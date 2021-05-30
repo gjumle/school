@@ -1,0 +1,4 @@
+function Submit() {
+    alert("Odevzáno.")
+}
+
