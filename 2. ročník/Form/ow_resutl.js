@@ -1,4 +1,0 @@
-function Submit() {
-    alert("Odevzáno.")
-}
-
