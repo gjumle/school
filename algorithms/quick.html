@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Quick sorts</title>
+    </head>
+    <body>
+        <script>
+            // Partiton Hoare
+            function partition(start, end, array) {
+                pivot_index = start; // Defines which element will be the pivot
+                pivot = array[pivot_index];
+
+                while (start < end) {
+                    while (start < array.length && array[start] <= pivot) {
+                        start += 1;
+                    }
+                    while (array[end] > pivot) {
+                        end -= 1;
+                    }
+                    if (start < end) {
+                        // Switches the elements
+                        array[start], array[end] = array[end], array[start];
+                    }
+                }
+                array[end], array[pivot_index] = array[pivot_index], array[end];
+                return end
+            }
+
+            // Implementation
+            function quickSort(start, end, array) {
+                if (start < end) {
+                    p = partition(start, end, array);
+
+                    quickSort(start, p - 1, array);
+                    quickSort(p + 1, end, array);
+                }
+            }
+
+            // Driver code
+            array = [10, 7, 8, 9, 1, 5];
+            quickSort(0, array.length - 1, array);
+
+            console.log("Sorted array: " + array);
+        </script>
+    </body>
+</html>
