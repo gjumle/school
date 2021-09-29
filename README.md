@@ -3,4 +3,4 @@ School website project for learning.
 
 ## Purpose
 - This repository servers as a school homework dump.
-- The point is not to try to find any logic in this.
+- I use this to keep some order in every line of code that I wrote while learning.
