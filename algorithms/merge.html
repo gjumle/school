@@ -40,16 +40,14 @@
                     k++;
                 }
 
-                // Copy the remaining elements of
-                // L[], if there are any
+                // Copy the remaining elements of L[], if there are any
                 while (i < n1) {
                     arr[k] = L[i];
                     i++;
                     k++;
                 }
 
-                // Copy the remaining elements of
-                // R[], if there are any
+                // Copy the remaining elements of R[], if there are any
                 while (j < n2) {
                     arr[k] = R[j];
                     j++;
@@ -57,12 +55,10 @@
                 }
             }
 
-            // l is for left index and r is
-            // right index of the sub-array
-            // of arr to be sorted */
+            // l is for left index and r is right index of the sub-array of arr to be sorted
             function mergeSort(arr,l, r) {
                 if(l>=r){
-                    return;//returns recursively
+                    return; //returns recursively
                 }
                 var m =l+ parseInt((r-l)/2);
                 mergeSort(arr,l,m);
@@ -70,8 +66,7 @@
                 merge(arr,l,m,r);
             }
 
-            // UTILITY FUNCTIONS
-            // Function to print an array
+            // Implementation
             function printArray( A, size) {
                 for (var i = 0; i < size; i++)
                    document.write(  A[i] + " ");
