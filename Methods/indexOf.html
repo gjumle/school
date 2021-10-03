@@ -6,9 +6,15 @@
     </head>
     <body>
         <script>
-            function myIndexOf() {
-
+            function myIndexOf(string, x) {
+                var i = 0;
+                while (string[i] != x) {
+                    i++;
+                }
+                return i;
             }
+
+            console.log(myIndexOf("Ahoj", "o"));
         </script>
     </body>
 </html>
