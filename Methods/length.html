@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Length method</title>
+    </head>
+    <body>
+        <button type="button" onclick="myLength()">Length</button>
+
+        <p id="demo"></p>
+        <script>
+            var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+            document.getElementById('demo').innerHTML = txt.length;
+
+            function myLength(string) {
+                var i, txtLength;
+                while (txt[i]) {
+                    i++;
+                }
+                return i; // 26
+            }
+        </script>
+    </body>
+</html>
