@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Words</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script>
+		function pocetDlouhychSlov(veta) {
+			let vetaArray = veta.split(" ");
+			let pocetSlov = 0;
+			for (x of vetaArray) {
+				if (x.length > 2) pocetSlov++;
+
+			}
+			return pocetSlov;
+		}
+
+		console.log(pocetDlouhychSlov(" Jmenuji se Leos Gjumija."));
+	</script>
+</body>
+</html>
