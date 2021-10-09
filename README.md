@@ -1,5 +1,5 @@
 # School repository
-School website project for learning.
+School project repository for learning.
 
 ## Purpose
 - This repository servers as a school homework dump.
