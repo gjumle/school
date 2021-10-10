@@ -1,3 +1,7 @@
+* {
+	font-family: sans-serif;
+}
+
 .flex {
 	display: flex;
 	align-items: center;
