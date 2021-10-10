@@ -12,24 +12,44 @@
 			<h1>The Freelancer taxes calculator</h1>
 		</header>
 
-		<form>
-			<div class="flex" id="in_out">
-				<label for="incomes">Incomes:</label>
-				<input type="number" name="incomes" id="incomes">
+		<section class="in_out">
+			<h2 class="flex">1. Incomes and expenses</h2>
+			<form>
+				<div class="flex" id="in_out">
+					<label for="incomes">Incomes:</label>
+					<input type="number" name="incomes" id="incomes">
 
-				<label for="expenses">Expenses:</label>
-				<input type="number" name="expenses" id="expenses">
-			</div>
+					<label for="expenses">Expenses:</label>
+					<input type="number" name="expenses" id="expenses">
+				</div>
+			</form>
+				<div class="flex">
+					<h3>The difference of incomes and expenes:</h3>
+				</div>
+				<p class="flex" id="in_out_result"></p>
+		</section>
+
+		<section class="tax_base">
+			<h2 class="flex">2. Tax base</h2>
+			<form>
+				<div class="flex" id="tax_base">
+					<label for="non-taxable">Non-taxable expenses:</label>
+					<input type="number" name="non-taxable" id="non-taxable">
+
+					<label for="insurance">Insurance:</label>
+					<input type="number" name="insurance" id="insurance">
+				</div>
+			</form>
+				<div class="flex">
+					<h3>The tax base:</h3>
+				</div>
+				<p class="flex" id="tax_base_result"></p>
+		</section>
+
+		<section class="button">
 			<div class="half-flex">
-				<button type="button" onclick="in_out()">Calculate</button>
+				<button type="button" onclick="calculate()">Calculate</button>
 			</div>
-		</form>
-
-		<section>
-			<div class="flex">
-				<h3>The difference of incomes and expenes:</h3>
-			</div>
-			<p class="flex" id="result"></p>
 		</section>
 	</body>
 </html>
