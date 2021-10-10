@@ -26,8 +26,17 @@
                 return i; //
             }
 
-            function quickSort() {
-                
+            function quickSort(arr, left, right) {
+                if (arr.lenght > 1) { //If the arr is only one element array, return the array
+                    var index = partition(arr, left, right); //Defines the middle of the array
+                    if (left < index - 1) {
+                        quickSort(arr, left, index - 1); //Qucik sort the left part from index
+                    }
+                    if (right > index - 1) {
+                        quickSort(arr, index, right); //Quick sort the right part from index
+                    }
+                }
+                return arr; //Return the partition
             }
         </script>
     </body>
