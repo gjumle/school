@@ -16,10 +16,10 @@ function calculate() {
 	var ed_tax_base_r = tax_base_s + gft - ls;
 	var f_tax = ed_tax_base_r * 0.15;
 
-	console.log(in_out_d);
-	console.log(tax_base_s);
-	console.log(ed_tax_base_r);
-	console.log(f_tax);
+	console.log("The diference: " + in_out_d);
+	console.log("Tax base: " + tax_base_s);
+	console.log("Edited tax base: " + ed_tax_base_r);
+	console.log("The final tax: " + f_tax);
 
 	document.getElementById('in_out_result').innerHTML = inc + " - " + exp + " = " + in_out_d;
 	document.getElementById('tax_base_result').innerHTML = in_out_d + " + " + n_tax + " + " + ins + " = " + tax_base_s;
