@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<header class="flex">
-			<h1>The Freelancer taxes calculator</h1>
+			<h1>The Freelancer taxes calculator (2019)</h1>
 		</header>
 
 		<section class="in_out">
@@ -44,6 +44,54 @@
 					<h3>The tax base:</h3>
 				</div>
 				<p class="flex" id="tax_base_result"></p>
+		</section>
+
+		<section class="edited_tax_base">
+			<h2 class="flex">3. Edited tax base</h2>
+			<form>
+				<div class="flex" id="edited_tax_base">
+					<label for="gifts">Gifts:</label>
+					<input type="number" name="gifts" id="gifts">
+
+					<label for="loss">Loss:</label>
+					<input type="number" name="loss" id="loss">
+				</div>
+
+				<div class="wife-husband flex">
+					<p>Wife or Husband:</p>
+				</div>
+					<div class="flex">
+						<label for="wife-husband">Yes</label>
+						<input type="radio" name="wife-husband" value="1">
+					</div>
+					<div class="flex">
+						<label for="wife-husband">No</label>
+						<input type="radio" name="wife-husband" value="0">
+					</div>
+				<div class="children flex">
+					<p>Children:</p>
+				</div>
+					<div class="flex">
+						<label for="children">0</label>
+						<input type="radio" name="children" value="0">
+					</div>
+					<div class="flex">
+						<label for="children">1</label>
+						<input type="radio" name="children" value="1">
+					</div>
+					<div class="flex">
+						<label for="children">2</label>
+						<input type="radio" name="children" value="2">
+					</div>
+					<div class="flex">
+						<label for="children">3</label>
+						<input type="radio" name="children" value="3">
+					</div>
+			</form>
+				<div class="flex">
+					<h3>The edited tax base:</h3>
+				</div>
+				<p class="flex" id="edited_tax_base_result"></p>
 		</section>
 
 		<section class="button">

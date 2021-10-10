@@ -12,5 +12,5 @@ function calculate() {
 	console.log(tax_base_s);
 
 	document.getElementById('in_out_result').innerHTML = inc + " - " + exp + " = " + in_out_d;
-	document.getElementById('tax_base').innerHTML = in_out_d + " + " + n_tax + " + " + ins + " = " + tax_base_s;
+	document.getElementById('tax_base_result').innerHTML = in_out_d + " + " + n_tax + " + " + ins + " = " + tax_base_s;
 }
