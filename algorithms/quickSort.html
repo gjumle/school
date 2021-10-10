@@ -6,27 +6,27 @@
     </head>
     <body>
         <script>
-            function partition(arr, left, right) {
-                var pivot = arr[Math.floor((left + right) / 2)]; //Selects the middle element
-                i = left;
-                j = right;
-                while (i <= j) {
-                    while (arr[i] < pivot) {
-                        i++; //Move one to the right
-                    }
-                    while (arr[j] > pivot) {
-                        j--; //Move one to the left
-                    }
-                    if (i <= j) {
-                        arr[i], arr[j] = arr[j], arr[i]; //Swapp the elements
-                        i++;
-                        j--; //Bypass each other
-                    }
-                }
-                return i;
-            }
-
             function quickSort(arr, left, right) {
+                function partition(arr, left, right) {
+                    var pivot = arr[Math.floor((left + right) / 2)]; //Selects the middle element
+                    i = left;
+                    j = right;
+                    while (i <= j) {
+                        while (arr[i] < pivot) {
+                            i++; //Move one to the right
+                        }
+                        while (arr[j] > pivot) {
+                            j--; //Move one to the left
+                        }
+                        if (i <= j) {
+                            arr[i], arr[j] = arr[j], arr[i]; //Swapp the elements
+                            i++;
+                            j--; //Bypass each other
+                        }
+                    }
+                    return i;
+                }
+
                 if (arr.length > 1) { //If the arr is only one element array, return the array
                     var index = partition(arr, left, right); //Defines the middle of the array
                     if (left < index - 1) {
