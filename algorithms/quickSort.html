@@ -23,11 +23,11 @@
                         j--; //Bypass each other
                     }
                 }
-                return i; //
+                return i;
             }
 
             function quickSort(arr, left, right) {
-                if (arr.lenght > 1) { //If the arr is only one element array, return the array
+                if (arr.length > 1) { //If the arr is only one element array, return the array
                     var index = partition(arr, left, right); //Defines the middle of the array
                     if (left < index - 1) {
                         quickSort(arr, left, index - 1); //Qucik sort the left part from index
@@ -38,6 +38,14 @@
                 }
                 return arr; //Return the partition
             }
+
+
+            //Implementation
+            var arr = [5, 10 , 8, 4, 28, 15, 92, 2]
+            var left = arr[0];
+            var right = arr.length - 1;
+            console.log(quickSort(arr, left, right)); //Shitfuck not working at all
+            console.log(partition(arr, left, right)); //Shitfuck working but return 7
         </script>
     </body>
 </html>
