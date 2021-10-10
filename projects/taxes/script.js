@@ -1,5 +1,6 @@
 function count(exp, inc) {
-	exp = document.getElementById('expenses').value;
-	inc = document.getElementById('incomes').value;
-	return inc - exp;
+	var exp = document.getElementById('expenses').value;
+	var inc = document.getElementById('incomes').value;
+	result = inc - exp;
+	document.getElementById('result').innerHTML = result;
 }
