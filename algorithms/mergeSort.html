@@ -20,7 +20,16 @@
                                 lIndex++;
                             }
                         }
+                        var ret = result.contract(left.slice[lIndex], right.slice[rIndex]);
+                        return ret;
                 }
+
+                if (arr.length == 1) {
+                    return arr;
+                }
+                let mid = Math.floor(arr.length / 2);
+                left = arr.slice(0, mid);
+                right = arr.slice(mid);
             }
         </script>
     </body>
