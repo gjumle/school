@@ -6,7 +6,18 @@
     </head>
     <body>
         <script>
-            
+            function mergeSort(arr) {
+                function merge(left, right) {
+                        let lIndex, rIndex = 0;
+                        let result = [];
+                        while (lIndex < left.length && rIndex < right.length) {
+                            if (left[lIndex] > right[rIndex]) {
+                                result.push(right[rIndex]);
+                                rIndex++;
+                            }
+                        }
+                }
+            }
         </script>
     </body>
 </html>
