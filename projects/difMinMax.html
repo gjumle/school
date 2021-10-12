@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>difMinMax</title>
+</head>
+<body>
+	<script>
+		function difMinMax(numbers) {
+			var arrNumbers = numbers.split(";");
+			var min = max;
+			for (x of arrNumbers) {
+				if (x > max) max = x;
+				if (x < min) min = x;
+			}
+			return max - min;
+		}
+
+		console.log(difMinMax("1;5;8;4;-15;45;2"));
+	</script>
+</body>
+</html>

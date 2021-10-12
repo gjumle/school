@@ -7,8 +7,8 @@
 <body>
 	<script>
 		function mocnina(zaklad, exponent) {
-			if (exponent == 0) return 1;
-			return zaklad * mocnina(zaklad, exponent - 1);
+			if (exponent == 1) return zaklad;
+			else return zaklad * mocnina(zaklad, exponent - 1);
 		}
 
 		console.log(mocnina(1, 2));
