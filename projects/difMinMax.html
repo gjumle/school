@@ -8,7 +8,8 @@
 	<script>
 		function difMinMax(numbers) {
 			var arrNumbers = numbers.split(";");
-			var min = max;
+			var min, max;
+			min = max = arrNumbers[0];
 			for (x of arrNumbers) {
 				if (x > max) max = x;
 				if (x < min) min = x;
