@@ -3,6 +3,16 @@
 <head>
 	<meta charset="utf-8">
 	<title>Grade Evidence</title>
+
+	<style>
+		table {
+			visibility: hidden;
+			border-collapse: collapse;
+		}
+		th, td {
+			border: 1px solid black;
+		}
+	</style>
 </head>
 <body>
 	<main>
@@ -19,6 +29,14 @@
 
 			<input type="submit" name="submit" value="save"><br>
 		</form>
+
+		<table id="table">
+			<th>
+				<tr>Date</tr>
+				<tr>Subject</tr>
+				<tr>Grade</tr>
+			</th>
+		</table>
 	</main>
 
 	<script>
