@@ -27,7 +27,7 @@
 			<label for="mark">Grade:</label><br>
 			<input type="text" name="mark" id="mark"><br>
 
-			<input type="submit" name="submit" value="save"><br>
+			<input type="button" name="save" value="save" id="save"><br>
 		</form>
 
 		<table id="table">
@@ -40,6 +40,19 @@
 	</main>
 
 	<script>
+		document.getElementById('save').onclick= function() {
+			var table = document.getElementById('table');
+			table.style.visibility = "visibile";
+
+			var row = table.insertRow(-1);
+			var date = row.insertCell(0);
+			var subject = row.insertCell(1);
+			var grade = row.insertCell(2);
+
+			date.innerHTML = document.getElementById('date');
+			subject.innerHTML = document.getElementById('sub');
+			grade.innerHTML = document.getElementById('mark');
+		}
 		
 	</script>
 </body>
