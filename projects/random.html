@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Random array</title>
+</head>
+<body>
+	<script >
+		function genereateArray(count, min, max) {
+			var arr = [];
+			for (var i = 0; i < count; i++) {
+				arr.push(Math.floor(Math.random() * (max - min) + min));
+			}
+			return arr;
+		}
+		console.log(genereateArray(10, 1000, 10000));
+	</script>
+</body>
+</html>
