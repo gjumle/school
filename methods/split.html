@@ -7,14 +7,19 @@
     <body>
         <script>
             function mySplit(string, divider) {
+                let stringArr = [];
                 for (var i = 0; i < string.length; i++) {
                     if (string[i] == divider) {
                         let start = string[0];
-                        let part = [0, i];
-                        let stringArr = stringArr.push(part);
+                        let part = [start, i];
+                        stringArr.push(part);
+                        start = string[i];
                     }
                 }
+                return stringArr;
             }
+
+            console.log(mySplit("Ahoj, jak se mas, ja  se mam dobre", ","));
         </script>
     </body>
 </html>
