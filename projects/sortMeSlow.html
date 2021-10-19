@@ -7,17 +7,22 @@
     <body>
         <script>
             function sortMeSlow(numbers) {
-                var numberArr = numbers.split("");
+                var numberArr = numbers.split(";");
+                var ordered = true;
+                console.log(numberArr);
                 for (var i = 0; i < numberArr.length; i++) {
-                    if (numberArr[i] > numberArr[i + 1]) {
-                        
+                    if (numberArr[i] > numberArr[i + 1] && ordered == true) {
+                        ordered = true;
+                    }
+                    else {
+                        ordered = false;
                     }
                 }
 
-                return numberArr;
+                return ordered;
             }
 
-            console.log(sortMeSlow("123456"));
+            console.log(sortMeSlow("5;2;1"));
         </script>
     </body>
 </html>
