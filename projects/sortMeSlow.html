@@ -6,28 +6,28 @@
     </head>
     <body>
         <script>
-            function orderCheck(numbers) {
-                var numberArr = numbers.split(";");
+            function sortMeSlow(numbers) {
+                var numbersArr = numbers.split(";");
                 var ordered = true;
+
+                var arrLength = numbersArr.length;
+
                 console.log(numberArr);
-                for (var i = 0; i < numberArr.length; i++) {
-                    if (numberArr[i] > numberArr[i + 1] && ordered == true) {
+                for (var i = 0; i < numbersArr.length; i++) {
+                    if (numbersArr[i] > numbersArr[i + 1] && ordered == true) {
                         ordered = true;
                     }
                     else {
                         ordered = false;
                     }
                 }
+                var randomValue =  (Math.floor(Math.random() * (arrLength + 1) + 0));
 
-                return ordered;
-            }
 
-            function random(min, max) {
-                return (Math.floor(Math.random() * (max - min + 1) + min));
-            }
 
-            function sortMeSlow(numbers) {
-                
+                if (orderCheck(numbers == false)) {
+
+                }
             }
 
             console.log(sortMeSlow("5;2;1"));
