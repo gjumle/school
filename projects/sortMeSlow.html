@@ -6,7 +6,7 @@
     </head>
     <body>
         <script>
-            function sortMeSlow(numbers) {
+            function orderCheck(numbers) {
                 var numberArr = numbers.split(";");
                 var ordered = true;
                 console.log(numberArr);
@@ -20,6 +20,14 @@
                 }
 
                 return ordered;
+            }
+
+            function random(min, max) {
+                return (Math.floor(Math.random() * (max - min + 1) + min));
+            }
+
+            function sortMeSlow(numbers) {
+                
             }
 
             console.log(sortMeSlow("5;2;1"));
