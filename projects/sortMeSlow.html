@@ -22,9 +22,10 @@
                 }
                 var randomValue =  (Math.floor(Math.random() * arrLength));
                 var randomValueS = (Math.floor(Math.random() * arrLength));
-                // TODO: for cyclus to sort the whole array
                 if (ordered == false) {
+                    for (var n = 0; n < arrLength; n++) {
                     [numbersArr[randomValue], numbersArr[randomValueS]] = [numbersArr[randomValueS], numbersArr[randomValue]];
+                    }
                 }
                 for (var j = 0; j < arrLength; j++) {
                     numbersStr += numbersArr[j];
