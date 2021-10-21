@@ -21,7 +21,7 @@
                 var randomValue =  (Math.floor(Math.random() * (arrLength + 1) + 0));
                 var randomValueS = (Math.floor(Math.random() * (arrLength + 1) + 0));
                 if (ordered == false) {
-                    numbersArr[randomValue], numbersArr[randomValueS] = numbersArr[randomValueS], numbersArr[randomValue];
+                    [numbersArr[randomValue], numbersArr[randomValueS]] = [numbersArr[randomValueS], numbersArr[randomValue]];
                 }
                 return numbersArr;
             }
