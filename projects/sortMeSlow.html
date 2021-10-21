@@ -6,7 +6,7 @@
     </head>
     <body>
         <script>
-            function sortMeSlow(numbers) {
+            function sortMeSlow(numbers) { // TODO: .tostring
                 var numbersArr = numbers.split(";");
                 var ordered = true;
                 var arrLength = numbersArr.length;
@@ -21,7 +21,8 @@
                 var randomValue =  (Math.floor(Math.random() * arrLength));
                 var randomValueS = (Math.floor(Math.random() * arrLength));
                 console.log(randomValue);
-                console.log(randomValueS);
+                console.log(randomValueS);4
+                // TODO: for cyclus to sort the whole array
                 if (ordered == false) {
                     [numbersArr[randomValue], numbersArr[randomValueS]] = [numbersArr[randomValueS], numbersArr[randomValue]];
                 }
