@@ -18,8 +18,10 @@
                         ordered = false;
                     }
                 }
-                var randomValue =  (Math.floor(Math.random() * (arrLength + 1) + 0));
-                var randomValueS = (Math.floor(Math.random() * (arrLength + 1) + 0));
+                var randomValue =  (Math.floor(Math.random() * arrLength));
+                var randomValueS = (Math.floor(Math.random() * arrLength));
+                console.log(randomValue);
+                console.log(randomValueS);
                 if (ordered == false) {
                     [numbersArr[randomValue], numbersArr[randomValueS]] = [numbersArr[randomValueS], numbersArr[randomValue]];
                 }
