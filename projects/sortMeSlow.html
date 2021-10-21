@@ -8,9 +8,10 @@
         <script>
             function sortMeSlow(numbers) {
                 var strNumber = numbers.toString()
-                var numbersArr = strNumbers.split(";");
+                var numbersArr = strNumber.split(";");
                 var ordered = true;
                 var arrLength = numbersArr.length;
+                var numbersStr = "";
                 for (var i = 0; i < arrLength - 1; i++) {
                     if (numbersArr[i] > numbersArr[i + 1] && ordered == true) {
                         ordered = true;
@@ -25,7 +26,10 @@
                 if (ordered == false) {
                     [numbersArr[randomValue], numbersArr[randomValueS]] = [numbersArr[randomValueS], numbersArr[randomValue]];
                 }
-                return numbersArr;
+                for (var j = 0; j < arrLength; j++) {
+                    numbersStr += numbersArr[j];
+                }
+                return numbersStr;
             }
 
 
