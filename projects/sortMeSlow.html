@@ -13,7 +13,7 @@
                 var arrLength = numbersArr.length;
                 var numbersStr = "";
                 for (var i = 0; i < arrLength - 1; i++) {
-                    if (numbersArr[i - 1] > numbersArr[i] && ordered == true) {
+                    if (numbersArr[i - 1] < numbersArr[i] && ordered == true) {
                         ordered = true;
                     }
                     else {
