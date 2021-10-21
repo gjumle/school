@@ -6,8 +6,9 @@
     </head>
     <body>
         <script>
-            function sortMeSlow(numbers) { // TODO: .tostring
-                var numbersArr = numbers.split(";");
+            function sortMeSlow(numbers) {
+                var strNumber = numbers.toString()
+                var numbersArr = strNumbers.split(";");
                 var ordered = true;
                 var arrLength = numbersArr.length;
                 for (var i = 0; i < arrLength - 1; i++) {
