@@ -7,8 +7,18 @@
 <body>
 	<script>
 		function sorting(arr) {
-			
-		} 
+			var sorted = true;
+			while (sorted == true) {
+				for (x of arr) {
+					if (x - 1 > x) {
+						sorted = true;
+					}
+					else {
+						sorted = false;
+					}
+				}
+			}
+		}
 	</script>
 </body>
 </html>
