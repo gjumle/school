@@ -34,8 +34,35 @@
                 return numbersStr;
             }
 
+            //Class solution
+            function sortMeSlowTwo(number) {
+                function isNotSorted(arr) {
+                    for (let i = 0; i < arr.length; i++) {
+                        if (arr[i-1] < arr[i]) return true;
+                    }
+                    return false;
+                }
+                function shuffle(arr) {
+                    function randomIntFromInterval (min, max) {
+                        return Math.floor(Math.random() * (max - min + 1) + min);
+                    }
+                    var n = arr.length;
+
+                    var i = randomIntFromInterval(0, n-1);
+                    var j = randomIntFromInterval(0, n-1);
+                    [arr[i], arr[j]] = [arr[j], arr[i]];
+
+                    return arr;
+                }
+                var cisloArr = number.split("");
+                while (isNotSorted(cisloArr)) {
+                    cisloArr = shuffle(cisloArr);
+                }
+                return Number(cisloArr.join(""));
+            }
 
             console.log(sortMeSlow(5493812));
+            console.log(sortMeSlowTwo("5493812"));
         </script>
     </body>
 </html>
