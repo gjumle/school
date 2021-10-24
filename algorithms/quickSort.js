@@ -1,19 +1,27 @@
-function partition(arr, left, right) {
-    let pivot = arr[Math.floor((left + right) / 2)]
-    let i = left;
-    let j = right;
-    while (i <= j) {
-        while (arr[i] < pivot) {
-            i++;
+function quickSort(arr, left, right) {
+    function partition(arr, left, right) {
+        let pivot = arr[Math.floor((left + right) / 2)]
+        let i = left;
+        let j = right;
+        while (i <= j) {
+            while (arr[i] < pivot) {
+                i++;
+            }
+            while (arr[j] > pivot) {
+                j--;
+            }
+            if (i <= j) {
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+                i++;
+                j--;
+            }
         }
-        while (arr[j] > pivot) {
-            j--;
-        }
-        if (i <= j) {
-            [arr[i], arr[j]] = [arr[j], arr[i]];
-            i++;
-            j--;
-        }
+        return i;
     }
-    return i;
+    
 }
+
+//Implementation
+var startTime = performance.now();
+console.log(quickSort());
+var endTime = performance.now();
