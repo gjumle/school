@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Finance calculator</title>
+        <style media="screen">
+            * {
+                font-family: sans-serif;
+            }
+            table {
+    			visibility: hidden;
+    			border-collapse: collapse;
+    		}
+    		th, td {
+    			border: 1px solid black;
+    		}
+        </style>
+    </head>
+    <body>
+        <h1>Finance calculator</h1>
+        <div class="flex">
+            <form class="form" action="index.html" method="post">
+                <label for="ammount">Ammount:</label><br>
+                <input type="number" name="ammount" value=""><br>
+
+                <label for="date">Date:</label><br>
+                <input type="date" name="date" value=""><br>
+
+                <label for="description">Description:</label><br>
+                <input type="text" name="description" value=""><br>
+
+                <input type="button" name="save" value="Save" id="save"><br>
+            </form>
+        </div>
+
+        <table id="table">
+            <tr>
+                <th>Ammount</th>
+                <th>Date</th>
+                <th>Description</th>
+            </tr>
+        </table>
+        <script type="text/javascript">
+            document.getElementById('save').onclick = function() {
+                var table = document.getElementById('table');
+                table.style.visibility = "visibile";
+
+                var row = insertRow(-1);
+                var ammount = insertCell(0);
+                var date = insertCell(1);
+                var description = insertCell(2);
+
+                ammount.innerHTML = document.getElementById('ammount');
+                date.innerHTML = document.getElementById('date');
+                description.innerHTML = document.getElementById('description');
+                
+            }
+        </script>
+    </body>
+</html>
