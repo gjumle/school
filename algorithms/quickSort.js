@@ -1,7 +1,7 @@
 function partition(arr, left, right) {
     let pivot = arr[Math.floor((left + right) / 2)]
-    i = left;
-    j = right;
+    let i = left;
+    let j = right;
     while (i <= j) {
         while (arr[i] < pivot) {
             i++;
