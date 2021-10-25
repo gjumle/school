@@ -18,10 +18,21 @@ function quickSort(arr, left, right) {
         }
         return i;
     }
-    
+    if (arr.length > 1) {
+        var index = partition(arr, left, right);
+        if (left < index - 1) {
+            quickSort(arr, left, index - 1);
+        }
+        if (index < right) {
+            quickSort(arr, index, right);
+        }
+    }
+    return arr;
 }
 
 //Implementation
+testArr = [0, 15, 25, 2, 0.2, 18, 45, 18];
+testRight = testArr.length;
 var startTime = performance.now();
-console.log(quickSort());
+console.log(quickSort(testArr, 0, testRight));
 var endTime = performance.now();
