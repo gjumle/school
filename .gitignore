@@ -8,6 +8,9 @@ dist/
 # Compiled Python bytecode
 *.py[cod]
 
+#KSI
+*ksi*.py
+
 # Log files
 *.log
 
