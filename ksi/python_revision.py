@@ -4,3 +4,8 @@ for x in languages:
 	if x == "JS":
 		continue
 	print(x)
+
+i = 1
+while i <= 6:
+	print(i)
+	i += 1
