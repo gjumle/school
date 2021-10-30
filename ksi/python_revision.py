@@ -9,3 +9,7 @@ i = 1
 while i <= 6:
 	print(i)
 	i += 1
+
+counter = lambda y : y + 1
+
+print(counter(12))
