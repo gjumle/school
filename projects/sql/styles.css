@@ -1,9 +1,16 @@
 * {
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .flex {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.top {
+	background-color: red;
+	color: white;
 }
