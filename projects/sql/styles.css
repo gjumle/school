@@ -26,3 +26,13 @@
 #send {
 	margin-top: 16px;
 }
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	background: red;
+	color: white;
+	font-weight: 150;
+	font-size: 14px;
+	width: 100%;
+}
