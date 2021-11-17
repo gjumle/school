@@ -16,3 +16,13 @@
 	font-weight: 750;
 	font-size: 42px;
 }
+
+.sql-console {
+	height: 480px;
+	width: 800px;
+	margin-top: 24px;
+}
+
+#send {
+	margin-top: 16px;
+}
