@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <button class="flex" type="button" onclick="sum_prompt()">Calculate</button>
+
+        <p class="flex" id="demo"></p>
+
+        <script>
+            function sum_prompt() {
+                let a = parseInt(prompt("First number:", "1"));
+                let b = parseInt(prompt("Second number:", "2"));
+                if (a && b != null) {
+                    document.getElementById('demo').innerHTML = a + b;
+                }
+                else {
+                    window.alert("The values musn't be empy")
+                    sum_prompt()
+                }
+            }
+        </script>
+
+        <style>
+            .flex {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </body>
+</html>

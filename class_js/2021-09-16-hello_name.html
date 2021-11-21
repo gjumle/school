@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Hello name</title>
+    </head>
+    <body>
+        <form class="name" action="index.html" method="post">
+            <label for="name">Vaše jméno: </label>
+            <input  id="name-input" type="text" name="name" value="Your name">
+        </form>
+        <button type="button" name="button" onclick="nameAlert()">Alert</button>
+
+        <script>
+            function nameAlert() {
+                var name = document.getElementById('name-input').value;
+                window.alert("Hello" + " " + name + "!");
+            }
+        </script>
+
+    </body>
+</html>

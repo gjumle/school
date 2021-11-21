@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Triagle</title>
+    </head>
+    <body>
+        <button type="button" onclick="equal()">Calculate</button>
+
+        <p id="demo"></p>
+
+        <script>
+            function equal() {
+                let a = parseInt(prompt("First number:", "1"));
+                let b = parseInt(prompt("Second number:", "2"));
+                let c = parseInt(prompt("Third number:", "3"));
+                if (a + b =< c || a + c =< b || c + b =< a) {
+                    document.getElementById('demo').innerHTML =
+                    "Trojúhelník nelze sestrojit.";
+                    if (a == b && b == c) {
+                        document.getElementById('demo').innerHTML =
+                        "Trojúhelník je rovnostranný.";
+                    }
+                    else if (a == b || b == c || a == c) {
+                        document.getElementById('demo').innerHTML =
+                        "Trojúhelník je rovnoramenný.";
+                    }
+                    else {
+                        document.getElementById('demo').innerHTML =
+                        "Trojúhelník není rovnoramenný ani rovnostranný.";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
