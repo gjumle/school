@@ -1,0 +1,11 @@
+MariaDB [car_service]> select vin, nazev, concat(jmeno, " ", prijmeni) as zakaznik from auto a join znacka b on a.znacka_id=b.znacka_id join majitel c on a.zakaznik_id=c.majitel_id;
++-------------+-------+---------------+
+| vin         | nazev | zakaznik      |
++-------------+-------+---------------+
+| XBZQWE_1234 | skoda | Petr Novak    |
+| XBZQWE_5678 | audi  | Karel Pokorny |
+| XBZQWE_0987 | bmw   | Anna Mala     |
++-------------+-------+---------------+
+3 rows in set (0.000 sec)
+
+MariaDB [car_service]>
