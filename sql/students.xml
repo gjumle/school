@@ -1,0 +1,9 @@
+MariaDB [students]> select concat(sName, " ", fName) name, name class from s2c a join students s on a.s_id=s.s_id join class c on a.c_id=c.c_id;
++----------------+-------+
+| name           | class |
++----------------+-------+
+| Novak Petr     | EKN   |
+| Mala Anna      | EKN   |
+| Pospisil Josef | IT    |
++----------------+-------+
+3 rows in set (0.000 sec)
