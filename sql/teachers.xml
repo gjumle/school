@@ -32,7 +32,9 @@ select concat(jmeno, ' ', prijmeni) jmeno from ucitel;
 
 select concat(jmeno, ' ', prijmeni) jmeno, predmet.nazev predmet from ucitel, predmet;
 
-select concat(jmeno, ' ', prijmeni) jmeno, predmet.nazev predmet from ucitel, predmet where jmeno = 'Petr Stastny' group by jmeno;
+select concat(jmeno, ' ', prijmeni) jmeno, predmet.nazev predmet from ucitel, predmet where predmet.nazev = 'cestina';
+
+select concat(jmeno, ' ', prijmeni) jmeno, predmet.nazev predmet from ucitel, predmet where predmet.nazev = 'matematika' or predmet.nazev = 'cestina' order by jmeno;
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 FUNCTION
