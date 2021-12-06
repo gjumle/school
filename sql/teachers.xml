@@ -40,6 +40,8 @@ select * from predmet p join ucitel_muze_ucit uc on p.p_id=uc.predmet_id;
 
 select nazev, concat(jmeno, ' ', prijmeni) jmeno from predmet p join ucitel_muze_ucit uc on p.p_id=uc.predmet_id join ucitel u on u.u_id=uc.ucitel_id;
 
+select nazev, concat(jmeno, ' ', prijmeni) jmeno from predmet p join ucitel_uci uc on p.p_id=uc.predmet_id join ucitel u on u.u_id=uc.ucitel_id;
+
 ----------------------------------------------------------------------------------------------------------------------------------------
 FUNCTION
 ----------------------------------------------------------------------------------------------------------------------------------------
