@@ -36,6 +36,10 @@ select concat(jmeno, ' ', prijmeni) jmeno, predmet.nazev predmet from ucitel, pr
 
 select concat(jmeno, ' ', prijmeni) jmeno, predmet.nazev predmet from ucitel, predmet where predmet.nazev = 'matematika' or predmet.nazev = 'cestina' order by jmeno;
 
+select * from predmet p join ucitel_muze_ucit uc on p.p_id=uc.predmet_id;
+
+select nazev, ucitel_id from predmet p join ucitel_muze_ucit uc on p.p_id=uc.predmet_id join ucitel u on u.u_id=;
+
 ----------------------------------------------------------------------------------------------------------------------------------------
 FUNCTION
 ----------------------------------------------------------------------------------------------------------------------------------------
@@ -48,10 +52,12 @@ create function F_suplovani(
 )
 
 returns varchar(30)
-deterministic sql
+deterministic sql reads sql data
 
 begin
-	if ...
+	case
+  if (nazev = 'matematika') then
+    select concat(jmeno, ' ', prijmeni) jmeno, predmet.nazev predmet from ucitel u, predmet join predmet p on p.p_id=u.ucitel_id where predmet.nazev = nazev;
 end $$
 
 delimiter ;
