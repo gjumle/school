@@ -30,6 +30,10 @@ JOIN / VIEW
 
 select concat(jmeno, ' ', prijmeni) jmeno from ucitel;
 
+select concat(jmeno, ' ', prijmeni) jmeno, predmet.nazev predmet from ucitel, predmet;
+
+select concat(jmeno, ' ', prijmeni) jmeno, predmet.nazev predmet from ucitel, predmet where jmeno = 'Petr Stastny' group by jmeno;
+
 ----------------------------------------------------------------------------------------------------------------------------------------
 FUNCTION
 ----------------------------------------------------------------------------------------------------------------------------------------
