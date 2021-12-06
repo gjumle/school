@@ -137,3 +137,14 @@ MariaDB [school]> select nazev, concat(jmeno, ' ', prijmeni) jmeno from predmet 
 | zemepis    | Jana Novotna    |
 +------------+-----------------+
 8 rows in set (0.000 sec)
+
+MariaDB [school]> select nazev, concat(jmeno, ' ', prijmeni) jmeno from predmet p join ucitel_uci uc on p.p_id=uc.predmet_id join ucitel u on u.u_id=uc.ucitel_id;
++------------+-----------------+
+| nazev      | jmeno           |
++------------+-----------------+
+| matematika | Petr Stastny    |
+| cestina    | Katerina Mala   |
+| dejepis    | Antonin Pokorny |
+| zemepis    | Jana Novotna    |
++------------+-----------------+
+4 rows in set (0.000 sec)
