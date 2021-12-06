@@ -38,7 +38,7 @@ select concat(jmeno, ' ', prijmeni) jmeno, predmet.nazev predmet from ucitel, pr
 
 select * from predmet p join ucitel_muze_ucit uc on p.p_id=uc.predmet_id;
 
-select nazev, ucitel_id from predmet p join ucitel_muze_ucit uc on p.p_id=uc.predmet_id join ucitel u on u.u_id=;
+select nazev, concat(jmeno, ' ', prijmeni) jmeno from predmet p join ucitel_muze_ucit uc on p.p_id=uc.predmet_id join ucitel u on u.u_id=uc.ucitel_id;
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 FUNCTION
@@ -120,3 +120,18 @@ MariaDB [suplovani]> show create table ucitel_muze_ucit;
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 |
 +------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 1 row in set (0.000 sec)
+
+MariaDB [school]> select nazev, concat(jmeno, ' ', prijmeni) jmeno from predmet p join ucitel_muze_ucit uc on p.p_id=uc.predmet_id join ucitel u on u.u_id=uc.ucitel_id;
++------------+-----------------+
+| nazev      | jmeno           |
++------------+-----------------+
+| matematika | Petr Stastny    |
+| cestina    | Petr Stastny    |
+| dejepis    | Petr Stastny    |
+| cestina    | Katerina Mala   |
+| dejepis    | Antonin Pokorny |
+| zemepis    | Antonin Pokorny |
+| matematika | Jana Novotna    |
+| zemepis    | Jana Novotna    |
++------------+-----------------+
+8 rows in set (0.000 sec)
