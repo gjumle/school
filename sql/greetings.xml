@@ -28,3 +28,35 @@ insert into students (jmeno, prijmeni, datum_narozeni, pohlavi, studium_id) valu
 PROCEDURE
 ---------
 
+
+
+------
+OUTPUT
+------
+
+MariaDB [student]> select * from students;
++------+-------+----------+----------------+---------+------------+
+| s_id | jmeno | prijmeni | datum_narozeni | pohlavi | studium_id |
++------+-------+----------+----------------+---------+------------+
+|    1 | Petr  | Novak    | 2003-05-15     |       3 |          1 |
++------+-------+----------+----------------+---------+------------+
+1 row in set (0.000 sec)
+
+MariaDB [student]> select * from studium;
++--------+-------------+
+| std_id | nazev       |
++--------+-------------+
+|      1 | ekonomika   |
+|      2 | informatika |
+|      3 | pravo       |
++--------+-------------+
+3 rows in set (0.000 sec)
+
+MariaDB [student]> select * from pohlavi;
++------+--------+
+| p_id | nazev  |
++------+--------+
+|    3 | male   |
+|    4 | female |
++------+--------+
+2 rows in set (0.000 sec)
