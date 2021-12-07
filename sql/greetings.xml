@@ -1,0 +1,9 @@
+------
+CREATE
+------
+
+create database student;
+
+create table pohlavi (p_id int not null default 0, nazev varchar(5) not null default "", primary key (p_id));
+
+create table students (s_id int not null auto_increment, jmeno varchar(255) not null default "", prijmeni varchar(255) not null default "", datum_narozeni DATE not null default "0000-00-00", pohlavi int not null, studium_id int not null);
