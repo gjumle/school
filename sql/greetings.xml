@@ -4,6 +4,18 @@ CREATE
 
 create database student;
 
-create table pohlavi (p_id int not null default 0, nazev varchar(5) not null default "", primary key (p_id));
+create table pohlavi (p_id int not null auto_increment, nazev varchar(5) not null default "", primary key (p_id));
 
-create table students (s_id int not null auto_increment, jmeno varchar(255) not null default "", prijmeni varchar(255) not null default "", datum_narozeni DATE not null default "0000-00-00", pohlavi int not null, studium_id int not null);
+create table studium (std_id int not null auto_increment, nazev varchar(255) not null default "", primary key (std_id));
+
+create table students (s_id int not null auto_increment, jmeno varchar(255) not null default "", prijmeni varchar(255) not null default "", datum_narozeni DATE not null default "0000-00-00", pohlavi int not null, studium_id int not null, primary key (s_id), constraint fk_pohlavi foreign key (pohlavi) references pohlavi(p_id));
+
+alter table students add constraint foreign key fk_studium (studium_id) references studium(std_id);
+
+alter table pohlavi modify nazev varchar(6) not null default "";
+
+------
+INSERT
+------
+
+insert into pohlavi (nazev) values ('male'), ('female');
