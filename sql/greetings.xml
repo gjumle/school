@@ -28,7 +28,22 @@ insert into students (jmeno, prijmeni, datum_narozeni, pohlavi, studium_id) valu
 PROCEDURE
 ---------
 
+delimiter $$
 
+create procedure p_input_students (
+	IN jmeno substring(" ", 1)
+	IN prijmeni substring(" ", -1)
+	IN datum_narozeni date
+	IN pohlavi int
+	IN studium_id
+)
+
+returns varchar(255)
+deterministic sql
+
+begin 
+	insert into students set @jmeno ...
+end$$
 
 ------
 OUTPUT
