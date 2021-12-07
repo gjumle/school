@@ -64,7 +64,7 @@ begin
 	case
   if (nazev = 'matematika') then
     select concat(jmeno, ' ', prijmeni) jmeno, predmet.nazev predmet from ucitel u, predmet join predmet p on p.p_id=u.ucitel_id where predmet.nazev = nazev;
-end $$
+end$$
 
 delimiter ;
 
