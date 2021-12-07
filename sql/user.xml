@@ -1,0 +1,38 @@
+------
+CREATE
+------
+
+create database user;
+
+create table uzivatele (u_id int not null auto_increment, jmeno varchar(255) not null default "", vek int not null default 0, primary key (u_id));
+
+------
+INSERT
+------
+
+insert into uzivatele (jmeno, vek) values ('Petr', 15), ('Tomas', 10), ('Simon', 15), ('Lukas', 5), ('Adam', 25);
+
+------
+SELECT
+------
+
+select jmeno, vek from uzivatele;
+
+--------
+FUNCTION
+--------
+
+delimiter $$
+
+create function f_user_list (
+	userList varchar(255)
+)
+
+returns varchar(255)
+deterministic sql reads sql data
+
+begin
+	declare finished int default 0;
+	declare userName varchar(255) default "";
+	declare userAge int default 0;
+end$$
