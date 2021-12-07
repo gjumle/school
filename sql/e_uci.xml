@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-12-07T07:44:00.688Z" agent="5.0 (X11)" etag="BtCKUI-cGJlT1UfROO6N" version="15.9.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-12-07T07:44:13.778Z" agent="5.0 (X11)" etag="_eguZWM2CLNMdzuoImm_" version="15.9.1" type="github">
   <diagram id="oNfmPzZ8P4WPS-MMHol9" name="Page-1">
     <mxGraphModel dx="1422" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -8,7 +8,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="oHWFgUAdIZh1crchMBfZ-1" value="Předmět" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
-          <mxGeometry x="110" y="80" width="180" height="100" as="geometry" />
+          <mxGeometry x="64" y="80" width="180" height="100" as="geometry" />
         </mxCell>
         <mxCell id="oHWFgUAdIZh1crchMBfZ-2" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=1;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="oHWFgUAdIZh1crchMBfZ-1">
           <mxGeometry y="30" width="180" height="30" as="geometry" />
@@ -40,7 +40,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="oHWFgUAdIZh1crchMBfZ-17" value="Učitel" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
-          <mxGeometry x="370" y="80" width="180" height="160" as="geometry" />
+          <mxGeometry x="324" y="80" width="180" height="160" as="geometry" />
         </mxCell>
         <mxCell id="oHWFgUAdIZh1crchMBfZ-18" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=1;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="oHWFgUAdIZh1crchMBfZ-17">
           <mxGeometry y="30" width="180" height="30" as="geometry" />
@@ -95,7 +95,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="oHWFgUAdIZh1crchMBfZ-31" value="Třída" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
-          <mxGeometry x="630" y="80" width="180" height="160" as="geometry" />
+          <mxGeometry x="584" y="80" width="180" height="160" as="geometry" />
         </mxCell>
         <mxCell id="oHWFgUAdIZh1crchMBfZ-32" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=1;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="oHWFgUAdIZh1crchMBfZ-31">
           <mxGeometry y="30" width="180" height="30" as="geometry" />
