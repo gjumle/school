@@ -35,3 +35,26 @@ return @state;
 end$$
 
 delimiter ;
+
+------
+SELECT
+------
+
+select nazev, f_price_string(cena) price from ucebnice;
+
+------
+OUTPUT
+------
+
+MariaDB [ucebnice]> select nazev, f_price_string(cena) price from ucebnice;
++--------------------------+-------+
+| nazev                    | price |
++--------------------------+-------+
+| Matematika               | levny |
+| Anglictina               | drahy |
+| Cesky jazyk a literatura | levny |
+| Ekonomika                | drahy |
+| Operacni systemy         | drahy |
+| Nemecky jazyk            | levny |
++--------------------------+-------+
+6 rows in set (0.008 sec)
