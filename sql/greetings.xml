@@ -31,18 +31,17 @@ PROCEDURE
 delimiter $$
 
 create procedure p_input_students (
-	IN jmeno substring(" ", 1)
-	IN prijmeni substring(" ", -1)
+	IN jmeno varchar(255)
+	IN prijmeni varchar(255)
 	IN datum_narozeni date
 	IN pohlavi int
-	IN studium_id
+	IN studium_id int
 )
-
 returns varchar(255)
 deterministic sql
 
 begin 
-	insert into students set @jmeno ...
+if 
 end$$
 
 ------
