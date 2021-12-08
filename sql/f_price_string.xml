@@ -36,6 +36,27 @@ end$$
 
 delimiter ;
 
+---------
+PROCEDURE
+---------
+
+delimiter $$
+
+create procedure p_discount (
+	in i_discount int
+)
+begin
+update ucebnice set cena = cena + (cena * i_discount/100);
+end$$
+
+delimiter ;
+
+----
+CALL
+----
+
+call p_discount(12);
+
 ------
 SELECT
 ------
@@ -58,3 +79,29 @@ MariaDB [ucebnice]> select nazev, f_price_string(cena) price from ucebnice;
 | Nemecky jazyk            | levny |
 +--------------------------+-------+
 6 rows in set (0.008 sec)
+
+MariaDB [ucebnice]> select * from ucebnice;
++------+-------+--------------------------+
+| u_id | cena  | nazev                    |
++------+-------+--------------------------+
+|    1 |  7500 | Matematika               |
+|    2 | 12288 | Anglictina               |
+|    3 |  3888 | Cesky jazyk a literatura |
+|    4 | 14700 | Ekonomika                |
+|    5 | 19200 | Operacni systemy         |
+|    6 |  4800 | Nemecky jazyk            |
++------+-------+--------------------------+
+6 rows in set (0.000 sec)
+
+MariaDB [ucebnice]> select * from ucebnice;
++------+-------+--------------------------+
+| u_id | cena  | nazev                    |
++------+-------+--------------------------+
+|    1 |  8625 | Matematika               |
+|    2 | 14131 | Anglictina               |
+|    3 |  4471 | Cesky jazyk a literatura |
+|    4 | 16905 | Ekonomika                |
+|    5 | 22080 | Operacni systemy         |
+|    6 |  5520 | Nemecky jazyk            |
++------+-------+--------------------------+
+6 rows in set (0.000 sec)
