@@ -24,24 +24,31 @@ insert into studium (nazev) values ('ekonomika'), ('informatika'), ('pravo');
 
 insert into students (jmeno, prijmeni, datum_narozeni, pohlavi, studium_id) values ('Petr', 'Novak', '2003-05-15', 3, 1);
 
----------
-PROCEDURE
----------
+--------
+FUNCTION
+--------
 
 delimiter $$
 
-create procedure p_input_students (
-	IN jmeno varchar(255)
-	IN prijmeni varchar(255)
-	IN datum_narozeni date
-	IN pohlavi int
-	IN studium_id int
+create function f_greet (
+	jmeno varchar(255),
+	prijmeni varchar(255),
+	datum_narozeni date,
+	pohlavi int
 )
 returns varchar(255)
 deterministic sql
 
 begin 
-if 
+if (datediff(year, datum_narozeni, curdate()) < 18) then
+set @greet = 'Ahoj ', jmeno;
+else
+if (pohlavi = 3) then
+set @pozdrav = 'Dobry den pane ', concat(jmeno, " ", prijmeni);
+else if (pohlavi = 4) then
+set @pozdrav = 'Dobry den pani ', concat(jmeno, " ", prijmeni);
+end if;
+return @pozdrav;
 end$$
 
 ------
