@@ -37,8 +37,7 @@ create function f_greet (
     pohlavi int
 )
 returns varchar(255)
-deterministic sql
-
+deterministic no sql
 begin 
 if (datediff(year, datum_narozeni, curdate()) < 18) then
     set @pozdrav = concat('Ahoj ', jmeno);
