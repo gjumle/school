@@ -1,0 +1,58 @@
+------
+CREATE
+------
+
+create database update_statistic;
+
+create table uzivatele (u_id int not null auto_increment, jmeno varchar(255) not null default "", primary key (u_id));
+
+alter table uzivatele add vek int not null default 0;
+
+------
+INSERT
+------
+
+insert into uzivatele (jmeno, vek) values ('Petr', 15), ('Tomas', 20), ('Lukas', 18);
+
+------
+SELECT
+------
+
+select count(*) veky from (select distinct vek from uzivatele);
+
+----
+VIEW
+----
+
+create view v_veky as select count(vek) pocet, distinct vek from uzivatele;
+
+--------
+FUNCTION
+--------
+
+delimiter $$
+
+create function f_count_vek (
+    i_vek int(11)
+)
+returns varchar(255)
+begin
+set @pocet = 'select count(*) from uzivatele where vek=i_vek';
+return @pocet;
+end$$
+
+delimiter ;
+
+---------
+PROCEDURE
+---------
+
+create procedure p_vek_update (
+    in jmeno varchar(255),
+    in vek int(11)
+)
+begin
+    declare finished int default 0;
+    declare user_name varchar(255) default "";
+    declare user_age int default 0;
+    declare set @u_age = "create or replace view v_veky as select distinct vek"
