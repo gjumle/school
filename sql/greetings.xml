@@ -51,6 +51,14 @@ end if;
 return @pozdrav;
 end$$
 
+-------------
+SHOW FUNCTION
+-------------
+
+show function status where db='db_name';
+
+show create function funciton_name;
+
 ------
 OUTPUT
 ------
