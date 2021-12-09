@@ -41,12 +41,13 @@ deterministic sql
 
 begin 
 if (datediff(year, datum_narozeni, curdate()) < 18) then
-set @greet = 'Ahoj ', jmeno;
+set @pozdrav = concat('Ahoj ', jmeno);
 else
 if (pohlavi = 3) then
-set @pozdrav = 'Dobry den pane ', concat(jmeno, " ", prijmeni);
-elseif (pohlavi = 4) then
-set @pozdrav = 'Dobry den pani ', concat(jmeno, " ", prijmeni);
+set @pozdrav = concat('Dobry den pane ', jmeno, " ", prijmeni);
+else
+set @pozdrav = concat('Dobry den pani ', jmeno, " ", prijmeni);
+end if;
 end if;
 return @pozdrav;
 end$$
