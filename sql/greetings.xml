@@ -31,10 +31,10 @@ FUNCTION
 delimiter $$
 
 create function f_greet (
-	jmeno varchar(255),
-	prijmeni varchar(255),
-	datum_narozeni date,
-	pohlavi int
+    jmeno varchar(255),
+    prijmeni varchar(255),
+    datum_narozeni date,
+    pohlavi int
 )
 returns varchar(255)
 deterministic sql
