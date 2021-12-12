@@ -50,7 +50,7 @@ delimiter ;
 PROCEDURE
 ---------
 
-create procedure p_vek_update (
+create procedure p_uzivatel_update (
     in jmeno varchar(255),
     in vek int(11)
 )
