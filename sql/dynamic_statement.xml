@@ -36,9 +36,12 @@ create function f_count_vek (
     i_vek int(11)
 )
 returns varchar(255)
+deterministic
 begin
-set @pocet = 'select count(*) from uzivatele where vek=i_vek';
-return @pocet;
+    set @i_vek = age;
+    set @ret = 0;
+    select count(*) into @ret from uzivatele where vek= @i_vek;
+    return @pocet;
 end$$
 
 delimiter ;
