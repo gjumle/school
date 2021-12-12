@@ -50,12 +50,35 @@ delimiter ;
 PROCEDURE
 ---------
 
+delimiter $$
+
 create procedure p_uzivatel_update (
-    in jmeno varchar(255),
-    in vek int(11)
+    in n_jmeno varchar(255),
+    in n_vek int(11)
 )
 begin
-    declare finished int default 0;
-    declare user_name varchar(255) default "";
-    declare user_age int default 0;
-    declare set @u_age = "create or replace view v_veky as select distinct vek"
+    declare c_finished int default 0;
+    declare user_age varchar(255) default "";
+    declare sql_query text default "create or replace view v_veky as select 'pocet_uzivatelu' AS statistika";
+    declare cur_user cursor for select distinct vek from uzivatele union select n_vek as vek order by asc;
+    open cur_user;
+    cursor_loop: loop
+        fetch cur_user into user_age;
+        if c_finished = 1 then
+            leave cursor_loop;
+        end if;
+        set sql_query = concat(sql_query,", f_count_vek(",user_age, ") as vek_", user_age);
+    end loop cursor_loop;
+    close cur_user;
+
+    select sql_query as "";
+    sel @sql_query = (select sql_query);
+
+    prepare dynamic_statement from @sql_query;
+    execute dynamic_statement;
+    deallocate prepare dynamic_statement;
+
+    inser into uzivatele (jmeno, vek) values (n_jmeno, n_vek);
+end$$
+
+delimiter ;
