@@ -1,0 +1,26 @@
+------
+CREATE
+------
+
+create database stromky;
+
+create table prodejci (p_id int not null auto_increment, nazev varchar(255) not null default "", primary key(p_id));
+
+create table stromky (s_id int not null auto_increment, nazev varchar(255) not null default "", primary key(s_id));
+
+create table s2p (prodejci_id int not null default 0, stromky_id int not null default 0, constraint prodejci_stromky foreign key (prodejci_id) references prodejci(p_id));
+
+alter table s2p add constraint stromky_prodejci foreign key (stromky_id) references stromky(s_id);
+
+------
+INSERT
+------
+
+insert into prodejci (nazev) values ("Franta"), ("Pepa"), ("Dominik");
+
+insert into stromky (nazev) values ("Jedle"), ("Smrk"), ("Borovice");
+
+------
+SELECT
+------
+
