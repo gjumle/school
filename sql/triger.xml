@@ -1,0 +1,63 @@
+------
+CREATE
+------
+
+create database triger;
+
+create table student (s_id int not null auto_increment, jmeno varchar(255) not null default "", prijmeni varchar(255) not null default "", primary key(s_id));
+
+create table predmet (p_id int not null auto_increment, nazev varchar(255) not null default "", primary key(p_id));
+
+create table znamka (z_id int not null auto_increment, int_z int not null, primary key(z_id));
+
+create table studium (student_id int not null default 0, predmet_id int not null default 0, znamka_id int not null default 0);
+
+create table studium_old as select * from studium;
+
+-----
+ALTER
+-----
+
+alter table studium add constraint fk_s foreign key (student_id) references student(s_id);
+
+alter table studium add constraint fk_p foreign key (predmet_id) references predmet(p_id);
+
+alter table studium add constraint fk_z foreign key (znamka_id) references znamka(z_id);
+
+alter table studium add column date datetime;
+
+alter table studium modify column date datetime default getdate();
+
+------
+INSERT
+------
+
+insert into student (jmeno, prijmeni) values ("Petr", "Novotny"), ("Alojs", "Hruby"), ("Dominik", "Volny");
+
+insert into predmet (nazev) values ("Matematika"), ("Cestina"), ("Programovani");
+
+insert into znamka (int_z) values (1), (2), (3), (4), (5);
+
+insert into studium (student_id, predmet_id, znamka_id) values (1, 1, 3), (2, 3, 1), (3, 2, 5), (1, 1, 1), (2, 1, 3), (3, 2, 1);
+
+---------
+PROCEDURE
+---------
+
+delimiter $$
+
+create procedure p_archive (
+    in student_id,
+    in predmet_id,
+    in znamka_id,
+    in date
+)
+returns varchar(255)
+deterministic
+begin
+    insert into student_old (student_id, predmet_id, znamka_id, date) values (studium.student_id, studium.predmet_id, studium.znamka_id, studium.date);
+end $$
+
+------
+TRIGER
+------
