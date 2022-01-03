@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title & icon-->
+    <title>Fotografie</title>
+    <link rel="icon" type="image/svg" href="SVG/Icon.svg">
+    <!-- Font links-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- NOTE: Add bootstrap to this project -->
+    <!-- TODO: Place here the link for boot strap -->
+    <!-- CSS Links-->
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/form.css">
+    <!-- Meta tags -->
+    <meta lang="en">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body id="skin">
+<!-- Navigation menu-->
+<header>
+    <nav>
+        <ul class="nav-links">
+            <li><a class="nav-link logo" href="./index.html" target="_self"><img src="./SVG/Logo.svg" alt="Logo" height="45"></a></li>
+            <li><a class="nav-link active" href="./index.html" target="_self">Domů</a></li>
+            <li><a class="nav-link" href="./photography.html" target="_self">Fotografie</a></li>
+            <li><a class="nav-link" href="./portfolio.html" target="_self">Portfolio</a></li>
+            <li><a class="nav-link" href="./colors.html" target="_self">Barvy</a></li>
+            <li><a class="nav-link" href="in_a_row.html" target="_self">Piškvorky</a></li>
+            <li><a class="nav-link" href="./snake.html" target="_self">Had</a></li>
+            <li><a class="nav-link" href="./form.html" target="_self">Formulář</a></li>
+            <li><a class="nav-link" href="./about.html" target="_self">O mně</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- Main section -->
+<main>
+    <section class="presentation", id="sec_1">
+        <div class="introduction">
+            <div class="intro-text">
+                <h1>Formulář</h1>
+                <p>Jednoduchý formulář pomocí PHP.</p>
+            </div>
+        </div>
+        <div class="cover">
+            <img src="./SVG/Php.svg" alt="Php">
+        </div>
+    </section>
+    <section class="presentation", id="sec_2">
+        <div class="introduction">
+            <div class="intro-text">
+                <h1>Formulář</h1>
+                <form method="POST" action="result.php">
+                    <div class="form-group" id="form-group-1">
+                        <label class="form-check">Otázka č.1</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q1" id="inputRadio1" value="1">
+                            <label class="form-check-label" for="inputRadio1">Odpověď č. 1</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q1" id="inputRadio2" value="0">
+                            <label class="form-check-label" for="inputRadio2">Odpověď č. 2</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q1" id="inputRadio3" value="0">
+                            <label class="form-check-label" for="inputRadio3">Odpověď č. 3</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="form-group-2">
+                        <label class="form-check">Otázka č.2</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q2" id="inputRadio11" value="0">
+                            <label class="form-check-label" for="inputRadio11">Odpověď č. 1</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q2" id="inputRadio12" value="1">
+                            <label class="form-check-label" for="inputRadio12">Odpověď č. 2</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q2" id="inputRadio13" value="0">
+                            <label class="form-check-label" for="inputRadio13">Odpověď č. 3</label>
+                        </div>
+
+                    </div>
+                    <div class="form-group" id="form-group-3">
+                        <label class="form-check">Otázka č.3</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q3" id="inputRadio21" value="1">
+                            <label class="form-check-label" for="inputRadio21">Odpověď č. 1</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q3" id="inputRadio22" value="0">
+                            <label class="form-check-label" for="inputRadio22">Odpověď č. 2</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q3" id="inputRadio23" value="0">
+                            <label class="form-check-label" for="inputRadio23">Odpověď č. 3</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="form-group-4">
+                        <label class="form-check">Otázka č.4</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q4" id="inputRadio31" value="1">
+                            <label class="form-check-label" for="inputRadio31">Odpověď č. 1</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q4" id="inputRadio32" value="0">
+                            <label class="form-check-label" for="inputRadio32">Odpověď č. 2</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q4" id="inputRadio33" value="0">
+                            <label class="form-check-label" for="inputRadio33">Odpověď č. 3</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="form-group-5">
+                        <label class="form-check">Otázka č.5</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q5" id="inputRadio41" value="0">
+                            <label class="form-check-label" for="inputRadio41">Odpověď č. 1</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q5" id="inputRadio42" value="1">
+                            <label class="form-check-label" for="inputRadio42">Odpověď č. 2</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q5" id="inputRadio43" value="0">
+                            <label class="form-check-label" for="inputRadio43">Odpověď č. 3</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="form-group-6">
+                        <label class="form-check">Otázka č.6</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q6" id="inputRadio51" value="0">
+                            <label class="form-check-label" for="inputRadio51">Odpověď č. 1</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q6" id="inputRadio52" value="0">
+                            <label class="form-check-label" for="inputRadio52">Odpověď č. 2</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q6" id="inputRadio53" value="1">
+                            <label class="form-check-label" for="inputRadio53">Odpověď č. 3</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="form-group-7">
+                        <label class="form-check">Otázka č.7</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q7" id="inputRadio61" value="0">
+                            <label class="form-check-label" for="inputRadio61">Odpověď č. 1</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q7" id="inputRadio62" value="0">
+                            <label class="form-check-label" for="inputRadio62">Odpověď č. 2</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q7" id="inputRadio63" value="1">
+                            <label class="form-check-label" for="inputRadio63">Odpověď č. 3</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="form-group-8">
+                        <label class="form-check">Otázka č.8</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q8" id="inputRadio71" value="0">
+                            <label class="form-check-label" for="inputRadio71">Odpověď č. 1</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q8" id="inputRadio72" value="1">
+                            <label class="form-check-label" for="inputRadio72">Odpověď č. 2</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Q8" id="inputRadio73" value="0">
+                            <label class="form-check-label" for="inputRadio73">Odpověď č. 3</label>
+                        </div>
+                    </div>
+
+                    <div class="submit">
+                        <input class="submit-btn" type="submit" name="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <ul class="copryright">
+        <li class="copyright-link">Fotografie ©2020</li>
+        <li class="copyright-link">Všechna práva vyhrazena</li>
+        <li class="copyright-link"><a class="copyright-link" href="./about.html" target="_blank">Kontakt</a></li>
+    </ul>
+</footer>
+</body>
+</html>

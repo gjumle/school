@@ -1,0 +1,14 @@
+#score {
+    font-family: 'Roboto Mono', monospace;
+}
+#snakeboard {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#score {
+    text-align: center;
+    font-size: 140px;
+    padding-bottom: 60px;
+}

@@ -1,0 +1,10 @@
+form, label, input {
+    text-align: left;
+}
+
+label.form-check {
+    font-weight: bold;
+    font-size: large;
+}
+
+
