@@ -1,3 +1,7 @@
+<?php
+    include_once './maridb-connect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -31,7 +35,7 @@
                     <li><a class="nav-link" href="in_a_row.html" target="_self">Piškvorky</a></li>
                     <li><a class="nav-link" href="./snake.html" target="_self">Had</a></li>
                     <li><a class="nav-link" href="./form.html" target="_self">Formulář</a></li>
-                    <li><a class="nav-link" href="./running.html" target="_self">Běhání</a></li>
+                    <li><a class="nav-link" href="running.php" target="_self">Běhání</a></li>
                     <li><a class="nav-link" href="./about.html" target="_self">O mně</a></li>
                 </ul>
             </nav>
@@ -52,7 +56,21 @@
             <section class="presentation" id="sec_2">
                 <div class="introduction">
                   <div class="intro-text">
-                      <!-- TODO: Add a box-posting type thingy -->
+                      <h2>Tabulka</h2>
+                      <?php
+
+                        $sql = "SELECT * FROM web_ready;";
+                        $result = mysqli_query($conn, $sql);
+                        $resultCheck = mysqli_num_rows($result);
+
+                        if ($resultCheck > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo $row['distance'];
+                                echo $row['date'];
+                            }
+                        }
+
+                      ?>
                   </div>
                 </div>
             </section>
