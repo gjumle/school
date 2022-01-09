@@ -125,11 +125,11 @@ BEGIN
     SET @runner = 'SELECT r_id'
                   'FROM runners'
                   'WHERE user_name = f_user_name';
-    SET @retd = 'SELECT SUM(distance) Vzdálenost
+    SET @ret = 'SELECT SUM(distance) Vzdálenost
                 FROM logs l
                     JOIN l2r l2 ON l.l_id = l2.logg_id
                 WHERE runner_id = 1';
-    RETURN @retd;
+    RETURN @ret;
 END;
 
 
@@ -231,5 +231,3 @@ SHOW CREATE VIEW months;
 
 
 SHOW CREATE VIEW v_level;
-
-
