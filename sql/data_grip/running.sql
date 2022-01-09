@@ -53,10 +53,20 @@ INSERT INTO logs (date, distance, note)
 VALUES ('2022-01-03 00:15:00', 10, 'vzlet');
 
 
+INSERT INTO l2r (runner_id, logg_id)
+VALUES (1, 1);
+
+
+INSERT INTO l2r (runner_id, logg_id)
+VALUES (1, 2),
+       (1, 3),
+       (1, 4);
+
+
 CREATE PROCEDURE in_log(
-    IN p_date datetime,
-    IN p_distance int(11),
-    IN p_note varchar(255)
+    IN p_date DATE,
+    IN p_distance INT(11),
+    IN p_note VARCHAR(255)
 )
     MODIFIES SQL DATA
 INSERT INTO logs (date, distance, note)
@@ -64,6 +74,18 @@ VALUES (p_date, p_distance, p_note);
 
 
 CALL in_log('2022-01-12', 22, 'hello');
+
+
+CREATE PROCEDURE add_user(
+    IN p_user_name VARCHAR(50),
+    IN p_e_mail VARCHAR(255)
+)
+    MODIFIES SQL DATA
+REPLACE INTO runners (user_name, e_mail)
+VALUES (p_user_name, p_e_mail);
+
+
+CALL add_user('petr12', 'petr21@gmail.com');
 
 
 CREATE FUNCTION f_distance(
@@ -94,6 +116,34 @@ END;
 DROP FUNCTION f_distance;
 
 
+CREATE FUNCTION f_sum_distance(
+    f_user_name VARCHAR
+)
+    RETURNS INT(11)
+    DETERMINISTIC NO SQL
+BEGIN
+    SET @runner = 'SELECT r_id'
+                  'FROM runners'
+                  'WHERE user_name = f_user_name';
+    SET @retd = 'SELECT SUM(distance) Vzdálenost
+                FROM logs l
+                    JOIN l2r l2 ON l.l_id = l2.logg_id
+                WHERE runner_id = 1';
+    RETURN @retd;
+END;
+
+
+SELECT r_id
+FROM runners
+WHERE user_name = 'petr12';
+
+
+SELECT SUM(distance) Vzdálenost
+FROM logs l
+         JOIN l2r l2 ON l.l_id = l2.logg_id
+WHERE runner_id = 1;
+
+
 SELECT date Datum, distance Vzdálenost, f_distance(distance) Level
 FROM logs;
 
@@ -111,6 +161,14 @@ ORDER BY date DESC;
 
 
 DROP VIEW latest;
+
+
+SELECT *
+FROM runners;
+
+
+SELECT *
+FROM l2r;
 
 
 SELECT *
