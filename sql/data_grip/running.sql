@@ -85,7 +85,7 @@ REPLACE INTO runners (user_name, e_mail)
 VALUES (p_user_name, p_e_mail);
 
 
-CALL add_user('petr12', 'petr21@gmail.com');
+CALL add_user('gjumija_leos', 'gjumija@gmail.com');
 
 
 CREATE FUNCTION f_distance(
@@ -122,20 +122,24 @@ CREATE FUNCTION f_sum_distance(
     RETURNS INT(11)
     DETERMINISTIC NO SQL
 BEGIN
+    SET @user = f_user_name;
     SET @runner = 'SELECT r_id'
                   'FROM runners'
-                  'WHERE user_name = f_user_name';
+                  'WHERE user_name = @user';
     SET @ret = 'SELECT SUM(distance) Vzdálenost
                 FROM logs l
                     JOIN l2r l2 ON l.l_id = l2.logg_id
-                WHERE runner_id = 1';
+                WHERE @runner_id = @runner';
     RETURN @ret;
 END;
 
 
+DROP FUNCTION f_sum_distance;
+
+
 SELECT r_id
 FROM runners
-WHERE user_name = 'petr12';
+WHERE user_name = 'gjumija_leos';
 
 
 SELECT SUM(distance) Vzdálenost
