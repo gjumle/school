@@ -50,12 +50,17 @@ VALUES (2, 1, '2021-12-17'),
        (3, 4, '2021-12-17');
 
 
+CREATE VIEW v_volni_poslanci AS
 SELECT DISTINCT CONCAT(jmeno, ' ', prijmeni) Poslanec
 FROM poslanci
 WHERE poslanci.p_id NOT IN (SELECT poslanec_id FROM funkcni_obdobi)
 ORDER BY Poslanec ASC;
 
+SELECT *
+FROM v_volni_poslanci;
 
+
+CREATE VIEW v_ministri AS
 SELECT CONCAT(jmeno, ' ', prijmeni) Poslanec, nazev Ministerstvo, od Od
 FROM poslanci
          JOIN funkcni_obdobi fo on poslanci.p_id = fo.poslanec_id
@@ -63,7 +68,11 @@ FROM poslanci
 WHERE do IS NULL
 ORDER BY Poslanec ASC;
 
+SELECT *
+FROM v_ministri;
 
+
+CREATE VIEW v_multi_ministri AS
 SELECT CONCAT(jmeno, ' ', prijmeni) Poslanec, nazev Ministerstvo
 FROM poslanci
          JOIN funkcni_obdobi fo on poslanci.p_id = fo.poslanec_id
@@ -71,11 +80,5 @@ FROM poslanci
 WHERE (SELECT COUNT(poslanec_id) FROM funkcni_obdobi WHERE p_id = funkcni_obdobi.poslanec_id) > 1
 ORDER BY Poslanec ASC;
 
-
-CREATE VIEW v_volni_poslanci AS
-SELECT DISTINCT CONCAT(jmeno, ' ', prijmeni) Poslanec
-FROM poslanci
-WHERE poslanci.p_id NOT IN (SELECT poslanec_id FROM funkcni_obdobi)
-ORDER BY Poslanec ASC;
-
-SELECT * FROM v_volni_poslanci;
+SELECT *
+FROM v_multi_ministri;
