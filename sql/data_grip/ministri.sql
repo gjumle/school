@@ -26,7 +26,56 @@ CREATE TABLE funkcni_obdobi
     od          DATE NOT NULL DEFAULT '0000-00-00',
     do          DATE NOT NULL DEFAULT '0000-00-00',
     CONSTRAINT p2f FOREIGN KEY (poslanec_id) REFERENCES poslanci (p_id),
-    CONSTRAINT m2f FOREIGN KEY (poslanec_id) REFERENCES ministerstva (m_id)
+    CONSTRAINT m2f FOREIGN KEY (ministr_id) REFERENCES ministerstva (m_id)
 );
 
 
+REPLACE INTO poslanci (jmeno, prijmeni)
+VALUES ('Petr', 'Fiala'),
+       ('Vít', 'Rakušan'),
+       ('Marian', 'Jurečka'),
+       ('Ivan', 'Bartoš'),
+       ('Jan', 'Hamáček');
+
+REPLACE INTO ministerstva (nazev)
+VALUES ('Vnitra'),
+       ('Práce a soc. věcí'),
+       ('Místní rozvoj'),
+       ('Zdravotnictví');
+
+REPLACE INTO funkcni_obdobi (poslanec_id, ministr_id, od)
+VALUES (2, 1, '2021-12-17'),
+       (3, 2, '2021-12-17'),
+       (4, 3, '2021-12-17'),
+       (3, 4, '2021-12-17');
+
+
+SELECT DISTINCT CONCAT(jmeno, ' ', prijmeni) Poslanec
+FROM poslanci
+WHERE poslanci.p_id NOT IN (SELECT poslanec_id FROM funkcni_obdobi)
+ORDER BY Poslanec ASC;
+
+
+SELECT CONCAT(jmeno, ' ', prijmeni) Poslanec, nazev Ministerstvo, od Od
+FROM poslanci
+         JOIN funkcni_obdobi fo on poslanci.p_id = fo.poslanec_id
+         JOIN ministerstva m on fo.ministr_id = m.m_id
+WHERE do IS NULL
+ORDER BY Poslanec ASC;
+
+
+SELECT CONCAT(jmeno, ' ', prijmeni) Poslanec, nazev Ministerstvo
+FROM poslanci
+         JOIN funkcni_obdobi fo on poslanci.p_id = fo.poslanec_id
+         JOIN ministerstva m on m.m_id = fo.ministr_id
+WHERE (SELECT COUNT(poslanec_id) FROM funkcni_obdobi WHERE p_id = funkcni_obdobi.poslanec_id) > 1
+ORDER BY Poslanec ASC;
+
+
+CREATE VIEW v_volni_poslanci AS
+SELECT DISTINCT CONCAT(jmeno, ' ', prijmeni) Poslanec
+FROM poslanci
+WHERE poslanci.p_id NOT IN (SELECT poslanec_id FROM funkcni_obdobi)
+ORDER BY Poslanec ASC;
+
+SELECT * FROM v_volni_poslanci;
