@@ -82,3 +82,29 @@ ORDER BY Poslanec ASC;
 
 SELECT *
 FROM v_multi_ministri;
+
+
+CREATE FUNCTION f_pocet_ministerstev(
+    f_jmeno VARCHAR(25),
+    f_prijmeni VARCHAR(25)
+)
+    RETURNS INT(25)
+    DETERMINISTIC
+BEGIN
+    SELECT COUNT(ministr_id)
+    INTO @ret
+    FROM poslanci
+             JOIN funkcni_obdobi f on poslanci.p_id = f.poslanec_id
+             JOIN ministerstva m on m.m_id = f.ministr_id
+    WHERE prijmeni = f_prijmeni;
+    IF (@ret IS NULL) THEN
+        RETURN 0;
+    END IF;
+    RETURN @ret;
+END;
+
+DROP FUNCTION f_pocet_ministerstev;
+
+SELECT CONCAT(jmeno, '' '', prijmeni) Poslanec, f_pocet_ministerstev('Ivan', 'Bartoš') Funkce
+FROM funkcni_obdobi
+         JOIN poslanci p on p.p_id = funkcni_obdobi.poslanec_id;
