@@ -47,7 +47,7 @@ BEGIN
 END;
 
 
-CALL P_insertData(100000);
+CALL P_insertData(100);
 
 
 SELECT *
@@ -219,7 +219,7 @@ CREATE TRIGGER T_P_AI_sales
     FOR EACH ROW
 BEGIN
     CALL P_trigger_sales('ai', NEW.product_name, NEW.product_price, NEW.product_amount,
-                         NULL, NULL);
+                         NULL, NULL, NULL);
 END;
 
 
