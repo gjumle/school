@@ -33,3 +33,4 @@ CREATE TABLE prubezne_hodnoceni (
     CONSTRAINT ph2p FOREIGN KEY (predmet_id) REFERENCES predmet(p_id),
     CONSTRAINT ph2z FOREIGN KEY (znamka_id) REFERENCES znamky(z_id)
 );
+
