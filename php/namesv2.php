@@ -18,7 +18,6 @@ function names_count($arr) {
     }
     foreach ($compare as $y) {
         $tret = $compare[$y] . " x " . $ret[$y];
-        $y += 1;
     }
     return implode(" ", $tret);
 }
