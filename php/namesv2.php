@@ -12,7 +12,7 @@ function names_count($arr) {
                 $count += 1;
             }
         }
-        array_push($ret, $count);
+        $ret[] = $count;
         $count = 0;
     }
     return implode(" ", $ret);
