@@ -5,8 +5,8 @@ function names_count($arr) {
     $compare = array_unique($arr);
     $ret = array();
     $count = 0;
-    foreach ($arr as $i) {
-        foreach ($compare as $j) {
+    foreach ($compare as $i) {
+        foreach ($arr as $j) {
             if ($i == $j) {
                 $count += 1;
             }
