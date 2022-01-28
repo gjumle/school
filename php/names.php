@@ -15,4 +15,4 @@ function name_count($name) {
     return "Pocet jmen " . $name . " je v seznamu " . $ret . " krat.";
 }
 
-echo name_count("Karel");
+echo name_count("Petr");
