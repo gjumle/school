@@ -14,7 +14,9 @@ function names_count($arr) {
         $ret[] = $count;
         $count = 0;
     }
-    
+
+
+
     return implode(" ", $ret);
 }
 
