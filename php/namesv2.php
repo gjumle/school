@@ -3,10 +3,8 @@ $names = array("Terka", "Petr", "Lukas", "Daniel", "Simon", "Petr", "Karel", "Lu
 
 function names_count($arr) {
     $compare = array_unique($arr);
-    $i = 0;
     $ret = array();
     $count = 0;
-    $tret = array();
     foreach ($arr as $i) {
         foreach ($compare as $j) {
             if ($i == $j) {
@@ -16,10 +14,7 @@ function names_count($arr) {
         $ret[] = $count;
         $count = 0;
     }
-    foreach ($compare as $y) {
-        $tret = $compare[$y] . " x " . $ret[$y];
-    }
-    return implode(" ", $tret);
+    return implode(" ", $ret);
 }
 
 echo names_count($names);
