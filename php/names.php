@@ -12,7 +12,7 @@ function name_count($name) {
         }
         $i += 1;
     }
-    return "Pocet jmen " . $name . " je v seznamu " . $ret . " krat.";
+    return "Jmeno " . $name . " je v seznamu " . $ret . " krat.";
 }
 
 echo name_count("Petr");
