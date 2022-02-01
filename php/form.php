@@ -2,26 +2,36 @@
 
 $text = isset($_POST["textove_pole"]) ? $_POST["textove_pole"] : "";
 $posun = isset($_POST["posun"]) ? $_POST["posun"] : 0;
+$abeceda = array("a", "b", "c", "d", "e", "f", "g", "h", "ch", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
 
 
+for ($i=0; strlen($text); $i++) {
+    $letter = $text[$i];
+    $ret = $ret . ($abeceda[array_search($letter, $abeceda)]);
+}
+
+/*
 if (isset($_POST["textove_pole"]) && isset($_POST["posun"])) {
     echo $_POST["textove_pole"];
     echo $_POST["posun"];
 }
+*/
+
+echo $text;
+echo $posun;
 
 ?>
 
 <html>
-    <form method="post">
-        <textarea id="in_text"></textarea>
-        <input type="number" id="in_number">
+<form method="post">
+    <textarea id="in_text"></textarea>
+    <input type="number" id="in_number">
 
-        <button type="submit" onclick="vyplneno()">Send</button>
-    </form>
+    <button type="submit" onclick="vyplneno()">Send</button>
+</form>
 </html>
 
 <script>
-
     function vyplneno() {
         var in_text = document.getElementById("in_text").value;
         var in_number = document.getElementById("in_number").value;
