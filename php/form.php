@@ -17,9 +17,6 @@ if (isset($_POST["textove_pole"]) && isset($_POST["posun"])) {
 }
 */
 
-echo $text;
-echo $posun;
-
 ?>
 
 <html>
