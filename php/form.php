@@ -25,6 +25,7 @@ if (isset($_POST["textove_pole"]) && isset($_POST["posun"])) {
 <html>
 <form method="post">
     <textarea name="textove_pole" id="in_text"><?php echo $text; ?></textarea>
+
     <input type="text" name="posun" id="in_number" value="<?php echo $posun; ?>">
 
     <button type="submit" onclick="vyplneno()">Send</button>
@@ -33,8 +34,8 @@ if (isset($_POST["textove_pole"]) && isset($_POST["posun"])) {
 
 <script>
     function vyplneno() {
-        var in_text = document.getElementById("in_text").value;
-        var in_number = document.getElementById("in_number").value;
+        let in_text = document.getElementById("in_text").value;
+        let in_number = document.getElementById("in_number").value;
 
         if (in_number == false || in_text == false) {
             window.alert("Vyplnte vsechna pole!");
