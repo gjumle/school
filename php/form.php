@@ -7,7 +7,7 @@ $abeceda = array("a", "b", "c", "d", "e", "f", "g", "h", "ch", "i", "j", "k", "l
 
 for ($i=0; strlen($text); $i++) {
     $letter = $text[$i];
-    $ret = $ret . ($abeceda[array_search($letter, $abeceda)]);
+    $ret = $ret . ($abeceda[array_search($letter, $abeceda) + $posun] %count($abeceda));
 }
 
 /*
@@ -24,8 +24,8 @@ echo $posun;
 
 <html>
 <form method="post">
-    <textarea id="in_text"></textarea>
-    <input type="number" id="in_number">
+    <textarea name="textove_pole"><?php echo $text?></textarea>
+    <input type="number" name="posun" value="<?php echo $posun?>">
 
     <button type="submit" onclick="vyplneno()">Send</button>
 </form>
@@ -33,8 +33,8 @@ echo $posun;
 
 <script>
     function vyplneno() {
-        var in_text = document.getElementById("in_text").value;
-        var in_number = document.getElementById("in_number").value;
+        var in_text = document.getElementByName("textove_pole").value;
+        var in_number = document.getElementByName("posun").value;
 
         if (in_number == false || in_text == false) {
             window.alert("Vyplnte vsechna pole!");
