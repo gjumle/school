@@ -24,8 +24,8 @@ echo $posun;
 
 <html>
 <form method="post">
-    <textarea name="textove_pole"><?php echo $text?></textarea>
-    <input type="number" name="posun" value="<?php echo $posun?>">
+    <textarea name="textove_pole" id="in_text"><?php echo $text?></textarea>
+    <input type="number" name="posun" id="in_number" value="<?php echo $posun?>">
 
     <button type="submit" onclick="vyplneno()">Send</button>
 </form>
@@ -33,8 +33,8 @@ echo $posun;
 
 <script>
     function vyplneno() {
-        var in_text = document.getElementByName("textove_pole").value;
-        var in_number = document.getElementByName("posun").value;
+        var in_text = document.getElementById("in_text").value;
+        var in_number = document.getElementById("in_number").value;
 
         if (in_number == false || in_text == false) {
             window.alert("Vyplnte vsechna pole!");
