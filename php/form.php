@@ -4,11 +4,11 @@ $text = isset($_POST["textove_pole"]) ? $_POST["textove_pole"] : "";
 $posun = isset($_POST["posun"]) ? $_POST["posun"] : 0;
 $abeceda = array("a", "b", "c", "d", "e", "f", "g", "h", "ch", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
 
-
+$ret = "";
 for ($i=0; $i < strlen($text); $i++) {
     $letter = $text[$i];
     $index = array_search($letter, $abeceda);
-    $ret = $ret . ($abeceda[$index + $posun] %count($abeceda));
+    $ret = $ret . ($abeceda[($index + $posun) %count($abeceda)]);
 }
 
 echo $ret;
