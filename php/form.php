@@ -24,9 +24,15 @@ if (isset($_POST["textove_pole"]) && isset($_POST["posun"])) {
 
 <html>
 <form method="post">
+    <label for="in_text">Text</label>
+    <br>
     <textarea name="textove_pole" id="in_text"><?php echo $text; ?></textarea>
+    <br>
 
+    <label for="in_number">Posun</label>
+    <br>
     <input type="text" name="posun" id="in_number" value="<?php echo $posun; ?>">
+    <br>
 
     <button type="submit" onclick="vyplneno()">Send</button>
 </form>
