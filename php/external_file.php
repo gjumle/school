@@ -1,8 +1,15 @@
 <?php
-    $ext = fopen("data.txt", "w");
-    fputs($ext, "Sample text");
-    fclose($ext);
-    $obsah = file_get_contents("test.txt")
+    $jmeno = isset($_POST["jmeno"]) ? $_POST["jmeno"] : "";
+    $text = isset($_POST["text"]) ? $_POST["text"] : "";
+    $time = date("h:i:sa");
+
+    function save_data($jmeno, $text) {
+        global $jmeno, $text, $time;
+        $data = fopen("data.txt", "w");
+        fputs($data, $jmeno . "#" . $text . "#" . $time . "#");
+        fclose($data);
+    }
+    save_data($jmeno, $text);
 ?>
 
 <html lang="en">
