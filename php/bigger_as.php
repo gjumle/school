@@ -16,7 +16,6 @@ function higher_than($numbers, $higher_than) {
 
 echo higher_than($numbers, $higher_than);
 
-
 ?>
 
 <html lang="en">
