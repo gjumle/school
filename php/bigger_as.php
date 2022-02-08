@@ -22,7 +22,7 @@ echo higher_than($numbers, $higher_than);
 <html lang="en">
     <form action="" method="post">
         <textarea name="numbers"></textarea>
-        <input name="higher_than">
+        <input type="text" name="higher_than">
         <input type="submit" name="submit">
     </form>
 </html>
