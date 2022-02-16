@@ -3,21 +3,21 @@ $servername = "localhost";
 $username = "root";
 $password = "root";
 
-$conn = mysqli_connect($servername, $username, $password,);
+$mysqli = new mysqli($servername, $username, $password);
 
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+if ($mysqli->connect_errno) {
+    printf("Connect failed: %s<br />", $mysqli->connect_error);
+    exit();
 }
-echo "Connected successfully";
+printf('Connected successfully.<br />');
 
-$sql = "CREATE DATABASE testDB";
-
-if (mysqli_query($sql, $conn)) {
-    echo "Database created successfully";
-} else {
-    echo "Error creating database: " . mysqli_error();
+if ($mysqli->query("CREATE DATABASE")) {
+    printf("Database created successfully.<br />");
+}
+if ($mysqli->errno) {
+    printf("Could not create database: %s<br />", $mysqli->error);
 }
 
-mysqli_close($conn);
+$mysqli->close();
 
 ?>
