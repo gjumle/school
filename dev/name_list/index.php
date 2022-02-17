@@ -3,7 +3,7 @@
 include "functions.php";
 
 // DB Connection
-$conn = db_conn("names_list");
+$conn = db_conn("names_list", "localhost");
 
 
 $create_table = "CREATE TABLE IF NOT EXISTS names (
