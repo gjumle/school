@@ -30,7 +30,9 @@ if ($conn->query($create_table) === TRUE) {
 $insert = "INSERT INTO names (name) VALUES ($name)";
 
 if ($conn->query($insert) === TRUE) {
+    $last_id = $conn->insert_id;
     printf("New record created successfully. <br>");
+    printf("Last record is: " . $last_id . "<br>");
 } else {
     printf("Error: " . $insert . "<br>" . $conn->error);
 }
