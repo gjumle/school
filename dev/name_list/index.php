@@ -5,7 +5,6 @@ include "functions.php";
 // DB Connection
 $conn = db_conn("names_list");
 
-$name = isset($_POST["text_in"]) ? $_POST["text_in"] : "";
 
 $create_table = "CREATE TABLE IF NOT EXISTS names (
     n_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
