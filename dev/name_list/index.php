@@ -19,7 +19,7 @@ if ($conn->query($create_table) === TRUE) {
     printf("Error creating table: " . $conn->error);
 }
 
-$insert = "INSERT INTO names (name) VALUES ($name)";
+$insert = "INSERT INTO names (name) VALUES ('".$_POST["text_in"]."')";
 
 if ($conn->query($insert) === TRUE) {
     $last_id = $conn->insert_id;
@@ -29,12 +29,12 @@ if ($conn->query($insert) === TRUE) {
     printf("Error: " . $insert . "<br>" . $conn->error);
 }
 
-$select = "SELECT id, name FROM names";
+$select = "SELECT id, name, reg_date FROM names";
 $result = $conn->query($select);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"] . " - Name: " . $row["name"]. "<br>";
+        echo "id: " . $row["id"] . " - Name: " . $row["name"]. " reg: " . $row["reg_date"] . "<br>";
     }
 } else {
     echo "Empty set";
