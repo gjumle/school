@@ -29,7 +29,7 @@ if ($conn->query($insert) === TRUE) {
     printf("Error: " . $insert . "<br>" . $conn->error);
 }
 
-$select = "SELECT id, name, reg_date FROM names";
+$select = "SELECT n_id, name, reg_date FROM names";
 $result = $conn->query($select);
 
 if ($result->num_rows > 0) {
