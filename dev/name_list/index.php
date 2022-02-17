@@ -5,6 +5,8 @@ include "functions.php";
 // DB Connection
 $conn = db_conn("names_list", "localhost");
 
+$name = isset($_POST["text_in"]);
+
 
 $create_table = "CREATE TABLE IF NOT EXISTS names (
     n_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -23,7 +25,7 @@ $insert = "INSERT INTO names (name) VALUES ($name)";
 if ($conn->query($insert) === TRUE) {
     $last_id = $conn->insert_id;
     printf("New record created successfully. <br>");
-    printf("Last record is: " . $last_id . "<br>");
+    printf("Last record ID is: " . $last_id . "<br>");
 } else {
     printf("Error: " . $insert . "<br>" . $conn->error);
 }
