@@ -7,7 +7,6 @@ $conn = db_conn("names_list", "localhost");
 
 $name = isset($_POST["text_in"]);
 
-
 $create_table = "CREATE TABLE IF NOT EXISTS names (
     n_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL DEFAULT '',
@@ -28,6 +27,17 @@ if ($conn->query($insert) === TRUE) {
     printf("Last record ID is: " . $last_id . "<br>");
 } else {
     printf("Error: " . $insert . "<br>" . $conn->error);
+}
+
+$select = "SELECT id, name FROM names";
+$result = $conn->query($select);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "id: " . $row["id"] . " name: " . $row["name"]. "<br>";
+    }
+} else {
+    echo "Empty set";
 }
 
 $conn->close();
