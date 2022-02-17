@@ -5,8 +5,6 @@ include "functions.php";
 // DB Connection
 $conn = db_conn("names_list", "localhost");
 
-$name = isset($_POST["text_in"]);
-
 $create_table = "CREATE TABLE IF NOT EXISTS names (
     n_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL DEFAULT '',
@@ -19,22 +17,26 @@ if ($conn->query($create_table) === TRUE) {
     printf("Error creating table: " . $conn->error);
 }
 
-$insert = "INSERT INTO names (name) VALUES ('".$_POST["text_in"]."')";
-
-if ($conn->query($insert) === TRUE) {
-    $last_id = $conn->insert_id;
-    printf("New record created successfully. <br>");
-    printf("Last record ID is: " . $last_id . "<br>");
+if ($_POST["text_in"] == "") {
+    echo "Fill out the fields!";
 } else {
-    printf("Error: " . $insert . "<br>" . $conn->error);
+    $insert = "INSERT INTO names (name) VALUES ('".$_POST["text_in"]."')";
+    if ($conn->query($insert) === TRUE) {
+        $last_id = $conn->insert_id;
+        printf("New record created successfully. <br>");
+        printf("Last record ID is: " . $last_id . "<br>");
+    } else {
+        printf("Error: " . $insert . "<br>" . $conn->error);
+    }
 }
+
 
 $select = "SELECT n_id, name, reg_date FROM names";
 $result = $conn->query($select);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "id: " . $row["n_id"] . " - Name: " . $row["name"]. " reg: " . $row["reg_date"] . "<br>";
+        echo "id: " . $row["n_id"] . " - Name: " . $row["name"]. " - Reg: " . $row["reg_date"] . "<br>";
     }
 } else {
     echo "Empty set";
