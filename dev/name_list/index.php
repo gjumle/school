@@ -18,7 +18,7 @@ if ($conn->query($create_table) === TRUE) {
 }
 
 if ($_POST["text_in"] == "") {
-    echo "Fill out the fields!";
+    echo "Fill out the fields! <br>";
 } else {
     $insert = "INSERT INTO names (name) VALUES ('".$_POST["text_in"]."')";
     if ($conn->query($insert) === TRUE) {
