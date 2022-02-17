@@ -1,17 +1,6 @@
 <?php
-// DB Connection
-$hostname = "localhost";
-$username = "root";
-$password = "";
-$db = "names_list";
 
-$conn = new mysqli($hostname, $username, $password, $db);
-
-if ($conn->connect_error) {
-    printf("Connection failed: " . $conn->connect_error);
-} else {
-    printf("Connected successfully. <br>");
-}
+include "functions.php";
 
 $name = isset($_POST["text_in"]) ? $_POST["text_in"] : "";
 
