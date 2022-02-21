@@ -42,6 +42,15 @@ if ($result->num_rows > 0) {
     echo "Empty set";
 }
 
+if ($_POST["delete"] === TRUE) {
+    $delete = "DELETE FROM names WHERE n_id='$last_id'";
+    if ($conn->query($delete) === TRUE) {
+        printf("Last record delete successful.");
+    } else {
+        printf("Deletion error: " . $conn->error);
+    }
+}
+
 $conn->close();
 
 ?>
@@ -55,6 +64,8 @@ $conn->close();
     <label for="text_in">Insert name: </label>
     <input type="text" name="text_in" id="text_in">
     <input type="submit" onclick="empty_check()">
+    <label for="delete">Delete last record ></label>
+    <input type="button" name="delete" value="Delete">
 </form>
 </body>
 
