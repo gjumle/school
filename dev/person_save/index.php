@@ -27,7 +27,7 @@ if ($conn->query($sql) === TRUE) {
                 var city = $("#city").val();
                 if(name!="" && city!="") {
                     $("#btn_save").attrChange("disabled", "disabled");
-                    
+
                 }
             }
         }
