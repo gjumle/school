@@ -2,6 +2,8 @@
 
 include "functions.php";
 
+$get_id = isset($_POST["id_in"]);
+
 // DB Connection
 $conn = db_conn("names_list", "localhost");
 
@@ -43,10 +45,10 @@ if ($result->num_rows > 0) {
 }
 
 if ($_POST["delete"] === "Delete") {
-    global $last_id;
-    $delete = "DELETE FROM names WHERE n_id=" .$last_id . " LIMIT 1";
+    global $get_id;
+    $delete = "DELETE FROM names WHERE n_id=" . $get_id . " LIMIT 1";
     if ($conn->query($delete) === TRUE) {
-        printf("Last record delete successful.");
+        printf("Record delete successful.");
     } else {
         printf("Deletion error: " . $conn->error);
     }
@@ -65,7 +67,8 @@ $conn->close();
     <label for="text_in">Insert name: </label>
     <input type="text" name="text_in" id="text_in">
     <input type="submit" onclick="empty_check()">
-    <label for="delete">Delete last record: </label>
+    <label for="delete">Delete record: </label>
+    <input type="number" name="id_in" id="id_in">
     <input type="submit" name="delete" value="Delete">
 </form>
 </body>
