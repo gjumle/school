@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
 
 if ($_POST["delete"] === "Delete") {
     global $last_id;
-    $delete = "DELETE FROM names WHERE n_id='".$last_id."' LIMIT 1";
+    $delete = "DELETE FROM names WHERE n_id=" .$last_id . " LIMIT 1";
     if ($conn->query($delete) === TRUE) {
         printf("Last record delete successful.");
     } else {
