@@ -2,7 +2,7 @@
 
 include "functions.php";
 
-$get_id = isset($_POST["id_in"]);
+$get_id = $_POST["id_in"];
 
 // DB Connection
 $conn = db_conn("names_list", "localhost");

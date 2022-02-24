@@ -22,7 +22,7 @@ if ($conn->query($sql) === TRUE) {
     <title>index</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js">
         $(document).ready(function ()) {
-            $("#btn_save").on("clieck", function ()) {
+            $("#btn_save").on("click", function ()) {
                 var name = $("#name").val();
                 var city = $("#city").val();
                 if(name!="" && city!="") {
