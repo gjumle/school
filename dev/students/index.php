@@ -1,7 +1,7 @@
 <?php
 
-$text_in = isset($_POST["text_in"]);
-$class = isset($_POST["class"]);
+$text_in = $_POST["text_in"];
+$class = $_POST["class"];
 
 
 ?>
