@@ -3,8 +3,13 @@
 $text_in = $_POST["text_in"];
 $class = $_POST["class"];
 
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "students";
 
-$conn = new mysqli("localhost", "root", "", "students");
+
+$conn = new mysqli($host, $user, $password, $db);
 
 if ($conn->connect_error) {
     echo "Database connection error: " . $conn->errno . ".<br>";
@@ -22,13 +27,12 @@ if ($conn->query($sql)) {
 } else {
     echo "Data insert error: " . $conn->errno . ".<br>";
 }
-var_dump($sql);
 
-$sql = "SELECT name, surname, class FROM students";
+$sql = "SELECT s_id, name, sur_name, class_id FROM students";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table><th>s_id</th><th>name</th><th>sur_name</th><th>class_id</th>";
+    echo "<table border=1><th>s_id</th><th>name</th><th>sur_name</th><th>class_id</th>";
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
                  <td>" . $row["s_id"] ."</td>
@@ -38,7 +42,11 @@ if ($result->num_rows > 0) {
             </tr>";
     }
     echo "</table>";
+} else {
+    echo "0 results<br>";
 }
+
+$conn->close();
 
 ?>
 
