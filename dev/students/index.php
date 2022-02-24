@@ -46,6 +46,7 @@ if ($result->num_rows > 0) {
     echo "0 results<br>";
 }
 
+
 $conn->close();
 
 ?>
@@ -67,7 +68,7 @@ $conn->close();
             <option value="3">3.B</option>
             <option value="4">4.B</option>
         </select>
-        <input type="submit" name="submit" id="submit" value="Submit">
+        <input type="submit" name="submit" id="submit" value="Submit" onclick="empty_check()">
     </div>
 
 </form>

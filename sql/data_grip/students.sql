@@ -32,5 +32,7 @@ VALUES ('1.B'),
 SELECT *
 FROM students;
 
+TRUNCATE TABLE students;
+
 INSERT INTO students (name, sur_name, class_id)
 VALUES ('Petr', 'Novotny', 2);

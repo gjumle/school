@@ -3,6 +3,6 @@ function empty_check() {
     let classa = document.getElementById("class").value;
 
     if (classa === FALSE || text_in === FALSE) {
-
+        window.alert("Fill out all fields.")
     }
 }
