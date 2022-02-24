@@ -4,6 +4,42 @@ $text_in = $_POST["text_in"];
 $class = $_POST["class"];
 
 
+$conn = new mysqli("localhost", "root", "", "students");
+
+if ($conn->connect_error) {
+    echo "Database connection error: " . $conn->errno . ".<br>";
+} else {
+    echo "DB connection successful.<br>";
+}
+
+$name_arr = explode(" ", $text_in);
+$name = $name_arr[0];
+$sur_name = $name_arr[1];
+
+$sql = "INSERT INTO students (name, sur_name, class_id) VALUES ('" . $name . "', '" . $sur_name . "', " . $class . ")";
+if ($conn->query($sql)) {
+    echo "Data insert successful.<br>";
+} else {
+    echo "Data insert error: " . $conn->errno . ".<br>";
+}
+var_dump($sql);
+
+$sql = "SELECT name, surname, class FROM students";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<table><th>s_id</th><th>name</th><th>sur_name</th><th>class_id</th>";
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>
+                 <td>" . $row["s_id"] ."</td>
+                 <td>" . $row["name"] . "</td>
+                 <td>" . $row["sur_name"] . "</td>
+                 <td>" . $row["class_id"] . "</td>
+            </tr>";
+    }
+    echo "</table>";
+}
+
 ?>
 
 <html lang="en">
@@ -18,11 +54,12 @@ $class = $_POST["class"];
 
         <select name="class" id="class">
             <option value="">--- class ---</option>
-            <option value="1.B">1.B</option>
-            <option value="2.B">2.B</option>
-            <option value="3.B">3.B</option>
-            <option value="4.B">4.B</option>
+            <option value="1">1.B</option>
+            <option value="2">2.B</option>
+            <option value="3">3.B</option>
+            <option value="4">4.B</option>
         </select>
+        <input type="submit" name="submit" id="submit" value="Submit">
     </div>
 
 </form>
