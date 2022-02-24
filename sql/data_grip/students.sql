@@ -1,0 +1,17 @@
+SHOW DATABASES;
+
+CREATE DATABASE students;
+
+CREATE TABLE students
+(
+    s_id     INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name     VARCHAR(255) NOT NULL DEFAULT '',
+    sur_name VARCHAR(255) NOT NULL DEFAULT '',
+    class_id INT          NOT NULL
+);
+
+CREATE TABLE class
+(
+    c_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name INT NOT NULL DEFAULT ''
+);
