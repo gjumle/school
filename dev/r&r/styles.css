@@ -1,0 +1,45 @@
+* {
+	font-family: 'Bebas Neue', cursive;
+	margin: auto;
+	padding: auto;
+}
+
+
+/* Navigatin bar */
+.nav-links {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #140005;
+}
+
+.nav-link {
+  	float: left;
+}
+
+.nav-link-right {
+	float: right;
+}
+
+a.nav-link {
+	font-size: 26px;
+ 	display: block;
+ 	color: white;
+	text-align: center;
+ 	padding: 14px 16px;
+ 	text-decoration: none;
+}
+
+a.nav-link:hover {
+ 	background-color: #111;
+}
+
+
+/* Main section */
+.main {
+	height: 75rem;
+	display: flex;
+	color: #140005;
+	background-color: #BBC4C2;
+}
