@@ -27,14 +27,14 @@
 			</ul>
 		</nav>
 	</header>
-	<main class="main">
+	<section class="main">
 		<h1>Comming soon!</h1>
-	</main>
+	</section>
 	<section class="section">
 		<h1>Comming soon!</h1>
 	</section>
 	<footer class="footer">
-		<h1>Copyright 2022 - Leos Gjumija</h1>
+		<h1 class="copyright">© 2022</h1>
 	</footer>
 </body>
 </html>
