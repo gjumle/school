@@ -30,5 +30,11 @@
 	<main class="main">
 		<h1>Comming soon!</h1>
 	</main>
+	<section class="section">
+		<h1>Comming soon!</h1>
+	</section>
+	<footer class="footer">
+		<h1>Copyright 2022 - Leos Gjumija</h1>
+	</footer>
 </body>
 </html>

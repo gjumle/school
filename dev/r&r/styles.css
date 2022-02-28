@@ -42,8 +42,22 @@ a.nav-link:hover {
 
 /* Main section */
 .main {
-	height: 90vh;
+	height: 95vh;
 	display: flex;
 	color: #140005;
 	background-color: #BBC4C2;
+}
+
+.section {
+	height: 105vh;
+	display: flex;
+	color: white;
+	background-color: #464033;
+}
+
+.footer {
+	height: 20vh;
+	display: flex;
+	color: white;
+	background-color: #140005;
 }
