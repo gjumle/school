@@ -28,7 +28,9 @@
 		</nav>
 	</header>
 	<main class="main">
-		<h1>Comming soon!</h1>
+		<div class="heading">
+			<h1>Comming soon!</h1>
+		</div>
 	</main>
 </body>
 </html>
