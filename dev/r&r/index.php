@@ -20,7 +20,7 @@
 	<header>
 		<nav class="nav">
 			<ul class="nav-links">
-				<li><a class="nav-link" href="#">Home</a></li>
+				<li><a class="nav-link active" href="#">Home</a></li>
 				<li><a class="nav-link" href="#">Records</a></li>
 				<li><a class="nav-link" href="#">Stats</a></li>
 				<li><a class="nav-link nav-link-right" href="#">Account</a></li>

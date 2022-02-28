@@ -32,7 +32,11 @@ a.nav-link {
 }
 
 a.nav-link:hover {
- 	background-color: #BBC4C2;
+ 	background-color: #464033;
+}
+
+.active {
+	background-color: #464033;
 }
 
 
