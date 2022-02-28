@@ -28,10 +28,10 @@
 		</nav>
 	</header>
 	<section class="main">
-		<h1>Comming soon!</h1>
+		<h1 class="infographics">Comming soon!</h1>
 	</section>
 	<section class="section">
-		<h1>Comming soon!</h1>
+		<h1 class="infographics">Comming soon!</h1>
 	</section>
 	<footer class="footer">
 		<h1 class="copyright">© 2022</h1>
