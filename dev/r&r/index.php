@@ -18,24 +18,19 @@
 	<title>r&r</title>
 </head>
 <body>
-	<header>
-		<nav class="nav">
-			<ul class="nav-links">
-				<li><a class="nav-link active" href="./index.php">Home</a></li>
-				<li><a class="nav-link" href="#">Records</a></li>
-				<li><a class="nav-link" href="#">Stats</a></li>
-				<li><a class="nav-link nav-link-right" href="./login.php">Account</a></li>
-			</ul>
-		</nav>
-	</header>
-	<section class="main">
-		<h1 class="infographics">Comming soon!</h1>
-	</section>
-	<section class="section">
-		<h1 class="infographics">Comming soon!</h1>
-	</section>
-	<footer class="footer">
-		<h1 class="copyright">© 2022</h1>
-	</footer>
+	<nav>
+		<ul class="nav-links">
+			<li><a href="./index.php">Home</a></li>
+			<li><a href="#">Records</a></li>
+			<li><a href="#">Stats</a></li>
+			<li class="dropdown">
+				<a class="active dropbtn" href="javascript:void(0)">Account</a>
+				<div class="dropdown-content">
+					<a href="#">Login</a>
+			      	<a href="#">Register</a>
+		      	</div>
+			</li>
+		</ul>
+	</nav>
 </body>
 </html>
