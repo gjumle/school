@@ -5,32 +5,22 @@
 ?>
 
 <html>
-<head>
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Stylesheet -->
-	<link rel="stylesheet" type="text/css" href="./styles.css">
-	<!-- Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
-	<title>r&r</title>
-</head>
-<body>
-	<nav>
-		<ul class="nav-links">
-			<li><a href="./index.php">Home</a></li>
-			<li><a href="#">Records</a></li>
-			<li><a href="#">Stats</a></li>
-			<li class="dropdown">
-				<a class="active dropbtn" href="javascript:void(0)">Account</a>
-				<div class="dropdown-content">
-					<a href="#">Login</a>
-			      	<a href="#">Register</a>
-		      	</div>
-			</li>
-		</ul>
-	</nav>
-</body>
+<div style="margin: auto; width: 50%;">
+	<form action="" method="post">
+		<label for="distance">Distance:</label>
+		<input type="number" name="distance" id="distance"><br>
+
+		<label for="time">Start time: </label>
+		<input type="time" name="s_time" id="s_time"><br>
+
+		<label for="time">End time: </label>
+		<input type="time" name="e_time" id="e_time"><br>
+
+		<label for="user">Username: </label>
+		<input type="text" name="username" id="username"><br>
+
+		<input type="submit" name="submit" id="submit" value="OK">
+	</form>
+</div>
+	
 </html>

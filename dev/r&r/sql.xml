@@ -7,3 +7,13 @@ create table users (
 	age int not null,
 	constraint u_email unique (email)
 );
+
+create table records (
+	r_id int not null auto_increment primary key,
+	t_stamp datetime not null default current_timestamp,
+	distance int not null,
+	time_rec datetime not null,
+	user_id int not null,
+	constraint r2u foreign key (user_id) references users(u_id)
+);
+
