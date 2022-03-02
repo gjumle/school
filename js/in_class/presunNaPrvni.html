@@ -8,11 +8,13 @@
 <body>
 	<script type="text/javascript">
 		function presunNaPrvni(arr, i) {
-			prvek = arr.indexOf(i);
-			end = arr.length - 1;
-			for (let j = 0; j < arr.length; j++) {
-				// TODO: more fakt nevim
+			let first = arr.splice(arr.indexOf(i), 1);
+			let end = arr.length;
+
+			for (let j = end; j > 0; j--) {
+				arr[j] = arr[j-1];
 			}
+			arr[0] = first[0];
 			return arr;
 		}
 
