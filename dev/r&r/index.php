@@ -11,10 +11,12 @@ if (form_true_check() === TRUE) {
 	$arr_time = timeToArr($str_time);
 
 	$username = $_POST['username'];
+
 	$user_id = get_user($username);
 
-	$data = get_data();
-	echo insert_data($distance, $str_time, $user_id);
+
+	$u_insert =  insert_user($username);
+	$i_data = insert_data($distance, $str_time, $user_id);
 }
 
 ?>
@@ -41,7 +43,11 @@ if (form_true_check() === TRUE) {
 				<th>Time</th>
 				<th>Username</th>
 			</tr>
-			<?php echo $data ?>
+			<?php
+				foreach ($i_data as $i) {
+					echo get_data();
+				} 
+			?>
 		</table>
 	</div>
 </body>

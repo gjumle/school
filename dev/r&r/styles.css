@@ -25,9 +25,11 @@
 	background-color: white;
 	cursor: pointer;
 }
-
+/*
 .table {
-	
+	color: black;
+	padding: 14px 16px;
+	border: 1px solid black;
 }
 
 .outputs {
@@ -35,10 +37,4 @@
 	justify-content: center;
 	align-items: center;
 	height: 70vh;
-}
-
-.output {
-	color: black;
-	padding: 14px 16px;
-	border: 1px solid black;
-}
+} */
