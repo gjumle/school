@@ -12,7 +12,7 @@ if (form_true_check() === TRUE) {
 
 	$username = $_POST['username'];
 
-	$insert_log = "insert into logs (distance, time_rec) values (";
+	$insert_log = "INSERT INTO logs (distance, time_rec) VALUES (" . $distance . ", '" . $str_time "', '" . $username . "')";
 }
 
 ?>
