@@ -13,9 +13,8 @@ if (form_true_check() === TRUE) {
 	$username = $_POST['username'];
 	$user_id = get_user($username);
 
-	$insert_log = "INSERT INTO records (distance, time_rec) VALUES (" . $distance . ", '" . $str_time . "', '" . $username . "')";
-
 	echo get_data();
+	echo insert_data($distance, $str_time, $user_id);
 }
 
 ?>

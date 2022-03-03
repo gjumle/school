@@ -37,15 +37,26 @@ function get_user($username) {
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			while ($row = $result->fetch_assoc()) {
-				return $row["u_id"];
+				$user_id = $row["u_id"];
+				return $user_id;
 			}
 		} else {
 			return "0 results.";
 		}
 	} else {
-		return "Connection error: " . $conn->connect_error;
+		return "Error: " . $conn->errno;
 	}
 	
+}
+
+function insert_data($distance, $str_time, $user_id) {
+	global $conn;
+	$insert_data = "INSERT INTO records (distance, time_rec, user_id) VALUES (" . $distance . ", '" . $str_time . "', '" . $user_id . "')";
+	if ($conn->query($insert_data) === TRUE) {
+		return "Succesfull data insert.";
+	} else {
+		return "Error: " . $conn->errno . ".";
+	}
 }
 
 function get_data() {
