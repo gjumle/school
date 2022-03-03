@@ -1,19 +1,19 @@
-create table users (
-	u_id int not null auto_increment primary key,
-	user_name varchar(50) not null,
-	f_name varchar(25) not null,
-	s_name varchar(25) not null,
-	email varchar(100) not null,
-	age int not null,
-	constraint u_email unique (email)
+CREATE TABLE users (
+	u_id INT not null auto_increment PRIMARY KEY,
+	user_name varchar(50) NOT NULL,
+	f_name VARCHAR(25) NOT NULL,
+	s_name VARCHAR(25) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	age INT NOT NULL,
+	CONSTRAINT u_email UNIQUE (email)
 );
 
-create table records (
-	r_id int not null auto_increment primary key,
-	t_stamp datetime not null default current_timestamp,
-	distance int not null,
-	time_rec datetime not null,
-	user_id int not null,
-	constraint r2u foreign key (user_id) references users(u_id)
+CREATE TABLE records (
+	r_id INT NOT NULL auto_increment PRIMARY KEY,
+	t_stamp DATETIME NOT NULL DEFAULT current_timestamp,
+	distance INT NOT NULL,
+	time_rec DATETIME NOT NULL,
+	user_id INT NOT NULL,
+	CONSTRAINT r2u FOREIGN KEY (user_id) REFERENCES users(u_id)
 );
 
