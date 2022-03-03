@@ -70,7 +70,7 @@ function get_data() {
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		while ($row = $result->fetch_assoc()) {
-			return "<td>" . $row["Distance"] . "</td><td>" . $row["Time"] . "</td><td>" . $row["Username"] . "</td>";
+			return "<tr class='output'><td>" . $row["Distance"] . "</td><td>" . $row["Time"] . "</td><td>" . $row["Username"] . "</td></tr>";
 		}
 	} else {
 		return "0 results.";

@@ -36,14 +36,12 @@ if (form_true_check() === TRUE) {
 	</div>
 	<div class="outputs">
 		<table>
-			<tr>
+			<tr class="output">
 				<th>Distance</th>
 				<th>Time</th>
 				<th>Username</th>
 			</tr>
-			<tr>
-				<?php echo $data ?>
-			</tr>
+			<?php echo $data ?>
 		</table>
 	</div>
 </body>
