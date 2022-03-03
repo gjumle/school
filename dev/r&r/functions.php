@@ -14,7 +14,7 @@ function db_conn($db, $host) {
 }
 
 function timeToArr($str) {
-	$ret = implode(":", $str);
+	$ret = explode(":", $str);
 	return $ret;
 }
 
