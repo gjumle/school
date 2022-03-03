@@ -2,13 +2,21 @@
 
 include "./functions.php";
 
-$distance = isset($_POST['distance']) ? $_POST['distance'] : "";
-$time = isset($_POST['time']) ? $_POST['time'] : "";
+$is_distance = isset($_POST['distance']);
+$is_time = isset($_POST['time']);
+$is_username = isset($_POST['username']);
 
-if ($distance === TRUE && $time === TRUE) {
+
+if ($is_distance === TRUE && $is_time === TRUE && $is_username === TRUE) {
 	$conn = db_conn('rr', 'localhost');
-}
 
+	$distance = $_POST['distance'];
+	$time = timeToArr($_POST['time']);
+	echo $time;
+	$username = $_POST['username'];
+
+
+}
 
 ?>
 
