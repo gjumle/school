@@ -14,6 +14,8 @@ if (form_true_check() === TRUE) {
 	$user_id = user_check($username);
 
 	$insert_log = "INSERT INTO records (distance, time_rec) VALUES (" . $distance . ", '" . $str_time . "', '" . $username . "')";
+
+	echo get_data();
 }
 
 ?>
@@ -32,6 +34,18 @@ if (form_true_check() === TRUE) {
 			<input class="input" type="text" name="username" id="username" placeholder="Username">
 			<input class="input" type="submit" name="submit" id="submit" value="Save" onclick="empty_check()">
 		</form>
+	</div>
+	<div class="outputs">
+		<table>
+			<tr>
+				<th>Distance</th>
+				<th>Time</th>
+				<th>Username</th>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+		</table>
 	</div>
 </body>
 </html>

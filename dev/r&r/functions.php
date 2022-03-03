@@ -29,7 +29,8 @@ function form_true_check() {
 	}
 }
 
-function user_check($username) {
+function get_user($username) {
+	global $conn;
 	$sql = "SELECT u_id FROM users WHERE user_name ='" . $username . "'";
 	if ($conn->query($sql) === TRUE) {
 		return $sql;
@@ -38,8 +39,21 @@ function user_check($username) {
 	 	return $conn->connect_error;
 	} else {
 		$insert_user = "INSERT INTO users (user_name) VALUES ('" . $username . "')";
-		if ($conn->query($sql) === TRUE) {
+		if ($conn->query($insert_user) === TRUE) {
 		return $sql;
 		}
+	}
+}
+
+function get_data() {
+	global $conn;
+	$sql = "SELECT distance Distance, time_rec Time, user_name Username FROM records r JOIN users u ON r.user_id=u.u_id";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		while ($row = $result->fetch_assoc()) {
+			return $row["distance"] . ", " . $row["time_rec"] . ", " . $row["user_name"] . ".";
+		}
+	} else {
+		return "0 results.";
 	}
 }
