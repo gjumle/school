@@ -31,18 +31,21 @@ function form_true_check() {
 
 function get_user($username) {
 	global $conn;
-	$sql = "SELECT u_id FROM users WHERE user_name ='" . $username . "'";
-	if ($conn->query($sql) === TRUE) {
-		return $sql;
-	}
-	elseif ($conn->query($sql) === TRUE) {
-	 	return $conn->connect_error;
-	} else {
-		$insert_user = "INSERT INTO users (user_name) VALUES ('" . $username . "')";
-		if ($conn->query($insert_user) === TRUE) {
-		return $sql;
+	$insert_user = "REPLACE INTO users (user_name) VALUES ('" . $username . "')";
+	if ($conn->query($insert_user) === TRUE) {
+		$sql = "SELECT u_id FROM users WHERE user_name ='" . $username . "'";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			while ($row = $result->fetch_assoc()) {
+				return $row["u_id"];
+			}
+		} else {
+			return "0 results.";
 		}
+	} else {
+		return "Connection error: " . $conn->connect_error;
 	}
+	
 }
 
 function get_data() {
