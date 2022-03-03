@@ -1,0 +1,26 @@
+* {
+	font-family: sans-serif;
+}
+
+.inputs {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.input {
+	color: black;
+	padding: 14px 16px;
+	border: 1px solid black;
+}
+
+#submit {
+	background-color: black;
+	color: white;
+}
+
+#submit:hover {
+	color: black;
+	background-color: white;
+	cursor: pointer;
+}

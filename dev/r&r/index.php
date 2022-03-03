@@ -1,26 +1,31 @@
 <?php
 
+include "./functions.php";
+
+$distance = isset($_POST['distance']) ? $_POST['distance'] : "";
+$time = isset($_POST['time']) ? $_POST['time'] : "";
+
+if ($distance === TRUE && $time === TRUE) {
+	$conn = db_conn('rr', 'localhost');
+}
 
 
 ?>
 
-<html>
-<div style="margin: auto; width: 50%;">
-	<form action="" method="post">
-		<label for="distance">Distance:</label>
-		<input type="number" name="distance" id="distance"><br>
-
-		<label for="time">Start time: </label>
-		<input type="time" name="s_time" id="s_time"><br>
-
-		<label for="time">End time: </label>
-		<input type="time" name="e_time" id="e_time"><br>
-
-		<label for="user">Username: </label>
-		<input type="text" name="username" id="username"><br>
-
-		<input type="submit" name="submit" id="submit" value="OK">
-	</form>
-</div>
-	
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+	<script type="text/javascript" src="./master.js"></script>
+</head>
+<body>
+	<div class="inputs">
+		<form action="" method="post">
+			<input class="input" type="text" name="distance" id="distance" placeholder="Distance">
+			<input class="input" type="text" name="time" id="time" placeholder="Time (HH:MM:SS)">
+			<input class="input" type="text" name="username" id="username" placeholder="Username">
+			<input class="input" type="submit" name="submit" id="submit" value="Save" onclick="empty_check()">
+		</form>
+	</div>
+</body>
 </html>
