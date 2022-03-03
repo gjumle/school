@@ -11,7 +11,7 @@ if (form_true_check() === TRUE) {
 	$arr_time = timeToArr($str_time);
 
 	$username = $_POST['username'];
-	$user_id = user_check($username);
+	$user_id = get_user($username);
 
 	$insert_log = "INSERT INTO records (distance, time_rec) VALUES (" . $distance . ", '" . $str_time . "', '" . $username . "')";
 
