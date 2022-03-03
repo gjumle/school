@@ -13,7 +13,7 @@ function db_conn($db, $host) {
     return $conn;
 }
 
-function timeToArr(str) {
+function timeToArr($str) {
 	$ret = implode(":", $str);
 	return $ret;
 }
