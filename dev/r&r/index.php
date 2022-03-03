@@ -6,17 +6,14 @@ if (form_true_check() === TRUE) {
 	$conn = db_conn('rr', 'localhost');
 
 	$distance = $_POST['distance'];
-
 	$str_time = $_POST['time'];
-	$arr_time = timeToArr($str_time);
-
 	$username = $_POST['username'];
 
+	$u_insert = insert_user($username);
 	$user_id = get_user($username);
-
-
-	$u_insert =  insert_user($username);
 	$i_data = insert_data($distance, $str_time, $user_id);
+
+	echo $u_insert, $user_id, $i_data;
 }
 
 ?>
@@ -43,11 +40,7 @@ if (form_true_check() === TRUE) {
 				<th>Time</th>
 				<th>Username</th>
 			</tr>
-			<?php
-				foreach ($i_data as $i) {
-					echo get_data();
-				} 
-			?>
+			<?php get_data(); ?>
 		</table>
 	</div>
 </body>

@@ -37,7 +37,6 @@ function insert_user($username) {
 	} else {
 		return "Error: " . $conn->errno;
 	}
-	
 }
 
 function get_user($username) {
@@ -65,13 +64,12 @@ function insert_data($distance, $str_time, $user_id) {
 }
 
 function get_data() {
-	global $conn, $count;
+	global $conn;
 	$sql = "SELECT distance Distance, time_rec Time, user_name Username FROM records r JOIN users u ON r.user_id=u.u_id";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		while ($row = $result->fetch_assoc()) {
-			$count =+ 1;
-			return "<tr class='output'><td>" . $row["Distance"] . "</td><td>" . $row["Time"] . "</td><td>" . $row["Username"] . "</td></tr>";
+			echo "<tr class='output'><td>" . $row["Distance"] . "</td><td>" . $row["Time"] . "</td><td>" . $row["Username"] . "</td></tr>";
 		}
 	} else {
 		return "0 results.";
