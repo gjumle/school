@@ -31,7 +31,7 @@ function form_true_check() {
 
 function get_user($username) {
 	global $conn;
-	$insert_user = "REPLACE INTO users (user_name) VALUES ('" . $username . "')";
+	$insert_user = "INSERT INTO users (user_name) VALUES ('" . $username . "')";
 	if ($conn->query($insert_user) === TRUE) {
 		$sql = "SELECT u_id FROM users WHERE user_name ='" . $username . "'";
 		$result = $conn->query($sql);
@@ -65,7 +65,7 @@ function get_data() {
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		while ($row = $result->fetch_assoc()) {
-			return $row["distance"] . ", " . $row["time_rec"] . ", " . $row["user_name"] . ".";
+			return "<td>" . $row["distance"] . "</td><td>" . $row["time_rec"] . "</td><td>" . $row["user_name"] . "</td>";
 		}
 	} else {
 		return "0 results.";

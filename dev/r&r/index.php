@@ -13,7 +13,7 @@ if (form_true_check() === TRUE) {
 	$username = $_POST['username'];
 	$user_id = get_user($username);
 
-	echo get_data();
+	$data = get_data();
 	echo insert_data($distance, $str_time, $user_id);
 }
 
@@ -42,7 +42,7 @@ if (form_true_check() === TRUE) {
 				<th>Username</th>
 			</tr>
 			<tr>
-				<td></td>
+				<?php echo $data ?>
 			</tr>
 		</table>
 	</div>
