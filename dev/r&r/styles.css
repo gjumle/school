@@ -25,3 +25,16 @@
 	background-color: white;
 	cursor: pointer;
 }
+
+.outputs {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+}
+
+.output {
+	color: black;
+	padding: 14px 16px;
+	border: 1px solid black;
+}
