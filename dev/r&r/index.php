@@ -20,7 +20,7 @@ if ($distance === TRUE && $time === TRUE) {
 </head>
 <body>
 	<div class="inputs">
-		<form action="" method="post">
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 			<input class="input" type="text" name="distance" id="distance" placeholder="Distance">
 			<input class="input" type="text" name="time" id="time" placeholder="Time (HH:MM:SS)">
 			<input class="input" type="text" name="username" id="username" placeholder="Username">
