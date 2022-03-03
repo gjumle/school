@@ -29,11 +29,20 @@ function form_true_check() {
 	}
 }
 
-function get_user($username) {
+function insert_user($username) {
 	global $conn;
 	$insert_user = "INSERT INTO users (user_name) VALUES ('" . $username . "')";
 	if ($conn->query($insert_user) === TRUE) {
-		$sql = "SELECT u_id FROM users WHERE user_name ='" . $username . "'";
+		return "User " . $username . " created successfully.";
+	} else {
+		return "Error: " . $conn->errno;
+	}
+	
+}
+
+function get_user($username) {
+	global $conn;
+	$sql = "SELECT u_id FROM users WHERE user_name ='" . $username . "'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			while ($row = $result->fetch_assoc()) {
@@ -43,10 +52,6 @@ function get_user($username) {
 		} else {
 			return "0 results.";
 		}
-	} else {
-		return "Error: " . $conn->errno;
-	}
-	
 }
 
 function insert_data($distance, $str_time, $user_id) {
@@ -65,7 +70,7 @@ function get_data() {
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		while ($row = $result->fetch_assoc()) {
-			return "<td>" . $row["distance"] . "</td><td>" . $row["time_rec"] . "</td><td>" . $row["user_name"] . "</td>";
+			return "<td>" . $row["Distance"] . "</td><td>" . $row["Time"] . "</td><td>" . $row["Username"] . "</td>";
 		}
 	} else {
 		return "0 results.";
