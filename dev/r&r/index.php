@@ -35,7 +35,7 @@ if (form_true_check() === TRUE) {
 		</form>
 	</div>
 	<div class="outputs">
-		<table>
+		<table class="table">
 			<tr class="output">
 				<th>Distance</th>
 				<th>Time</th>

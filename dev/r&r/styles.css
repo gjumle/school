@@ -26,6 +26,10 @@
 	cursor: pointer;
 }
 
+.table {
+	
+}
+
 .outputs {
 	display: flex;
 	justify-content: center;
