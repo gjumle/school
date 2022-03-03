@@ -29,3 +29,17 @@ function form_true_check() {
 	}
 }
 
+function user_check($username) {
+	$sql = "SELECT u_id FROM users WHERE user_name ='" . $username . "'";
+	if ($conn->query($sql) === TRUE) {
+		return $sql;
+	}
+	elseif ($conn->query($sql) === TRUE) {
+	 	return $conn->connect_error;
+	} else {
+		$insert_user = "INSERT INTO users (user_name) VALUES ('" . $username . "')";
+		if ($conn->query($sql) === TRUE) {
+		return $sql;
+		}
+	}
+}
