@@ -2,20 +2,17 @@
 
 include "./functions.php";
 
-$is_distance = isset($_POST['distance']);
-$is_time = isset($_POST['time']);
-$is_username = isset($_POST['username']);
-
-
-if ($is_distance === TRUE && $is_time === TRUE && $is_username === TRUE) {
+if (form_true_check() === TRUE) {
 	$conn = db_conn('rr', 'localhost');
 
 	$distance = $_POST['distance'];
-	$time = timeToArr($_POST['time']);
-	echo $time;
+
+	$str_time = $_POST['time'];
+	$arr_time = timeToArr($str_time);
+
 	$username = $_POST['username'];
 
-
+	$insert_log = "insert into logs (distance, time_rec) values (";
 }
 
 ?>
