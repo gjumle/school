@@ -28,6 +28,7 @@ function form_true_check() {
 function insert_user($username) {
 	global $conn;
 	$insert_user = "INSERT INTO users (user_name) VALUES ('" . $username . "')";
+		echo $insert_user;
 	if ($conn->query($insert_user) === TRUE) {
 		return "User " . $username . " created successfully.";
 	} else {

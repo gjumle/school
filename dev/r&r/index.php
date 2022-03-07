@@ -10,10 +10,11 @@ if (form_true_check() === TRUE) {
 	$username = $_POST['username'];
 
 	$u_insert = insert_user($username);
+	echo $u_insert;
 	$user_id = get_user($username);
+	echo $user_id;
 	$i_data = insert_data($distance, $str_time, $user_id);
-
-	echo $u_insert, $user_id, $i_data;
+	echo $i_data;
 }
 
 ?>
