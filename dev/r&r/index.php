@@ -2,7 +2,7 @@
 
 include "./functions.php";
 
-if (form_true_check() === TRUE) {
+if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 	$conn = db_conn('rr', 'localhost');
 
 	$distance = $_POST['distance'];
