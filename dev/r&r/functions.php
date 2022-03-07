@@ -62,7 +62,9 @@ function get_data() {
 }
 
 function empty_post() {
+	global $distance, $str_time, $username, $user_id;
 	$distance = '';
 	$str_time = '';
-	$username = ''
+	$username = '';
+	$user_id = '';
 }
