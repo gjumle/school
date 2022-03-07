@@ -60,3 +60,9 @@ function get_data() {
 		return "0 results.";
 	}
 }
+
+function empty_post() {
+	$distance = '';
+	$str_time = '';
+	$username = ''
+}

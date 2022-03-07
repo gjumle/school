@@ -9,9 +9,10 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 	$str_time = $_POST['time'];
 	$username = $_POST['username'];
 
-	$u_insert = insert_user($username);
+	insert_user($username);
 	$user_id = get_user($username);
-	$i_data = insert_data($distance, $str_time, $user_id);
+	insert_data($distance, $str_time, $user_id);
+	empty_post();
 }
 
 ?>
