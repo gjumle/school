@@ -12,7 +12,6 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 	insert_user($username);
 	$user_id = get_user($username);
 	insert_data($distance, $str_time, $user_id);
-	empty_post();
 }
 
 ?>
