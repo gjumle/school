@@ -13,10 +13,6 @@ function db_conn($db, $host) {
     return $conn;
 }
 
-function timeToArr($str) {
-	return $arr = explode(":", $str);
-}
-
 function form_true_check() {
 	$is_distance = isset($_POST['distance']);
 	$is_time = isset($_POST['time']);
