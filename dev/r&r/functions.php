@@ -1,10 +1,6 @@
 <?php 
 
-function db_conn($db, $host) {
-    $hostname = $host;
-    $username = "root";
-    $password = "";
-
+function db_conn($hostname, $username, $password, $db) {
     $conn = new mysqli($hostname, $username, $password, $db);
 
     if ($conn->connect_error) {
