@@ -32,6 +32,13 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 			<input class="input" type="submit" name="submit" id="submit" value="Save" onclick="empty_check()">
 		</form>	
 	</div>
-	<?php get_data(); $conn->close();?>
+	<?php get_records(); $conn->close();?>
 </body>
 </html>
+
+
+<?php
+
+if (isset($_GET["edit_id"])) {
+	echo get_record($_GET['edit_id']);
+}

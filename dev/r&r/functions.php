@@ -52,7 +52,7 @@ function insert_data($distance, $str_time, $user_id) {
 	}
 }
 
-function get_data() {
+function get_records() {
 	global $conn;
 	$sql = "SELECT r_id ID, distance Distance, time_rec Time, user_name Username FROM records r JOIN users u ON r.user_id=u.u_id";
 	$result = $conn->query($sql);
@@ -74,9 +74,22 @@ function get_data() {
 	}
 }
 
+function get_record($r_id) {
+	global $conn;
+	$sql = 'SELECT r_id ID, distance Distance, time_rec Time, user_name Username FROM records r JOIN users u ON r.user_id=u.u_id WHERE r_id =' . $r_id;
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		while ($row = $result->fetch_assoc()) {
+			return $row['Distance'] . '#' . $row['Time'] . '#' . $row['Username'] . '#';
+		}
+	} else {
+		return "0 results.";
+	}
+}
+
 function delete_record($r_id) {
 	global $conn;
-	$sql = 'DELETE FROM records WHERE r_id =' . $_GET['delete_id'] . ' LIMIT 1';
+	$sql = 'DELETE FROM records WHERE r_id =' . $r_id . ' LIMIT 1';
 	if ($conn->query($sql)) {
 		return success('Data delete');
 	} else {
@@ -84,6 +97,12 @@ function delete_record($r_id) {
 	}
 }
 
-function update_records($r_id) {
-	
+function update_record($r_id, $distance, $str_time, $user_id) {
+	global $conn;
+	$sql = 'UPDATE records SET distance =' . $distance . ', str_time ="' . $str_time . '", username ="' . $user_id . '" WHERE r_id =' . $r_id;
+	if ($conn->query($sql)) {
+		return success('Data update');
+	} else {
+		return error_n('Data update');
+	}
 }
