@@ -13,10 +13,10 @@ function db_conn($hostname, $username, $password, $db) {
 function insert_user($username) {
 	global $conn;
 	$insert_user = "INSERT INTO users (user_name) VALUES ('" . $username . "')";
-	if ($conn->query($insert_user) === TRUE) {
-		return "User " . $username . " created successfully.";
+	if ($conn->query($insert_user)) {
+		return success('User creation');
 	} else {
-		return "Error: " . $conn->errno;
+		return error_n('User creation');
 	}
 }
 
@@ -37,10 +37,10 @@ function get_user($username) {
 function insert_data($distance, $str_time, $user_id) {
 	global $conn;
 	$insert_data = "INSERT INTO records (distance, time_rec, user_id) VALUES (" . $distance . ", '" . $str_time . "', '" . $user_id . "')";
-	if ($conn->query($insert_data) === TRUE) {
-		return "Succesfull data insert.";
+	if ($conn->query($insert_data)) {
+		return success('Data insert');
 	} else {
-		return "Error: " . $conn->errno . ".";
+		return error_n('Data insert');
 	}
 }
 
@@ -58,10 +58,24 @@ function get_data() {
 	echo "<th style='border: 1px solid black; padding: 14px 16px;'>Delete</th></tr>";
 	if ($result->num_rows > 0) {
 		while ($row = $result->fetch_assoc()) {
-			echo "<tr class='output'><td style='border: 1px solid black; padding: 7px 8px;'>". $row["ID"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'>" . $row["Distance"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'>" . $row["Time"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'>" . $row["Username"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'><a style='color: green;' href='?edit_id=" . $row["ID"] . "'>Edit</a></td><td style='border: 1px solid black; padding: 7px 8px;'><a style='color: red;' onclick ='delete_check()' href='?delete_id='" . $row["ID"] . "'>Delete</a></td></tr>";
+			echo "<tr class='output'><td style='border: 1px solid black; padding: 7px 8px;'>". $row["ID"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'>" . $row["Distance"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'>" . $row["Time"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'>" . $row["Username"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'><a style='color: green;' href='?edit_id=" . $row["ID"] . "'>Edit</a></td><td style='border: 1px solid black; padding: 7px 8px;'><a style='color: red;' onclick ='delete_check()' href='?delete_id=" . $row["ID"] . "''>Delete</a></td></tr>";
 		}
 		echo "</table></div>";
 	} else {
 		return "0 results.";
 	}
+}
+
+function delete_record($r_id) {
+	global $conn;
+	$sql = 'DELETE FROM records WHERE r_id =' . $_GET['delete_id'] . ' LIMIT 1';
+	if ($conn->query($sql)) {
+		return success('Data delete');
+	} else {
+		return error_n('Data delete');
+	}
+}
+
+function update_records($r_id) {
+	
 }
