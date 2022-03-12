@@ -31,14 +31,7 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 		</form>
 	</div>
 	<div class="outputs">
-		<table class="table">
-			<tr class="output">
-				<th>Distance</th>
-				<th>Time</th>
-				<th>Username</th>
-			</tr>
 			<?php get_data(); ?>
-		</table>
 	</div>
 </body>
 </html>

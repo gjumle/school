@@ -53,9 +53,12 @@ function get_data() {
 	$sql = "SELECT distance Distance, time_rec Time, user_name Username FROM records r JOIN users u ON r.user_id=u.u_id";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
+		echo "<table class='table'>";
+		echo "<tr class='output output-head'><th>Distance</th><th>Time</th><th>Username</th></tr>";
 		while ($row = $result->fetch_assoc()) {
 			echo "<tr class='output'><td>" . $row["Distance"] . "</td><td>" . $row["Time"] . "</td><td>" . $row["Username"] . "</td></tr>";
 		}
+		echo "</table>";
 	} else {
 		return "0 results.";
 	}
