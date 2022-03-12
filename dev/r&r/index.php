@@ -3,7 +3,7 @@
 include "./functions.php";
 
 if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
-	$conn = db_conn('rr', 'localhost');
+	$conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr');
 
 	$distance = $_POST['distance'];
 	$str_time = $_POST['time'];
