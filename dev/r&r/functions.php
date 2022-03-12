@@ -9,6 +9,14 @@ function db_conn($hostname, $username, $password, $db) {
     return $conn;
 }
 
+function success($theme) {
+	return $theme . " was successful.";
+}
+
+function error_n($theme) {
+	return $theme . " error:" . $conn->errno;
+}
+
 
 function insert_user($username) {
 	global $conn;
