@@ -11,6 +11,8 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 
 	insert_user($username);
 	insert_data($distance, $str_time, get_user($username));
+
+
 }
 
 ?>
@@ -28,17 +30,8 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 			<input class="input" type="text" name="time" id="time" placeholder="Time (HH:MM:SS)">
 			<input class="input" type="text" name="username" id="username" placeholder="Username">
 			<input class="input" type="submit" name="submit" id="submit" value="Save" onclick="empty_check()">
-		</form>
+		</form>	
 	</div>
-	<div class="outputs">
-		<table class="table">
-			<tr class="output">
-				<th>Distance</th>
-				<th>Time</th>
-				<th>Username</th>
-			</tr>
-			<?php get_data(); ?>
-		</table>
-	</div>
+	<?php get_data(); $conn->close();?>
 </body>
 </html>

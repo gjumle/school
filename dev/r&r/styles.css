@@ -1,5 +1,7 @@
 * {
 	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
 .inputs {
@@ -25,17 +27,3 @@
 	background-color: white;
 	cursor: pointer;
 }
-/*
-.table {
-	color: black;
-	padding: 14px 16px;
-	border: 1px solid black;
-	border:  collapse;
-}
-
-.outputs {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 70vh;
-} */
