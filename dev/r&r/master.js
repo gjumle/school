@@ -33,3 +33,7 @@ $(document).ready(function() {
 		}
 	})
 })
+
+function delete_check() {
+	alert("Delete record?");
+}
