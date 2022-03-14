@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	$(#submit).on('click', function() {
-		let distance = $(#distance).val();
-		let str_time = $(#time).val();
-		let username = $(#username).val();
+		var distance = $(#distance).val();
+		var str_time = $(#time).val();
+		var username = $(#username).val();
 		if (distance != '' && str_time != '' && username != '') {
 			$.('#submit').attr('disabled', 'disabled');
 			$.ajax({
