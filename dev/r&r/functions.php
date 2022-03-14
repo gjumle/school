@@ -57,7 +57,8 @@ function get_records() {
 	global $conn;
 	$sql = "SELECT r_id ID, distance Distance, time_rec Time, user_name Username FROM records r JOIN users u ON r.user_id=u.u_id";
 	$result = $conn->query($sql);
-	echo "<div class='outputs' style='display: flex; justify-content: center; align-items: center; height: 50vh'>";
+	echo "<link rel='stylesheet' href='./styles.css'>";
+	echo "<div class='outputs'>";
 	echo "<table class='table' style='border: 1px solid black; width: 60vw; border-collapse: collapse; margin: auto; text-align: center'>";
 	echo "<tr class='output'><th style='border: 1px solid black; padding: 14px 16px;'>ID</th>";
 	echo "<th style='border: 1px solid black; padding: 14px 16px;'>Distance (Km)</th>";
