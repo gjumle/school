@@ -14,6 +14,7 @@ function success($theme) {
 }
 
 function error_n($theme) {
+	global $conn;
 	return $theme . " error:" . $conn->errno;
 }
 
