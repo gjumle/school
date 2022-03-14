@@ -63,8 +63,7 @@ function get_records() {
 	echo "<th style='border: 1px solid black; padding: 14px 16px;'>Distance (Km)</th>";
 	echo "<th style='border: 1px solid black; padding: 14px 16px;'>Time (HH:MM:SS)</th>";
 	echo "<th style='border: 1px solid black; padding: 14px 16px;'>Username</th>";
-	echo "<th style='border: 1px solid black; padding: 14px 16px;'>Edit</th>";
-	echo "<th style='border: 1px solid black; padding: 14px 16px;'>Delete</th></tr>";
+	echo "<th style='border: 1px solid black; padding: 14px 16px;' colspan='2'>Modify</th></tr>";
 	if ($result->num_rows > 0) {
 		while ($row = $result->fetch_assoc()) {
 			echo "<tr class='output'><td style='border: 1px solid black; padding: 7px 8px;'>". $row["ID"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'>" . $row["Distance"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'>" . $row["Time"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'>" . $row["Username"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'><a style='color: green;' href='?edit_id=" . $row["ID"] . "'>Edit</a></td><td style='border: 1px solid black; padding: 7px 8px;'><a style='color: red;' onclick ='delete_check()' href='?delete_id=" . $row["ID"] . "''>Delete</a></td></tr>";
