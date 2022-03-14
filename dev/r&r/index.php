@@ -40,9 +40,14 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 <?php
 
 global $conn;
+global $distance, $str_time, $username;
 
 if (isset($_GET["edit_id"])) {
-	echo get_record($_GET['edit_id']);
+	get_record($_GET['edit_id']);
+}
+
+if (isset($_GET["delete_id"])) {
+	delete_record($_GET['delete_id']);
 }
 
 $conn->close();
