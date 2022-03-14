@@ -29,7 +29,7 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 			<input class="input" type="text" name="distance" id="distance" placeholder="Distance">
 			<input class="input" type="text" name="time" id="time" placeholder="Time (HH:MM:SS)">
 			<input class="input" type="text" name="username" id="username" placeholder="Username">
-			<input class="input" type="submit" name="submit" id="submit" value="Save" onclick="empty_check()">
+			<input class="input" type="submit" name="submit" id="submit" value="Save">
 		</form>	
 	</div>
 	<?php get_records(); ?>
