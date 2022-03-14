@@ -1,10 +1,10 @@
 $(document).ready(function() {
-	$(#submit).on('click', function() {
-		var distance = $(#distance).val();
-		var str_time = $(#time).val();
-		var username = $(#username).val();
+	$('#submit').on('click', function() {
+		var distance = $('#distance').val();
+		var str_time = $('#time').val();
+		var username = $('#username').val();
 		if (distance != '' && str_time != '' && username != '') {
-			$.('#submit').attr('disabled', 'disabled');
+			$('#submit').attr('disabled', 'disabled');
 			$.ajax({
 				url: index.php,
 				type: post,
