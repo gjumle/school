@@ -1,0 +1,40 @@
+<?php
+//Navolení hodnot
+$servername = "localhost";
+$username = "root";
+$password = "";
+$DBname = "simon";
+
+//Vytvoření propojení
+$conn = mysqli_connect($servername, $username, $password, $DBname);
+
+// Kontrola propojení
+if (!$conn) {
+    die("Sorry, nepřipojilo se to....");
+}
+echo ("Připojilo se to....");
+
+//Vkládání dat z formuláře do databáze
+if(isset($_POST["submit"])) {
+    $name = $_POST["name"];
+    $lastname = $_POST["lastname"];
+    $sql = "INSERT INTO uzivatel (jmeno) VALUES ('"$name"')";
+    if (mysqli_query($sql)) {
+        echo "Údaje byly přidány";
+    } else {
+        echo "Nepodařilo se přidat data!!!";
+    }
+}
+
+
+?>
+
+<!-- Formulář -->
+<html>
+    <form method="post">
+        <input type="text" id="name" name ="name" placeholder="Zadej jméno">
+        <input type="text" id="lastname" name="lastname" placeholder="Zadej příjmeni">
+        <button type="submit" id="submit" name="submit" >Odeslat</button>
+
+    </form>
+</html>
