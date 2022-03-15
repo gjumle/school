@@ -16,6 +16,7 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 
 ?>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -24,6 +25,14 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
+	<div class="nav-bar">
+		<ul class="nav-links">
+			<li class="nav-link"><a class="nav-link" href="#">Home</a></li>
+			<li class="nav-link"><a class="nav-link" href="#">Records</a></li>
+			<li class="nav-link"><a class="nav-link" href="#">Statistics</a></li>
+			<li class="nav-link"><a class="nav-link" href="#">About</a></li>
+		</ul>
+	</div>
 	<div class="inputs" id="success">
 		<form class="form" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 			<input class="input" type="text" name="distance" id="distance" placeholder="Distance">
@@ -39,9 +48,6 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 
 <?php
 
-global $conn;
-global $distance, $str_time, $username;
-
 if (isset($_GET["edit_id"])) {
 	get_record($_GET['edit_id']);
 }
@@ -51,3 +57,5 @@ if (isset($_GET["delete_id"])) {
 }
 
 $conn->close();
+
+?>

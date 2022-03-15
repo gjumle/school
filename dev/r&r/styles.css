@@ -4,6 +4,23 @@
 	padding: 0;
 }
 
+.nav-bar {
+	display: flex;
+	height: 20vh;
+	background-color: black;
+}
+
+.nav-links {
+	color: white;
+	list-style-type: none;
+
+}
+
+.nav-link {
+	text-decoration: none;
+	text-align: center;
+}
+
 .inputs {
 	display: flex;
 	justify-content: center;
