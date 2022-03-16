@@ -44,7 +44,7 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 		</ul>
 	</div>
 	<div class="inputs" id="success">
-		<form class="form" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+		<form class="form" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 			<input class="input" type="text" name="distance" id="distance" placeholder="Distance">
 			<input class="input" type="text" name="time" id="time" placeholder="Time (HH:MM:SS)">
 			<input class="input" type="text" name="username" id="username" placeholder="Username">
