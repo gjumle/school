@@ -93,7 +93,6 @@ function delete_record($r_id) {
 	global $conn;
 	$sql = 'DELETE FROM records WHERE r_id =' . $r_id . ' LIMIT 1';
 	if (mysqli_query($connect, $sql)) {
-		$get_records();
 		return success('Data delete');
 	} else {
 		return error_n('Data delete');
@@ -104,7 +103,6 @@ function update_record($r_id, $distance, $str_time, $user_id) {
 	global $conn;
 	$sql = 'UPDATE records SET distance =' . $distance . ', str_time ="' . $str_time . '", username ="' . $user_id . '" WHERE r_id =' . $r_id;
 	if (mysql_query($conn, $sql)) {
-		$get_records();
 		return success('Data update');
 	} else {
 		return error_n('Data update');
