@@ -4,34 +4,37 @@
 	padding: 0;
 }
 
-.nav-bar {
-	display: flex;
-	height: 20vh;
-	background-color: black;
-}
-
 .nav-links {
-	color: white;
-	list-style-type: none;
-
+	background-color: black;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	list-style: none;
 }
 
 .nav-link {
+	color: white;
+	padding: 2em;
 	text-decoration: none;
-	text-align: center;
+}
+
+li.nav-link:hover {
+	background-color: orangered;
 }
 
 .inputs {
-	display: flex;
-	justify-content: center;
 	align-items: center;
+	display: flex;
 	height: 50vh;
+	justify-content: center;
 }
 
 .input {
+	border: 1px solid black;
 	color: black;
 	padding: 14px 16px;
-	border: 1px solid black;
 }
 
 #submit {
@@ -40,7 +43,7 @@
 }
 
 #submit:hover {
-	color: black;
 	background-color: white;
+	color: black;
 	cursor: pointer;
 }
