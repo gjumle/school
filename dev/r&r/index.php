@@ -12,6 +12,16 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 	insert_user($username);
 	insert_data($distance, $str_time, get_user($username));
 
+	if (isset($_GET["edit_id"])) {
+		get_record($_GET['edit_id']);
+		update_record($r_id, $distance, $str_time, $username);
+		get_records();
+	}
+	
+	if (isset($_GET["delete_id"])) {
+		delete_record($_GET['delete_id']);
+		get_records();
+	}
 }
 
 ?>
@@ -47,14 +57,6 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 
 
 <?php
-
-if (isset($_GET["edit_id"])) {
-	get_record($_GET['edit_id']);
-}
-
-if (isset($_GET["delete_id"])) {
-	delete_record($_GET['delete_id']);
-}
 
 $conn->close();
 

@@ -80,7 +80,9 @@ function get_record($r_id) {
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		while ($row = $result->fetch_assoc()) {
-			return $row['Distance'] . '#' . $row['Time'] . '#' . $row['Username'] . '#';
+			$distance = $row['Distance'];
+			$str_time = $row['Time'];
+			$username = $row['Username'];
 		}
 	} else {
 		return "0 results.";
@@ -91,6 +93,7 @@ function delete_record($r_id) {
 	global $conn;
 	$sql = 'DELETE FROM records WHERE r_id =' . $r_id . ' LIMIT 1';
 	if ($conn->query($sql)) {
+		$get_records();
 		return success('Data delete');
 	} else {
 		return error_n('Data delete');
@@ -100,7 +103,9 @@ function delete_record($r_id) {
 function update_record($r_id, $distance, $str_time, $user_id) {
 	global $conn;
 	$sql = 'UPDATE records SET distance =' . $distance . ', str_time ="' . $str_time . '", username ="' . $user_id . '" WHERE r_id =' . $r_id;
+	echo $sql;
 	if ($conn->query($sql)) {
+		$get_records();
 		return success('Data update');
 	} else {
 		return error_n('Data update');
