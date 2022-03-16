@@ -53,7 +53,7 @@ function insert_data($distance, $str_time, $user_id) {
 	}
 }
 
-function get_records() {
+function get_records($result) {
 	global $conn;
 	$sql = "SELECT r_id ID, distance Distance, time_rec Time, user_name Username FROM records r JOIN users u ON r.user_id=u.u_id";
 	$result = mysqli_query($conn, $sql);
@@ -93,7 +93,7 @@ function delete_record($r_id) {
 	global $conn;
 	$sql = 'DELETE FROM records WHERE r_id =' . $r_id . ' LIMIT 1';
 	if (mysqli_query($conn, $sql)) {
-		return success('Data delete');
+		return $result = mysqli_query($conn, $sql);
 	} else {
 		return error_n('Data delete');
 	}
@@ -103,7 +103,7 @@ function update_record($r_id, $distance, $str_time, $user_id) {
 	global $conn;
 	$sql = 'UPDATE records SET distance =' . $distance . ', str_time ="' . $str_time . '", username ="' . $user_id . '" WHERE r_id =' . $r_id;
 	if (mysqli_query($conn, $sql)) {
-		return success('Data update');
+		return $result = mysqli_query($conn, $sql);
 	} else {
 		return error_n('Data update');
 	}
