@@ -3,8 +3,8 @@
 function db_conn($hostname, $username, $password, $db) {
     $conn = mysqli_connect($hostname, $username, $password, $db);
 
-    if ($conn->connect_error) {
-        echo "Connection error: " . $conn->connect_error . "<br>";
+    if (!$conn) {
+        die("Connection error: " . mysqli_connect_error() . "<br>");
     }
     return $conn;
 }
@@ -15,7 +15,7 @@ function success($theme) {
 
 function error_n($theme) {
 	global $conn;
-	return $theme . " error:" . $conn->errno;
+	return $theme . " error:" . mysqli_error($conn);
 }
 
 
