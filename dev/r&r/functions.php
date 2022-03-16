@@ -92,7 +92,7 @@ function get_record($r_id) {
 function delete_record($r_id) {
 	global $conn;
 	$sql = 'DELETE FROM records WHERE r_id =' . $r_id . ' LIMIT 1';
-	if (mysqli_query($connect, $sql)) {
+	if (mysqli_query($conn, $sql)) {
 		return success('Data delete');
 	} else {
 		return error_n('Data delete');
