@@ -56,6 +56,6 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 
 <?php
 
-$conn->close();
+mysqli_close($conn);
 
 ?>
