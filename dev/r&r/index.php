@@ -37,19 +37,18 @@ include "./functions.php";
 			$distance = $_POST['distance'];
 			$str_time = $_POST['time'];
 			$username = $_POST['username'];
+			$result = "";
 
 			insert_user($username);
 			insert_data($distance, $str_time, get_user($username));
 
 			if (isset($_GET["edit_id"])) {
 				get_record($_GET['edit_id']);
-				update_record($r_id, $distance, $str_time, $username);
-				get_records($result);
+				$result = update_record($r_id, $distance, $str_time, $username);
 			}
 			
 			if (isset($_GET["delete_id"])) {
-				delete_record($_GET['delete_id']);
-				get_records($result);
+				$result = delete_record($_GET['delete_id']);
 			}
 		}
 
