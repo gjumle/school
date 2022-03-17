@@ -45,14 +45,15 @@ if (isset($_POST['distance']) && isset($_POST['time']) && isset($_POST['username
     $result = mysqli_query($conn, $sql);
     if (mysqli_fetch_assoc($result)) {
         echo "<table style='border: 1px solid black;'>";
-        echo "<tr><th>ID</th><th>Distance</th><th>Time</th><th>Usernname</th></tr>";
+        echo "<tr><th>ID</th><th>Distance</th><th>Time</th><th>Usernname</th><th colspan=2 >Action</th></tr>";
         while ($row = mysqli_fetch_array($result)) {
             echo "<tr><td>" . $row['id'] . "</td>
-                  <td>" . $row['distance'] . "</td>
-                  <td>" . $row['time'] . "</td>
-                  <td>" . $row['username'] . "</td>
-                  <td><a href='?edit_id=" . $row['id'] . "'</td>;
-                  <td><a href='?delete_id=" . $row['id'] . "'</td></tr>"
+                    <td>" . $row['distance'] . "</td>
+                    <td>" . $row['time'] . "</td>
+                    <td>" . $row['username'] . "</td>
+                    <td><a href='?edit_id=" . $row['id'] . "'>Edit<a/></td>;
+                    <td><a href='?delete_id=" . $row['id'] . "'>Delete</a></td>
+                  </tr>";
         }
         echo "</table>";
     }
