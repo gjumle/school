@@ -51,6 +51,8 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 		</form>	
 	</div>
 	<?php
+		global $result;
+		
 		get_records($result);
 
 		mysqli_close($conn);
