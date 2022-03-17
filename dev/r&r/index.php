@@ -2,6 +2,27 @@
 
 include "./functions.php";
 
+if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
+	$conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr');
+
+	$distance = $_POST['distance'];
+	$str_time = $_POST['time'];
+	$username = $_POST['username'];
+	$result = "";
+
+	insert_user($username);
+	insert_data($distance, $str_time, get_user($username));
+
+	if (isset($_GET["edit_id"])) {
+		get_record($_GET['edit_id']);
+		$result = update_record($r_id, $distance, $str_time, $username);
+	}
+	
+	if (isset($_GET["delete_id"])) {
+		$result = delete_record($_GET['delete_id']);
+	}
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -30,28 +51,6 @@ include "./functions.php";
 		</form>	
 	</div>
 	<?php
-
-		if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
-			$conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr');
-
-			$distance = $_POST['distance'];
-			$str_time = $_POST['time'];
-			$username = $_POST['username'];
-			$result = "";
-
-			insert_user($username);
-			insert_data($distance, $str_time, get_user($username));
-
-			if (isset($_GET["edit_id"])) {
-				get_record($_GET['edit_id']);
-				$result = update_record($r_id, $distance, $str_time, $username);
-			}
-			
-			if (isset($_GET["delete_id"])) {
-				$result = delete_record($_GET['delete_id']);
-			}
-		}
-
 		get_records($result);
 
 		mysqli_close($conn);
