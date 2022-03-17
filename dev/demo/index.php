@@ -44,7 +44,7 @@ if (isset($_POST['distance']) && isset($_POST['time']) && isset($_POST['username
     $sql = 'SELECT * FROM records';
     $result = mysqli_query($conn, $sql);
     if (mysqli_fetch_assoc($result)) {
-        echo "<table style='border: 1px solid black;'>";
+        echo "<table border=1'>";
         echo "<tr><th>ID</th><th>Distance</th><th>Time</th><th>Usernname</th><th colspan=2 >Action</th></tr>";
         while ($row = mysqli_fetch_array($result)) {
             echo "<tr><td>" . $row['id'] . "</td>
