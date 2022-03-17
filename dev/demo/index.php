@@ -50,7 +50,9 @@ if (isset($_POST['distance']) && isset($_POST['time']) && isset($_POST['username
             echo "<tr><td>" . $row['id'] . "</td>
                   <td>" . $row['distance'] . "</td>
                   <td>" . $row['time'] . "</td>
-                  <td>" . $row['username'] . "</td></tr>";
+                  <td>" . $row['username'] . "</td>
+                  <td><a href='?edit_id=" . $row['id'] . "'</td>;
+                  <td><a href='?delete_id=" . $row['id'] . "'</td></tr>"
         }
         echo "</table>";
     }
