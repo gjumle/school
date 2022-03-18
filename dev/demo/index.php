@@ -1,7 +1,9 @@
 <?php
 
+include "./functions.php";
+
 echo "<link rel='stylesheet' href='./styles.css'>";
-echo "<script src='./master.js'>";
+echo "<script src='./master.js'></script>";
 
 $conn = mysqli_connect('localhost', 'demo', 'demo', 'demo');
 
@@ -33,13 +35,6 @@ foreach ($section as $row) {
 
 echo "</ul>";
 
-if (isset($_POST['distance']) && isset($_POST['time']) && isset($_POST['username'])) {
-    $distance = $_POST['distance'];
-    $time = $_POST['time'];
-    $username = $_POST['username'];
-} else {
-    echo "Fill out  the fields";
-}
 
 if (isset($_GET['delete_id'])){
     $id = $_GET['delete_id'];
@@ -47,24 +42,30 @@ if (isset($_GET['delete_id'])){
     $result = mysqli_query($conn, $sql);
 }
 
+if (isset($_GET['edit_id'])){
+    $id = $_GET['edit_id'];
+    $distance = get_value($conn, $id, 'distance');
+    $time = get_value($conn, $id, 'time');
+    $username = get_value($conn, $id, 'username');
+}
+
+        
+
 if (isset($_POST['submit'])) {
-    if (isset($_GET['edit_id'])) {
-        $id = $_GET['edit_id'];
-        $sql = 'SELECT * FROM records WHERE id =' . $id;
-        $result = mysqli_query($conn, $sql);
-        if (mysqli_fetch_assoc($result)) {
-            $row = mysqli_fetch_assoc($result);
-            $distance = $row['distance'];
-            $time = $row['time'];
-            $username = $row['username'];
+    if (isset($_POST['distance']) && isset($_POST['time']) && isset($_POST['username'])) {
+        if (isset($_GET['edit_id'])) {
+            $id = $_GET['edit_id'];
+            $sql = 'UPDATE records SET distance = ' . $distance . ', time=' .$time . ', username=' . $username . ' WHERE id=' . $id;
+        } else {
+            $distance = $_POST['distance'];
+            $time = $_POST['time'];
+            $username = $_POST['username'];
+            $sql = 'INSERT INTO records (distance, time, username) VALUES ("' . $distance . '", "' . $time . '", "' . $username . '")';
         }
-        $sql = 'UPDATE records SET distance = ' . $distance . ' WHERE id=' . $id;
-        $sql .= 'UPDATE records SET time = ' . $time . ' WHERE id=' . $id;
-        $sql .= 'UPDATE records SET username = ' . $username . ' WHERE id=' . $id;
+        $result = mysqli_query($conn, $sql);
     } else {
-        $sql = 'INSERT INTO records (distance, time, username) VALUES ("' . $distance . '", "' . $time . '", "' . $username . '")';
+        echo "Fill out  the fields";
     }
-    $result = mysqli_query($conn, $sql);
 }
 
 $sql = 'SELECT * FROM records';
@@ -90,5 +91,5 @@ if (mysqli_fetch_assoc($result)) {
     <input type='text' placeholder='distance' name='distance' id='distance' value='<?php echo $distance ?>'>
     <input type='text' placeholder='time' name='time' id='time' value='<?php echo $time ?>'>
     <input type='text' placeholder='username' name='username' id='username' value='<?php echo $username ?>'>
-    <input type='submit' name='submit' id='submit' value='OK'>
+    <input type='submit' name='submit' id='submit' value='OK' onclick='empty_check()'>
 </form>
