@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
         }
         $result = mysqli_query($conn, $sql);
     } else {
-        echo "Fill out  the fields";
+        echo "Fill out the fields";
     }
 }
 
