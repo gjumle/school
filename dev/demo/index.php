@@ -91,5 +91,7 @@ if (mysqli_fetch_assoc($result)) {
     <input type='text' placeholder='distance' name='distance' id='distance' value='<?php echo $distance ?>'>
     <input type='text' placeholder='time' name='time' id='time' value='<?php echo $time ?>'>
     <input type='text' placeholder='username' name='username' id='username' value='<?php echo $username ?>'>
-    <input type='submit' name='submit' id='submit' value='OK' onclick='empty_check()'>
+    <input type='submit' name='submit' id='submit' value='OK'>    
+    <button onclick='empty_check()'>Check</button>
 </form>
+

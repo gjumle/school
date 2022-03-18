@@ -6,7 +6,6 @@ function delete_ok() {
 function empty_check() {
     let values = [];
     let empty = true;
-    let value = '';
     values.pop(document.getElementById('distance').value);
     values.pop(document.getElementById('time').value);
     values.pop(document.getElementById('username').value);
@@ -15,13 +14,13 @@ function empty_check() {
             empty = false;
             switch(i) {
                 case 1:
-                    getElementById('distance').style.color = 'red';
+                    document.getElementById('distance').style.color = 'red';
                     break;
                 case 2:
-                    getElementById('time').style.color = 'red';
+                    document.getElementById('time').style.color = 'red';
                     break;
                 case 3:
-                    getElementById('usernames').style.color = 'red';
+                    document.getElementById('usernames').style.color = 'red';
                     break;
             }
         } else {
