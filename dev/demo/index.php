@@ -33,17 +33,6 @@ foreach ($section as $row) {
 
 echo "</ul>";
 
-$form = array('distance', 'time', 'username');
-
-echo "<form action='' method='post'>";
-
-foreach ($form as $input) {
-    echo "<input type='text' id=" . $input . " name=" . $input . " placeholder=" . $input . ">";
-}
-
-echo "<input type='submit' name='submit' id='submit' value='OK'>";
-echo "</form>";
-
 if (isset($_POST['distance']) && isset($_POST['time']) && isset($_POST['username'])) {
     $distance = $_POST['distance'];
     $time = $_POST['time'];
@@ -94,3 +83,12 @@ if (mysqli_fetch_assoc($result)) {
     }
     echo "</table>";
 }
+
+?>
+
+<form method='post' action='./index.php'>
+    <input type='text' placeholder='distance' name='distance' id='distance' value='<?php echo $distance ?>'>
+    <input type='text' placeholder='time' name='time' id='time' value='<?php echo $time ?>'>
+    <input type='text' placeholder='username' name='username' id='username' value='<?php echo $username ?>'>
+    <input type='submit' name='submit' id='submit' value='OK'>
+</form>
