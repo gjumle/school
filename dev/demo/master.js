@@ -14,13 +14,13 @@ function empty_check() {
             empty = false;
             switch(i) {
                 case 1:
-                    document.getElementById('distance').style.color = 'red';
+                    document.getElementById('distance').style.border = '2 px solid red';
                     break;
                 case 2:
-                    document.getElementById('time').style.color = 'red';
+                    document.getElementById('time').style.border = '2 px solid red';
                     break;
                 case 3:
-                    document.getElementById('usernames').style.color = 'red';
+                    document.getElementById('usernames').style.border = '2 px solid red';
                     break;
             }
         } else {
