@@ -47,28 +47,33 @@ if (isset($_POST['distance']) && isset($_POST['time']) && isset($_POST['username
     $distance = $_POST['distance'];
     $time = $_POST['time'];
     $username = $_POST['username'];
-    if (isset($_POST['sumbmit'])) {
-        if (isset($_GET['edit_id'])) {
-            $id = $_GET['edit_id'];
-            $result = mysqli_query($conn, $sql);
-            if (mysqli_fetch_assoc($result)) {
-                $row = mysqli_fetch_assoc($result);
-                $distance = $row['distance'];
-                $time = $row['distance'];
-                $username = $row['username'];
-            }
-            $sql = 'UPDATE records SET distance = ' . $distance . ' WHERE id=' . $id;
-            $sql .= 'UPDATE records SET time = ' . $time . ' WHERE id=' . $id;
-            $sql .= 'UPDATE records SET username = ' . $username . ' WHERE id=' . $id;
-        } elseif (isset($_GET['delete_id'])){
-            $id = $_GET['delete_id'];
-            $sql = 'DELETE FROM records WHERE id =' . $id . ' LIMIT 1';
-        } else {
-            $sql = 'INSERT INTO records (distance, time, username) VALUES ("' . $distance . '", "' . $time . '", "' . $username . '")';
-        }
+} else {
+    echo "Fill out  the fields";
+}
+
+if (isset($_GET['delete_id'])){
+    $id = $_GET['delete_id'];
+    $sql = 'DELETE FROM records WHERE id =' . $id . ' LIMIT 1';
+    $result = mysqli_query($conn, $sql);
+}
+
+if (isset($_POST['submit'])) {
+    if (isset($_GET['edit_id'])) {
+        $id = $_GET['edit_id'];
         $result = mysqli_query($conn, $sql);
+        if (mysqli_fetch_assoc($result)) {
+            $row = mysqli_fetch_assoc($result);
+            $distance = $row['distance'];
+            $time = $row['distance'];
+            $username = $row['username'];
+        }
+        $sql = 'UPDATE records SET distance = ' . $distance . ' WHERE id=' . $id;
+        $sql .= 'UPDATE records SET time = ' . $time . ' WHERE id=' . $id;
+        $sql .= 'UPDATE records SET username = ' . $username . ' WHERE id=' . $id;
+    } else {
+        $sql = 'INSERT INTO records (distance, time, username) VALUES ("' . $distance . '", "' . $time . '", "' . $username . '")';
     }
-    
+    $result = mysqli_query($conn, $sql);
 }
 
 $sql = 'SELECT * FROM records';
