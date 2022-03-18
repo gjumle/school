@@ -1,6 +1,7 @@
 <?php
 
 echo "<link rel='stylesheet' href='./styles.css'>";
+echo "<script src='./master.js'>";
 
 $conn = mysqli_connect('localhost', 'demo', 'demo', 'demo');
 
@@ -37,7 +38,7 @@ $form = array('distance', 'time', 'username');
 echo "<form action='' method='post'>";
 
 foreach ($form as $input) {
-    echo "<input type='text' value='" . $input . "' id=" . $input . " name=" . $input . " placeholder=" . $input . ">";
+    echo "<input type='text' id=" . $input . " name=" . $input . " placeholder=" . $input . ">";
 }
 
 echo "<input type='submit' name='submit' id='submit' value='OK'>";
@@ -60,11 +61,12 @@ if (isset($_GET['delete_id'])){
 if (isset($_POST['submit'])) {
     if (isset($_GET['edit_id'])) {
         $id = $_GET['edit_id'];
+        $sql = 'SELECT * FROM records WHERE id =' . $id;
         $result = mysqli_query($conn, $sql);
         if (mysqli_fetch_assoc($result)) {
             $row = mysqli_fetch_assoc($result);
             $distance = $row['distance'];
-            $time = $row['distance'];
+            $time = $row['time'];
             $username = $row['username'];
         }
         $sql = 'UPDATE records SET distance = ' . $distance . ' WHERE id=' . $id;
@@ -87,7 +89,7 @@ if (mysqli_fetch_assoc($result)) {
                 <td>" . $row['time'] . "</td>
                 <td>" . $row['username'] . "</td>
                 <td><a href='?edit_id=" . $row['id'] . "'>Edit<a/></td>;
-                <td><a href='?delete_id=" . $row['id'] . "'>Delete</a></td>
+                <td><a onclick='delete_ok()' href='?delete_id=" . $row['id'] . "'>Delete</a></td>
                 </tr>";
     }
     echo "</table>";
