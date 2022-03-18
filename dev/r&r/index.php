@@ -12,15 +12,15 @@ if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 
 	insert_user($username);
 	insert_data($distance, $str_time, get_user($username));
+}
 
-	if (isset($_GET["edit_id"])) {
-		get_record($_GET['edit_id']);
-		$result = update_record($r_id, $distance, $str_time, $username);
-	}
-	
-	if (isset($_GET["delete_id"])) {
-		$result = delete_record($_GET['delete_id']);
-	}
+if (isset($_GET["edit_id"])) {
+	get_record($_GET['edit_id']);
+	$result = update_record($r_id, $distance, $str_time, $username);
+}
+
+if (isset($_GET["delete_id"])) {
+	$result = delete_record($_GET['delete_id']);
 }
 
 ?>
