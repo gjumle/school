@@ -4,9 +4,17 @@ function delete_ok() {
 
 
 function empty_check() {
-    let distance = document.getElementById('distance').value;
-    let time = document.getElementById('time').value;
-    let username = document.getElementById('username').value;
-    if (distance == "" || time == "" || username == "")
-        alert("Fill out all fields.");
+    let values = [];
+    let empty = true;
+    values.pop(document.getElementById('distance').value);
+    values.pop(document.getElementById('time').value);
+    values.pop(document.getElementById('username').value);
+    for (let i = 0; i < values.length; i++) {
+        if (values[i] != "") {
+            empty = false;
+        }
+    }
+    if (empty == true) {
+        alert("Fill out all the fields.")
+    }
 }
