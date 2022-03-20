@@ -4,6 +4,10 @@ include 'functions.php';
 
 $conn = conn('localhost', 'dejvidson', 'dejvidson', 'dejvidson');
 
+echo "<link rel='stylesheet' href='styles.css'";
+echo "<script src='./master.js'></script>";
+echo "<meta lang='cs' charset='utf-8'>";
+
 $track_name = '';
 $team_name = '';
 $weather_name = '';
@@ -14,23 +18,54 @@ $time = '';
 ?>
 
 <form method=post>
-    <input type='text' name='username' id='username' placeholder='username'>
-    <input type='text' name='time' id='time' placeholder='time'>
+    <input type='text' name='username' id='username' placeholder='Username'>
+    <input type='text' name='time' id='time' placeholder='Cas'>
     <select name='track_name' id='track_name'>
-        <option value=0>--- select ---</option>
-        <option value=1>Brno</option>
+        <option value="0">---Trať---</option>
+        <option value="1">Bahrain - Bahrain International Circuit</option>
+        <option value="2">Saudi Arabia - Jeddah</option>
+        <option value="3">Australia - Albert Park, Melbourne</option>
+        <option value="4">Italy - Imola</option>
+        <option value="5">USA - Circuit of the Americas, Austin</option>
+        <option value="6">Spain - Circuit de Catalunya, Barcelona</option>
+        <option value="7">Monaco - Monaco</option>
+        <option value="8">Azerbaijan - Baku City Circuit</option>
+        <option value="9">Canada - Circuit Gilles Villeneuve</option>
+        <option value="10">UK - Silverstone</option>
+        <option value="11">Austria - Red Bull Ring, Spielberg</option>
+        <option value="12">France - Circuit Paul Ricard, Le Castellet</option>
+        <option value="13">Hungary - Hungaroring, Budapest</option>
+        <option value="14">Belgium - Spa-Francorchamps</option>
+        <option value="15">Netherlands - Zandvoort</option>
+        <option value="16">Italy - Monza</option>
+        <option value="17">Singapore - Marina Bay Street Circuit</option>
+        <option value="18">Japan - Suzuka International Circuit</option>
+        <option value="19">Mexico - Autódromo Hermanos Rodríguez, Mexico City</option>
+        <option value="20">Brazil - Interlagos</option>
+        <option value="21">UAE - Yas Marina Circuit</option>
     </select>
     <select name='team_name' id='team_name'>
-        <option value=0>--- select ---</option>
-        <option value=1>****_sila</option>
+        <option value="0">---Tým---</option>
+        <option value="1">Mercedes</option>
+        <option value="2">Red Bull</option>
+        <option value="3">Ferrari</option>
+        <option value="4">McLaren</option>
+        <option value="5">AlphaTauri</option>
+        <option value="6">Aston Martin</option>
+        <option value="7">Alpine</option>
+        <option value="8">Alfa Romeo</option>
+        <option value="9">Williams</option>
+        <option value="10">Haas</option>
     </select>
     <select name='weather_name' id='weather_name'>
-        <option value=0>--- select ---</option>
-        <option value=1>kocky_a_trakare</option>
+        <option value="0">---Podmínky---</option>
+        <option value="1">Sucho</option>
+        <option value="2">Mokro</option>
     </select>
     <select name='controller_name' id='controller_name'>
-        <option value=0>--- select ---</option>
-        <option value=1>mys</option>
+        <option value="0">---Podmínky---</option>
+        <option value="1">Sucho</option>
+        <option value="2">Mokro</option>
     </select>
     <input type='submit' name='submit' id='submit' value='OK'>
 </form>
