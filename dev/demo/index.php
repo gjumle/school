@@ -37,16 +37,16 @@ echo "</ul>";
 
 
 if (isset($_GET['delete_id'])){
-    $id = $_GET['delete_id'];
-    $sql = 'DELETE FROM records WHERE id =' . $id . ' LIMIT 1';
+    $d_id = $_GET['delete_id'];
+    $sql = 'DELETE FROM records WHERE id =' . $d_id . ' LIMIT 1';
     $result = mysqli_query($conn, $sql);
 }
 
 if (isset($_GET['edit_id'])){
-    $id = $_GET['edit_id'];
-    $distance = get_value($conn, $id, 'distance');
-    $time = get_value($conn, $id, 'time');
-    $username = get_value($conn, $id, 'username');
+    $e_id = $_GET['edit_id'];
+    $distance = get_value($conn, $e_id, 'distance');
+    $time = get_value($conn, $e_id, 'time');
+    $username = get_value($conn, $e_id, 'username');
 }
 
         
@@ -54,8 +54,10 @@ if (isset($_GET['edit_id'])){
 if (isset($_POST['submit'])) {
     if (isset($_POST['distance']) && isset($_POST['time']) && isset($_POST['username'])) {
         if (isset($_GET['edit_id'])) {
-            $id = $_GET['edit_id'];
-            $sql = 'UPDATE records SET distance = ' . $distance . ', time=' .$time . ', username=' . $username . ' WHERE id=' . $id;
+            echo "Edituji...";
+            $e_id = $_GET['edit_id'];
+            $sql = 'UPDATE records SET distance = ' . $distance . ', time=' .$time . ', username=' . $username . ' WHERE id=' . $e_sid;
+            echo $sql;
         } else {
             $distance = $_POST['distance'];
             $time = $_POST['time'];
@@ -64,7 +66,7 @@ if (isset($_POST['submit'])) {
         }
         $result = mysqli_query($conn, $sql);
     } else {
-        echo "Fill out the fields";
+        echo "Fill out all fields";
     }
 }
 
@@ -72,7 +74,7 @@ $sql = 'SELECT * FROM records';
 $result = mysqli_query($conn, $sql);
 if (mysqli_fetch_assoc($result)) {
     echo "<table border=1'>";
-    echo "<tr><th>ID</th><th>Distance</th><th>Time</th><th>Usernname</th><th colspan=2 >Action</th></tr>";
+    echo "<tr><th>ID</th><th>Distance</th><th>Time</th><th>Username</th><th colspan=2 >Action</th></tr>";
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr><td>" . $row['id'] . "</td>
                 <td>" . $row['distance'] . "</td>
