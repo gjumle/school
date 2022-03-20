@@ -24,13 +24,13 @@ $page = $_GET['page'];
 echo "<ul>";
 
 foreach ($section as $row) {
-    echo "<li><a href=\"index.php?page=$row\"";
+    echo "<li><a href='index.php?page=" . $row . "'";
 
     if ($row == $page) {
-        echo "class=\"selected\"";
+        echo "class='selected'";
     }
     
-    echo ">$row</a></li>\n";
+    echo ">" . $row . "</a></li>";
 }
 
 echo "</ul>";
