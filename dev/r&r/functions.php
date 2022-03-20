@@ -57,16 +57,22 @@ function get_records($result) {
 	global $conn;
 	$sql = "SELECT r_id ID, distance Distance, time_rec Time, user_name Username FROM records r JOIN users u ON r.user_id=u.u_id";
 	$result = mysqli_query($conn, $sql);
-	echo "<div class='outputs' style='display: flex; justify-content: center; align-items: center; height: 50vh'>";
-	echo "<table class='table' style='border: 1px solid black; width: 60vw; border-collapse: collapse; margin: auto; text-align: center'>";
-	echo "<tr class='output'><th style='border: 1px solid black; padding: 14px 16px;'>ID</th>";
-	echo "<th style='border: 1px solid black; padding: 14px 16px;'>Distance (Km)</th>";
-	echo "<th style='border: 1px solid black; padding: 14px 16px;'>Time (HH:MM:SS)</th>";
-	echo "<th style='border: 1px solid black; padding: 14px 16px;'>Username</th>";
-	echo "<th style='border: 1px solid black; padding: 14px 16px; colspan='2';'>Modify</th></tr>";
+	echo "<div class='outputs'>";
+	echo "<table class='table'>";
+	echo "<tr class='output'><th>ID</th>";
+	echo "<th>Distance (Km)</th>";
+	echo "<th>Time (HH:MM:SS)</th>";
+	echo "<th>Username</th>";
+	echo "<th colspan='2';'>Modify</th></tr>";
 	if (mysqli_num_rows($result) > 0) {
 		while ($row = mysqli_fetch_assoc($result)) {
-			echo "<tr class='output'><td style='border: 1px solid black; padding: 7px 8px;'>". $row["ID"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'>" . $row["Distance"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'>" . $row["Time"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'>" . $row["Username"] . "</td><td style='border: 1px solid black; padding: 7px 8px;'><a style='color: green;' href='?edit_id=" . $row["ID"] . "'>Edit</a></td><td style='border: 1px solid black; padding: 7px 8px;'><a style='color: red;' onclick ='delete_check()' href='?delete_id=" . $row["ID"] . "''>Delete</a></td></tr>";
+			echo "<tr class='output'>
+				<td class='table_data'>". $row["ID"] . "</td>
+				<td class='table_data'>" . $row["Distance"] . "</td>
+				<td class='table_data'>" . $row["Time"] . "</td>
+				<td class='table_data'>" . $row["Username"] . "</td>
+				<td class='table_data'><a class='edit' href='?edit_id=" . $row["ID"] . "'>Edit</a></td>
+				<td class='table_data'><a class-'delete' onclick ='delete_check()' href='?delete_id=" . $row["ID"] . "''>Delete</a></td></tr>";
 		}
 		echo "</table></div>";
 	} else {

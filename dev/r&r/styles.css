@@ -46,3 +46,27 @@ li.nav-link:hover {
 	color: black;
 	cursor: pointer;
 }
+
+.outputs {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50vh;
+}
+
+.output {
+	border: 1px solid black;
+	padding: 14px 16px;
+}
+
+.table {
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin: auto;
+	text-align: center;
+}
+
+.table-data {
+	border: 1px solid black;
+	padding: 7px 8px;
+}

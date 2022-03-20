@@ -55,7 +55,6 @@ if (isset($_GET["delete_id"])) {
 		
 		get_records($result);
 
-		mysqli_close($conn);
 	?>
 </body>
 </html>
