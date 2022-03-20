@@ -70,3 +70,8 @@ li.nav-link:hover {
 	border: 1px solid black;
 	padding: 7px 8px;
 }
+
+.table-head {
+	border: 1px solid black;
+	padding: 14px 16px;
+}
