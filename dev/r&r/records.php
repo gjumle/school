@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
 <div class="nav-bar">
 		<ul class="nav-links">
 			<li class="nav-link"><a class="nav-link" href="./index.php">Home</a></li>
-			<li class="nav-link active"><a class="nav-link" href=".records.php">Records</a></li>
+			<li class="nav-link active"><a class="nav-link" href="./records.php">Records</a></li>
 			<li class="nav-link"><a class="nav-link" href="./stats.php">Statistics</a></li>
             <li class="nav-link"><a class="nav-link" href="./users.php">User</a></li>
 			<li class="nav-link"><a class="nav-link" href="./about.php">About</a></li>
