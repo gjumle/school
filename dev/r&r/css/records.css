@@ -4,25 +4,6 @@
 	padding: 0;
 }
 
-.nav-links {
-	background-color: black;
-	
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	list-style: none;
-}
-
-.nav-link {
-	color: white;
-	padding: 1em;
-	text-decoration: none;
-}
-
-li.nav-link:hover {
-	background-color: orangered;
-}
-
 .inputs {
 	align-items: center;
 	display: flex;
@@ -42,8 +23,7 @@ li.nav-link:hover {
 }
 
 #submit:hover {
-	background-color: white;
-	color: black;
+	background-color: orangered;
 	cursor: pointer;
 }
 

@@ -1,0 +1,22 @@
+.nav-links {
+	background-color: black;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	list-style: none;
+}
+
+.nav-link {
+	color: white;
+	padding: 1em;
+	text-decoration: none;
+}
+
+.active {
+	background-color: orangered;
+}
+
+li.nav-link:hover {
+	background-color: orangered;
+}
