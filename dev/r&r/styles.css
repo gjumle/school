@@ -51,27 +51,25 @@ li.nav-link:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 50vh;
 }
 
-.output {
-	border: 1px solid black;
-	padding: 14px 16px;
-}
-
-.table {
-	border: 1px solid black;
+table, td, th {  
+	border: 1px solid #ddd;
+	text-align: left;
+  }
+  
+table {
 	border-collapse: collapse;
-	margin: auto;
-	text-align: center;
 }
 
-.table-data {
-	border: 1px solid black;
-	padding: 7px 8px;
+th, td {
+	padding: 15px;
 }
 
-.table-head {
-	border: 1px solid black;
-	padding: 14px 16px;
+#edit {
+	color: green;
+}
+
+#delete {
+	color: red;
 }

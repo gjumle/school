@@ -2,17 +2,12 @@
 
 include "./functions.php";
 
-if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
-	$conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr');
+$distance = "";
+$str_time = "";
+$username = "";
+$result = "";
 
-	$distance = $_POST['distance'];
-	$str_time = $_POST['time'];
-	$username = $_POST['username'];
-	$result = "";
-
-	insert_user($username);
-	insert_data($distance, $str_time, get_user($username));
-}
+$conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr');
 
 if (isset($_GET["edit_id"])) {
 	get_record($_GET['edit_id']);
@@ -22,6 +17,12 @@ if (isset($_GET["edit_id"])) {
 if (isset($_GET["delete_id"])) {
 	$result = delete_record($_GET['delete_id']);
 }
+if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
+	
+
+}
+
+
 
 ?>
 
