@@ -60,10 +60,10 @@ function get_records($result) {
 	echo "<div class='outputs'>";
 	echo "<table class='table'>";
 	echo "<tr class='output'><th>ID</th>";
-	echo "<th>Distance (Km)</th>";
-	echo "<th>Time (HH:MM:SS)</th>";
-	echo "<th>Username</th>";
-	echo "<th colspan='2';'>Modify</th></tr>";
+	echo "<th class='table_head'>Distance (Km)</th>";
+	echo "<th class='table_head'>Time (HH:MM:SS)</th>";
+	echo "<th class='table_head'>Username</th>";
+	echo "<th class='table_head' colspan='2';'>Modify</th></tr>";
 	if (mysqli_num_rows($result) > 0) {
 		while ($row = mysqli_fetch_assoc($result)) {
 			echo "<tr class='output'>
