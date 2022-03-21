@@ -2,6 +2,7 @@
 
 include "./functions/basics.php";
 include "./functions/records.php";
+include "./functions/users.php";
 
 $username = "";
 $f_name = "";
