@@ -2,6 +2,7 @@
 
 include "./functions/basics.php";
 include "./functions/records.php";
+include "./functions/users.php";
 
 $distance = "";
 $str_time = "";
@@ -10,11 +11,15 @@ $result = "";
 
 $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 
+$distance = $_POST['distance'];
+$str_time = $_POST['time'];
+$username = $_POST['username'];
+
 if (isset($_GET["edit_id"])) {
 	$e_id = $_GET['edit_id'];
-    $distance = get_value($conn, $e_id, 'distance');
-    $time = get_value($conn, $e_id, 'time');
-    $username = get_value($conn, $e_id, 'username');
+    $distance = get_value($conn, $e_id, 'Distance');
+    $str_time = get_value($conn, $e_id, 'Time');
+    $username = get_value($conn, $e_id, 'Username');
 }
 
 if (isset($_GET["delete_id"])) {
@@ -29,15 +34,10 @@ if (isset($_POST['submit'])) {
 		if (isset($e_di)) {
 			echo "Edituji . . . ";
 			$sql = 'UPDATE records SET distance =' . $distance . ', str_time ="' . $str_time . '", username ="' . $user_id . '" WHERE r_id =' . $r_id;
-			$result = mysqli_query($conn, $sql);
 		} else {
-			$distance = $_POST['distance'];
-            $time = $_POST['time'];
-            $username = $_POST['username'];
 			$sql = "INSERT INTO records (distance_id, time_rec, user_id) VALUES (" . $distance . ", '" . $str_time . "', '" . $user_id . "')";
-			$result = mysqli_query($conn, $sql);
 		}
-		
+		$result = mysqli_query($conn, $sql);
 		
 	} else {
 		echo "Fill out all fields";

@@ -24,6 +24,8 @@ CREATE VIEW web_records AS
 		JOIN users u ON r.user_id=u.u_id
 		JOIN distance d ON r.distance_id=d.d_id;
 
+SELECT * FROM web_records;
+
 DROP VIEW web_records;
 
 INSERT INTO distance (distance_name) VALUES (1), (5), (10), (21), (31), (42), (62);
