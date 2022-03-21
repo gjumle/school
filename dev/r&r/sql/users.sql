@@ -10,4 +10,9 @@ CREATE TABLE users (
 
 DROP TABLE users;
 
+CREATE VIEW web_users AS
+	SELECT u_id ID, user_name Username, f_name Firstname, s_name Surname, email Email, age Age FROM users;
+
+INSERT INTO users (user_name, f_name, s_name, email, age) VALUES ('gjumle', 'Leos', 'Gjumija', 'gjumle@protonmail.com', '18');
+
 SELECT u_id FROM users WHERE user_name = 'PokeTom13';
