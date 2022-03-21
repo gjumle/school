@@ -58,6 +58,7 @@ if (isset($_POST['submit'])) {
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="./css/nav.css">
 	<link rel="stylesheet" type="text/css" href="./css/records.css">
+	<link rel="stylesheet" type="text/css" href="./css/users.css">
 	<script type="text/javascript" src="./js/records.js"></script>
 </head>
 <body>
