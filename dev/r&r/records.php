@@ -11,10 +11,6 @@ $result = "";
 
 $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 
-$distance = $_POST['distance'];
-$str_time = $_POST['time'];
-$username = $_POST['username'];
-
 if (isset($_GET["edit_id"])) {
 	$e_id = $_GET['edit_id'];
     $distance = get_value($conn, $e_id, 'Distance');
@@ -30,6 +26,9 @@ if (isset($_GET["delete_id"])) {
 
 if (isset($_POST['submit'])) {
 	if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
+		$distance = $_POST['distance'];
+		$str_time = $_POST['time'];
+		$username = $_POST['username'];
 		$user_id = get_user($conn, $username);
 		if (isset($e_di)) {
 			echo "Edituji . . . ";
