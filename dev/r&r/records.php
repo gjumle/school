@@ -78,7 +78,7 @@ if (isset($_POST['submit'])) {
 		</form>	
 	</div>
 	<?php
-		$sql = "SELECT r_id ID, distance Distance, time_rec Time, user_name Username FROM records r JOIN users u ON r.user_id=u.u_id";
+		$sql = "SELECT * FROM web_records";
 		$result = mysqli_query($conn, $sql);
 		echo "<div class='outputs'>";
 		echo "<table>";
