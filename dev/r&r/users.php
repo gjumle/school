@@ -33,7 +33,6 @@ if (isset($_POST['submit'])) {
 		if (isset($e_di)) {
 			echo "Edituji . . . ";
 			$sql = 'UPDATE users SET f_name =' . $f_name . ', s_name ="' . $s_name . '", email ="' . $email . '" WHERE r_id =' . $u_id;
-			$result = mysqli_query($conn, $sql);
 		} else {
 			$username = $_POST['username'];
 			$f_name = $_POST['f_name'];
@@ -41,10 +40,8 @@ if (isset($_POST['submit'])) {
 			$email = $_POST['email'];
 			$age = $_POST['age'];
 			$sql = "INSERT INTO users (user_name, f_name, s_name, email, age) VALUES ('" . $username . "', '" . $f_name . "', '" . $s_name . "', '" . $email . "', '" . $age . "')";
-			$result = mysqli_query($conn, $sql);
 		}
-		
-		
+		$result = mysqli_query($conn, $sql);
 	} else {
 		echo "Fill out all fields";
 	}
