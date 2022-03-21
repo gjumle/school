@@ -26,7 +26,7 @@ if (isset($_GET["delete_id"])) {
 if (isset($_POST['submit'])) {
 	if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 		$user_id = get_user($conn, $username);
-		if (isset($_GET["edit_id"])) {
+		if (isset($e_di)) {
 			echo "Edituji . . . ";
 			$sql = 'UPDATE records SET distance =' . $distance . ', str_time ="' . $str_time . '", username ="' . $user_id . '" WHERE r_id =' . $r_id;
 			$result = mysqli_query($conn, $sql);

@@ -7,6 +7,6 @@ function get_value($conn, $id, $value) {
 		$row = mysqli_fetch_assoc($result);
 		return $row[$value];
 	} else {
-        return error_n("Data fetch");
+        return error_n($conn, "Data fetch");
     }
 }
