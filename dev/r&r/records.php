@@ -31,6 +31,9 @@ if (isset($_POST['submit'])) {
 			$sql = 'UPDATE records SET distance =' . $distance . ', str_time ="' . $str_time . '", username ="' . $user_id . '" WHERE r_id =' . $r_id;
 			$result = mysqli_query($conn, $sql);
 		} else {
+			$distance = $_POST['distance'];
+            $time = $_POST['time'];
+            $username = $_POST['username'];
 			$sql = "INSERT INTO records (distance_id, time_rec, user_id) VALUES (" . $distance . ", '" . $str_time . "', '" . $user_id . "')";
 			$result = mysqli_query($conn, $sql);
 		}
