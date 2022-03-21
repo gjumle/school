@@ -19,7 +19,7 @@ if (isset($_GET["edit_id"])) {
 
 if (isset($_GET["delete_id"])) {
 	$d_id = $_GET['delete_id'];
-    $sql = 'DELETE FROM records WHERE id =' . $d_id . ' LIMIT 1';
+    $sql = 'DELETE FROM records WHERE r_id =' . $d_id . ' LIMIT 1';
     $result = mysqli_query($conn, $sql);
 }
 
@@ -28,10 +28,12 @@ if (isset($_POST['submit'])) {
 		if (isset($_GET["edit_id"])) {
 			echo "Edituji . . . ";
 			$sql = 'UPDATE records SET distance =' . $distance . ', str_time ="' . $str_time . '", username ="' . $user_id . '" WHERE r_id =' . $r_id;
+			$result = mysqli_query($conn, $sql);
 		} else {
 			$sql = "INSERT INTO records (distance, time_rec, user_id) VALUES (" . $distance . ", '" . $str_time . "', '" . $user_id . "')";
+			$result = mysqli_query($conn, $sql);
 		}
-		$result = mysqli_query($conn, $sql);
+		
 		
 	} else {
 		echo "Fill out all fields";
