@@ -75,7 +75,7 @@ if (isset($_POST['submit'])) {
 			<input class="input" type="text" name="f_name" id="f_name" placeholder="Firstname">
 			<input class="input" type="text" name="s_name" id="s_name" placeholder="Surname">
 			<input class="input" type="text" name="email" id="email" placeholder="E-mail">
-			<input class="input" type="text" name="age" id="age" placeholder="age">
+			<input class="input" type="text" name="age" id="age" placeholder="Age">
 			<input class="input" type="submit" name="submit" id="submit" value="OK">
 		</form>	
 	</div>
@@ -85,9 +85,11 @@ if (isset($_POST['submit'])) {
 		echo "<div class='outputs'>";
 		echo "<table>";
 		echo "<tr><th>ID</th>";
-		echo "<th>Distance (Km)</th>";
-		echo "<th>Time (HH:MM:SS)</th>";
 		echo "<th>Username</th>";
+		echo "<th>Firstname</th>";
+		echo "<th>Surname</th>";
+		echo "<th>E-mail</th>";
+		echo "<th>Age</th>";
 		echo "<th colspan='2';'>Action</th></tr>";
 		if (mysqli_num_rows($result) > 0) {
 			while ($row = mysqli_fetch_assoc($result)) {
