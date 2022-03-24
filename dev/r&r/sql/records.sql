@@ -17,8 +17,6 @@ CREATE TABLE distance (
 
 DROP TABLE distance;
 
-INSERT INTO records (distance, time_rec, user_id) VALUES (10, '01:00:00', 07);
-
 CREATE VIEW web_records AS
 	SELECT r_id ID, distance_name Distance, time_rec Time, user_name Username FROM records r
 		JOIN users u ON r.user_id=u.u_id
