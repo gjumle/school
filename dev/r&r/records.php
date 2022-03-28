@@ -27,12 +27,13 @@ if (isset($_GET["delete_id"])) {
 if (isset($_POST['submit'])) {
 	if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 		$distance = $_POST['distance'];
+		$distance_id = get_distance($conn, $distance);
 		$str_time = $_POST['time'];
 		$username = $_POST['username'];
 		$user_id = get_user($conn, $username);
 		if (isset($e_di)) {
 			echo "Edituji . . . ";
-			$sql = 'UPDATE records SET distance =' . $distance . ', str_time ="' . $str_time . '", username ="' . $user_id . '" WHERE r_id =' . $r_id;
+			$sql = 'UPDATE records r JOIN users u ON r.user_id=u.u_id JOIN distance d ON r.distance_id=d.d_id SET distance_id =' . $distance_id . ', time_rec ="' . $str_time . '", user_id =' . $user_id . ' WHERE r_id =' . $e_id;
 		} else {
 			$sql = "INSERT INTO records (distance_id, time_rec, user_id) VALUES (" . $distance . ", '" . $str_time . "', '" . $user_id . "')";
 		}

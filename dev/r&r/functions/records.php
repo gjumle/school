@@ -10,3 +10,16 @@ function get_value_r($conn, $id, $value) {
         return error_n($conn, "Data fetch");
     }
 }
+
+function get_user($conn, $distance) {
+	$sql = "SELECT d_id FROM distance WHERE user_name ='" . $distance . "'";
+	$result = mysqli_query($conn, $sql);
+	if (mysqli_num_rows($result) > 0) {
+		while ($row = mysqli_fetch_assoc($result)) {
+			$user_id = $row["u_id"];
+			return $distance_id;
+		}
+	} else {
+		return "0 results.";
+	}
+}
