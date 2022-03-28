@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 		$user_id = get_user($conn, $username);
 		if (isset($e_di)) {
 			echo "Edituji . . . ";
-			$sql = 'UPDATE users SET f_name =' . $f_name . ', s_name ="' . $s_name . '", email ="' . $email . '" WHERE r_id =' . $u_id;
+			$sql = 'UPDATE users SET f_name =' . $f_name . ', s_name ="' . $s_name . '", email ="' . $email . '" WHERE u_id =' . $u_id;
 		} else {
 			$username = $_POST['username'];
 			$f_name = $_POST['f_name'];

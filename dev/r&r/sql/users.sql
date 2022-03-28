@@ -16,3 +16,5 @@ CREATE VIEW web_users AS
 INSERT INTO users (user_name, f_name, s_name, email, age) VALUES ('gjumle', 'Leos', 'Gjumija', 'gjumle@protonmail.com', '18');
 
 SELECT u_id FROM users WHERE user_name = 'PokeTom13';
+
+UPDATE users SET f_name ='Tomas', s_name ='Prerovsky', email ='tmas.ppf@gmai.com' WHERE u_id = '1';
