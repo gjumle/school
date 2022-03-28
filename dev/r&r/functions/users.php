@@ -23,7 +23,7 @@ function get_user($conn, $username) {
 }
 
 function get_value_u($conn, $id, $value) {
-    $sql = 'SELECT ' . $value . ' FROM web_users WHERE u_id =' . $id;
+    $sql = 'SELECT ' . $value . ' FROM web_users WHERE ID =' . $id;
 	$result = mysqli_query($conn, $sql);
 	if (mysqli_num_rows($result) > 0){
 		$row = mysqli_fetch_assoc($result);
