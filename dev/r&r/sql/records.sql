@@ -28,3 +28,4 @@ DROP VIEW web_records;
 
 INSERT INTO distance (distance_name) VALUES (1), (5), (10), (21), (31), (42), (62);
 
+UPDATE records SET distance ='2', str_time ='01:05:12', username ='1' WHERE r_id ='1';

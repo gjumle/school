@@ -13,9 +13,9 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 
 if (isset($_GET["edit_id"])) {
 	$e_id = $_GET['edit_id'];
-    $distance = get_value($conn, $e_id, 'Distance');
-    $str_time = get_value($conn, $e_id, 'Time');
-    $username = get_value($conn, $e_id, 'Username');
+    $distance = get_value_r($conn, $e_id, 'Distance');
+    $str_time = get_value_r($conn, $e_id, 'Time');
+    $username = get_value_r($conn, $e_id, 'Username');
 }
 
 if (isset($_GET["delete_id"])) {
