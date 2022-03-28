@@ -14,11 +14,11 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 
 if (isset($_GET["edit_id"])) {
 	$e_id = $_GET['edit_id'];
-    $username = get_value($conn, $e_id, 'username');
-    $f_name = get_value($conn, $e_id, 'f_name');
-    $s_name = get_value($conn, $e_id, 's_name');
-	$email = get_value($conn, $e_id, 'email');
-	$age = get_value($conn, $e_id, 'age');
+    $username = get_value_u($conn, $e_id, 'username');
+    $f_name = get_value_u($conn, $e_id, 'f_name');
+    $s_name = get_value_u($conn, $e_id, 's_name');
+	$email = get_value_u($conn, $e_id, 'email');
+	$age = get_value_u($conn, $e_id, 'age');
 }
 
 if (isset($_GET["delete_id"])) {
@@ -70,11 +70,11 @@ if (isset($_POST['submit'])) {
 	</div>
 	<div class="inputs" id="success">
 		<form class="form" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-			<input class="input" type="text" name="username" id="username" placeholder="Username">
-			<input class="input" type="text" name="f_name" id="f_name" placeholder="Firstname">
-			<input class="input" type="text" name="s_name" id="s_name" placeholder="Surname">
-			<input class="input" type="text" name="email" id="email" placeholder="E-mail">
-			<input class="input" type="text" name="age" id="age" placeholder="Age">
+			<input class="input" type="text" name="username" id="username" placeholder="Username" value="<?php echo $username; ?>">
+			<input class="input" type="text" name="f_name" id="f_name" placeholder="Firstname" value="<?php echo $f_name; ?>">
+			<input class="input" type="text" name="s_name" id="s_name" placeholder="Surname" value="<?php echo $s_name; ?>">
+			<input class="input" type="text" name="email" id="email" placeholder="E-mail" value="<?php echo $email; ?>">
+			<input class="input" type="text" name="age" id="age" placeholder="Age" value="<?php echo $age; ?>">
 			<input class="input" type="submit" name="submit" id="submit" value="OK">
 		</form>	
 	</div>

@@ -1,6 +1,6 @@
 <?php
 
-function get_value($conn, $id, $value) {
+function get_value_r($conn, $id, $value) {
     $sql = 'SELECT ' . $value . ' FROM web_records WHERE r_id =' . $id;
 	$result = mysqli_query($conn, $sql);
 	if (mysqli_num_rows($result) > 0){
