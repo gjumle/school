@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
 		$user_id = get_user($conn, $username);
 		if (isset($e_di)) {
 			echo "Edituji . . . ";
-			$sql = 'UPDATE records r JOIN users u ON r.user_id=u.u_id JOIN distance d ON r.distance_id=d.d_id SET distance_id =' . $distance_id . ', time_rec ="' . $str_time . '", user_id =' . $user_id . ' WHERE r_id =' . $e_id;
+			$sql = 'UPDATE records SET distance_id =' . $distance_id . ', time_rec ="' . $str_time . '", user_id =' . $user_id . ' WHERE r_id =' . $e_id;
 		} else {
 			$sql = "INSERT INTO records (distance_id, time_rec, user_id) VALUES (" . $distance . ", '" . $str_time . "', '" . $user_id . "')";
 		}
