@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) {
 	</div>
 	<div class="inputs" id="success">
 		<form class="form" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-			<select class="input" name="distance" id="distance">
+			<select class="input" name="distance" id="distance" value="<?php echo $distance ?>">
 				<option value=0>Distance</option>
 				<option value=1>1 Km</option>
 				<option value=2>5 Km</option>
@@ -75,8 +75,8 @@ if (isset($_POST['submit'])) {
 				<option value=6>42 Km</option>
 				<option value=7>62 Km</option>
 			</select>
-			<input class="input" type="text" name="time" id="time" placeholder="Time (HH:MM:SS)">
-			<input class="input" type="text" name="username" id="username" placeholder="Username">
+			<input class="input" type="text" name="time" id="time" placeholder="Time (HH:MM:SS)" value="<?php echo $str_time ?>">
+			<input class="input" type="text" name="username" id="username" placeholder="Username" value="<?php echo $username ?>">
 			<input class="input" type="submit" name="submit" id="submit" value="OK">
 		</form>	
 	</div>
