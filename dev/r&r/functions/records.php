@@ -11,7 +11,7 @@ function get_value_r($conn, $id, $value) {
     }
 }
 
-function get_user($conn, $distance) {
+function get_distance($conn, $distance) {
 	$sql = "SELECT d_id FROM distance WHERE user_name ='" . $distance . "'";
 	$result = mysqli_query($conn, $sql);
 	if (mysqli_num_rows($result) > 0) {
