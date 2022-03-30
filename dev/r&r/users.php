@@ -14,11 +14,12 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 
 if (isset($_GET["edit_id"])) {
 	$e_id = $_GET['edit_id'];
-    $username = get_value_u($conn, $e_id, 'username');
-    $f_name = get_value_u($conn, $e_id, 'f_name');
-    $s_name = get_value_u($conn, $e_id, 's_name');
-	$email = get_value_u($conn, $e_id, 'email');
-	$age = get_value_u($conn, $e_id, 'age');
+    $username = get_value_u($conn, $e_id, 'Username');
+	$user_id = get_user($conn, $username);
+    $f_name = get_value_u($conn, $e_id, 'Firstname');
+    $s_name = get_value_u($conn, $e_id, 'Surname');
+	$email = get_value_u($conn, $e_id, 'Email');
+	$age = get_value_u($conn, $e_id, 'Age');
 }
 
 if (isset($_GET["delete_id"])) {
@@ -29,15 +30,14 @@ if (isset($_GET["delete_id"])) {
 
 if (isset($_POST['submit'])) {
 	if (isset($_POST['username'], $_POST['f_name'], $_POST['s_name'], $_POST['email'], $_POST['age'])) {
+		$username = $_POST['username'];
+		$f_name = $_POST['f_name'];
+		$s_name = $_POST['s_name'];
+		$email = $_POST['email'];
+		$age = $_POST['age'];
 		if (isset($_GET["edit_id"])) {
-			$sql = 'UPDATE users SET f_name =' . $f_name . ', s_name ="' . $s_name . '", email ="' . $email . '" WHERE u_id =' . $u_id;
+			$sql = 'UPDATE users SET f_name =' . $f_name . ', s_name ="' . $s_name . '", email ="' . $email . '" WHERE u_id =' . $e_id;
 		} else {
-			$username = $_POST['username'];
-			$user_id = get_user($conn, $username);
-			$f_name = $_POST['f_name'];
-			$s_name = $_POST['s_name'];
-			$email = $_POST['email'];
-			$age = $_POST['age'];
 			$sql = "INSERT INTO users (user_name, f_name, s_name, email, age) VALUES ('" . $username . "', '" . $f_name . "', '" . $s_name . "', '" . $email . "', '" . $age . "')";
 		}
 		$result = mysqli_query($conn, $sql);
