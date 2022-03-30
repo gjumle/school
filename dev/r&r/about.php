@@ -10,7 +10,7 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 <head>
 	<meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/nav.css">
-	<link rel="stylesheet" type="text/css" href="./css/home.css">
+	<link rel="stylesheet" type="text/css" href="./css/about.css">
 	<script type="text/javascript" src="./js/records.js"></script>
 </head>
 <body>
@@ -22,4 +22,10 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
             <li class="nav-link"><a class="nav-link" href="./users.php">User</a></li>
 			<li class="nav-link active"><a class="nav-link" href="./about.php">About</a></li>
 		</ul>
+	</div>
+	<div class="about-title">
+		<h1>About this project</h1>
+	</div>
+	<div class="about-text">
+		<p>Toto je text o mem projektu ...</p>
 	</div>

@@ -1,0 +1,24 @@
+.about-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+}
+
+.about-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+}
+
+h1.about-title {
+    flex: 1;
+    margin: 15px;
+    color: orangered;
+}
+
+p.about-text {
+    color: black;
+    margin: 10px;
+}
