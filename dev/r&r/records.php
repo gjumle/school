@@ -28,6 +28,9 @@ if (isset($_GET["delete_id"])) {
 
 if (isset($_POST['submit'])) {
 	if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
+		if (!$user_id) {
+			echo "User does not exist. Change the 'Username'.";
+		}
 		$distance = $_POST['distance'];
 		$distance_id = get_distance($conn, $distance);
 		$str_time = $_POST['time'];
