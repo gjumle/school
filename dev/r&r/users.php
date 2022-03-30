@@ -41,6 +41,11 @@ if (isset($_POST['submit'])) {
 			$sql = "INSERT INTO users (user_name, f_name, s_name, email, age) VALUES ('" . $username . "', '" . $f_name . "', '" . $s_name . "', '" . $email . "', '" . $age . "')";
 		}
 		$result = mysqli_query($conn, $sql);
+		$username = "";
+		$f_name = "";
+		$s_name = "";
+		$email = "";
+		$age = "";
 	} else {
 		echo "Fill out all fields";
 	}
