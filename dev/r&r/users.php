@@ -29,12 +29,11 @@ if (isset($_GET["delete_id"])) {
 
 if (isset($_POST['submit'])) {
 	if (isset($_POST['username'], $_POST['f_name'], $_POST['s_name'], $_POST['email'], $_POST['age'])) {
-		$user_id = get_user($conn, $username);
-		if (isset($e_di)) {
-			echo "Edituji . . . ";
+		if (isset($_GET["edit_id"])) {
 			$sql = 'UPDATE users SET f_name =' . $f_name . ', s_name ="' . $s_name . '", email ="' . $email . '" WHERE u_id =' . $u_id;
 		} else {
 			$username = $_POST['username'];
+			$user_id = get_user($conn, $username);
 			$f_name = $_POST['f_name'];
 			$s_name = $_POST['s_name'];
 			$email = $_POST['email'];

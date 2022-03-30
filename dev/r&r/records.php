@@ -26,14 +26,14 @@ if (isset($_GET["delete_id"])) {
 
 if (isset($_POST['submit'])) {
 	if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
-		$distance = $_POST['distance'];
 		$distance_id = get_distance($conn, $distance);
-		$str_time = $_POST['time'];
-		$username = $_POST['username'];
 		$user_id = get_user($conn, $username);
 		if (isset($_GET["edit_id"])) {
 			$sql = 'UPDATE records SET distance_id =' . $distance_id . ', time_rec ="' . $str_time . '", user_id =' . $user_id . ' WHERE r_id =' . $e_id;
 		} else {
+			$distance = $_POST['distance'];
+			$str_time = $_POST['time'];
+			$username = $_POST['username'];
 			$sql = "INSERT INTO records (distance_id, time_rec, user_id) VALUES (" . $distance_id . ", '" . $str_time . "', '" . $user_id . "')";
 		}
 		$result = mysqli_query($conn, $sql);
@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) {
 	</div>
 	<div class="inputs" id="success">
 		<form class="form" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-			<select class="input" name="distance" id="distance" value="<?php echo $distance ?>">
+			<select class="input" name="distance" id="distance">
 				<option value=0>Distance</option>
 				<option value=1>1 Km</option>
 				<option value=2>5 Km</option>
