@@ -30,22 +30,23 @@ if (isset($_POST['submit'])) {
 	if (isset($_POST['distance'], $_POST['time'], $_POST['username'])) {
 		if (!$user_id) {
 			echo "User does not exist. Change the 'Username'.";
-		}
-		$distance = $_POST['distance'];
-		$distance_id = get_distance($conn, $distance);
-		$str_time = $_POST['time'];
-		$username = $_POST['username'];
-		$user_id = get_user($conn, $username);
-		if (isset($_GET["edit_id"])) {
-			$sql = 'UPDATE records SET distance_id =' . $distance_id . ', time_rec ="' . $str_time . '", user_id =' . $user_id . ' WHERE r_id =' . $e_id;
 		} else {
-			$sql = "INSERT INTO records (distance_id, time_rec, user_id) VALUES (" . $distance_id . ", '" . $str_time . "', '" . $user_id . "')";
+			$distance = $_POST['distance'];
+			$distance_id = get_distance($conn, $distance);
+			$str_time = $_POST['time'];
+			$username = $_POST['username'];
+			$user_id = get_user($conn, $username);
+			if (isset($_GET["edit_id"])) {
+				$sql = 'UPDATE records SET distance_id =' . $distance_id . ', time_rec ="' . $str_time . '", user_id =' . $user_id . ' WHERE r_id =' . $e_id;
+			} else {
+				$sql = "INSERT INTO records (distance_id, time_rec, user_id) VALUES (" . $distance_id . ", '" . $str_time . "', '" . $user_id . "')";
+			}
+			$result = mysqli_query($conn, $sql);
+			$distance = "";
+			$str_time = "";
+			$username = "";
+			$result = "";
 		}
-		$result = mysqli_query($conn, $sql);
-		$distance = "";
-		$str_time = "";
-		$username = "";
-		$result = "";
 	} else {
 		echo "Fill out all fields";
 	}
