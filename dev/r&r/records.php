@@ -31,8 +31,7 @@ if (isset($_POST['submit'])) {
 		$str_time = $_POST['time'];
 		$username = $_POST['username'];
 		$user_id = get_user($conn, $username);
-		if (isset($e_di)) {
-			echo "Edituji . . . ";
+		if (isset($_GET["edit_id"])) {
 			$sql = 'UPDATE records SET distance_id =' . $distance_id . ', time_rec ="' . $str_time . '", user_id =' . $user_id . ' WHERE r_id =' . $e_id;
 		} else {
 			$sql = "INSERT INTO records (distance_id, time_rec, user_id) VALUES (" . $distance_id . ", '" . $str_time . "', '" . $user_id . "')";
