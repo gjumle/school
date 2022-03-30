@@ -31,3 +31,5 @@ INSERT INTO distance (distance_name) VALUES (1), (5), (10), (21), (31), (42), (6
 UPDATE records r 
 	SET distance_id ='2', time_rec ='01:05:12', user_id ='1'
 	WHERE r_id ='1';
+
+INSERT INTO records (distance_id, time_rec, user_id) VALUES ( 5, '01:10:00', 1);
