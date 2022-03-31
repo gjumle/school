@@ -15,7 +15,6 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 
 if (isset($_GET["edit_id"])) {
 	$_SESSION['edit_id_r'] = $_GET['edit_id'];
-	echo $_SESSION['edit_id_r'];
 
     $distance = get_value_r($conn, $_SESSION['edit_id_r'], 'Distance');
     $str_time = get_value_r($conn, $_SESSION['edit_id_r'], 'Time');
@@ -45,7 +44,6 @@ if (isset($_POST['submit'])) {
 			} else {
 				$sql = "INSERT INTO records (distance_id, time_rec, user_id) VALUES (" . $distance . ", '" . $str_time . "', '" . $user_id . "')";
 			}
-			echo $sql;
 			$result = mysqli_query($conn, $sql);
 
 			$distance = "";
