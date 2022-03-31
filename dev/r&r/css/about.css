@@ -13,9 +13,8 @@
 }
 
 h1.about-title {
-    flex: 1;
-    margin: 15px;
     color: orangered;
+    margin: 15px;
 }
 
 p.about-text {
