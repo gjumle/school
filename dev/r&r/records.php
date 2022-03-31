@@ -14,13 +14,13 @@ session_start();
 $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 
 if (isset($_GET["edit_id"])) {
-	$_SESSION['edit_id'] = $_GET['edit_id'];
+	$_SESSION['edit_id_r'] = $_GET['edit_id'];
+	echo $_SESSION['edit_id_r'];
 
-    $distance = get_value_r($conn, $_SESSION['edit_id'], 'Distance');
-    $str_time = get_value_r($conn, $_SESSION['edit_id'], 'Time');
-    $user_name = get_value_r($conn, $_SESSION['edit_id'], 'Username');
-	
-	$distance_id = get_distance($conn, $distance);
+    $distance = get_value_r($conn, $_SESSION['edit_id_r'], 'Distance');
+    $str_time = get_value_r($conn, $_SESSION['edit_id_r'], 'Time');
+    $user_name = get_value_r($conn, $_SESSION['edit_id_r'], 'Username');
+
 	$user_id = get_user($conn, $user_name);
 }
 
@@ -35,16 +35,15 @@ if (isset($_POST['submit'])) {
 	$str_time = $_POST['time'];
 	$user_name = $_POST['user_name'];
 	
-	$distance_id = get_distance($conn, $distance);
 	$user_id = get_user($conn, $user_name);
 	if (($distance && $str_time && $user_id) != FALSE) {
 		if (!$user_id) {
 			echo "User does not exist. Change the username.";
 		} else {
-			if ($_SESSION['edit_id'] != FALSE) {
-				$sql = 'UPDATE records SET distance_id =' . $distance_id . ', time_rec ="' . $str_time . '", user_id =' . $user_id . ' WHERE r_id =' . $_SESSION['edit_id'];
+			if ($_SESSION['edit_id_r'] != FALSE) {
+				$sql = 'UPDATE records SET distance_id =' . $distance . ', time_rec ="' . $str_time . '", user_id =' . $user_id . ' WHERE r_id =' . $_SESSION['edit_id_r'];
 			} else {
-				$sql = "INSERT INTO records (distance_id, time_rec, user_id) VALUES (" . $distance_id . ", '" . $str_time . "', '" . $user_id . "')";
+				$sql = "INSERT INTO records (distance_id, time_rec, user_id) VALUES (" . $distance . ", '" . $str_time . "', '" . $user_id . "')";
 			}
 			echo $sql;
 			$result = mysqli_query($conn, $sql);
