@@ -4,44 +4,47 @@ include "./functions/basics.php";
 include "./functions/records.php";
 include "./functions/users.php";
 
-$username = "";
+$user_name = "";
 $f_name = "";
 $s_name = "";
 $email = "";
 $age = "";
 
+session_start();
+
 $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 
 if (isset($_GET["edit_id"])) {
-	$e_id = $_GET['edit_id'];
-    $username = get_value_u($conn, $e_id, 'Username');
-	$user_id = get_user($conn, $username);
-    $f_name = get_value_u($conn, $e_id, 'Firstname');
-    $s_name = get_value_u($conn, $e_id, 'Surname');
-	$email = get_value_u($conn, $e_id, 'Email');
-	$age = get_value_u($conn, $e_id, 'Age');
+	$_SESSION['edit_id'] = $_GET['edit_id'];
+    $user_name = get_value_u($conn, $_SESSION['edit_id'], 'Username');
+    $f_name = get_value_u($conn, $_SESSION['edit_id'], 'Firstname');
+    $s_name = get_value_u($conn, $_SESSION['edit_id'], 'Surname');
+	$email = get_value_u($conn, $_SESSION['edit_id'], 'Email');
+	$age = get_value_u($conn, $_SESSION['edit_id'], 'Age');
 }
 
-if (isset($_GET["delete_id"])) {
+if (isset($_GET['delete_id'])) {
 	$d_id = $_GET['delete_id'];
-    $sql = 'DELETE FROM records WHERE r_id =' . $d_id . ' LIMIT 1';
+    $sql = 'DELETE FROM users WHERE u_id =' . $d_id . ' LIMIT 1';
     $result = mysqli_query($conn, $sql);
 }
 
 if (isset($_POST['submit'])) {
-	if (isset($_POST['username'], $_POST['f_name'], $_POST['s_name'], $_POST['email'], $_POST['age'])) {
-		$username = $_POST['username'];
-		$f_name = $_POST['f_name'];
-		$s_name = $_POST['s_name'];
-		$email = $_POST['email'];
-		$age = $_POST['age'];
-		if (isset($_GET["edit_id"])) {
-			$sql = 'UPDATE users SET f_name =' . $f_name . ', s_name ="' . $s_name . '", email ="' . $email . '" WHERE u_id =' . $e_id;
+	$user_name = $_POST['user_name'];
+	$f_name = $_POST['f_name'];
+	$s_name = $_POST['s_name'];
+	$email = $_POST['email'];
+	$age = $_POST['age'];
+	if (($user_name && $f_name && $s_name && $email && $age) == TRUE) {
+		if ($_SESSION['edit_id'] != FALSE) {
+			$sql = 'UPDATE users SET user_name ="' . $user_name . '", f_name ="' . $f_name . '", s_name ="' . $s_name . '", email ="' . $email . '", age =' . $age . ' WHERE u_id =' . $_SESSION['edit_id'];
 		} else {
-			$sql = "INSERT INTO users (user_name, f_name, s_name, email, age) VALUES ('" . $username . "', '" . $f_name . "', '" . $s_name . "', '" . $email . "', '" . $age . "')";
+			$sql = "INSERT INTO users (user_name, f_name, s_name, email, age) VALUES ('" . $user_name . "', '" . $f_name . "', '" . $s_name . "', '" . $email . "', " . $age . ")";
 		}
+		echo $sql;
 		$result = mysqli_query($conn, $sql);
-		$username = "";
+		
+		$user_name = "";
 		$f_name = "";
 		$s_name = "";
 		$email = "";
@@ -50,7 +53,6 @@ if (isset($_POST['submit'])) {
 		echo "Fill out all fields";
 	}
 }
-
 
 ?>
 
@@ -74,7 +76,7 @@ if (isset($_POST['submit'])) {
 	</div>
 	<div class="inputs" id="success">
 		<form class="form" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-			<input class="input" type="text" name="username" id="username" placeholder="Username" value="<?php echo $username; ?>">
+			<input class="input" type="text" name="user_name" id="user_name" placeholder="Username" value="<?php echo $user_name; ?>">
 			<input class="input" type="text" name="f_name" id="f_name" placeholder="Firstname" value="<?php echo $f_name; ?>">
 			<input class="input" type="text" name="s_name" id="s_name" placeholder="Surname" value="<?php echo $s_name; ?>">
 			<input class="input" type="text" name="email" id="email" placeholder="E-mail" value="<?php echo $email; ?>">

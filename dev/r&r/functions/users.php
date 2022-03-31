@@ -1,7 +1,7 @@
 <?php
 
-function insert_user($conn, $username) {
-	$sql = "INSERT INTO users (user_name) VALUES ('" . $username . "')";
+function insert_user($conn, $user_name) {
+	$sql = "INSERT INTO users (user_name) VALUES ('" . $user_name . "')";
 	if (mysqli_query($conn, $sql)) {
 		return success('User creation');
 	} else {
@@ -9,13 +9,12 @@ function insert_user($conn, $username) {
 	}
 }
 
-function get_user($conn, $username) {
-	$sql = "SELECT u_id FROM users WHERE user_name ='" . $username . "'";
+function get_user($conn, $user_name) {
+	$sql = "SELECT u_id FROM users WHERE user_name ='" . $user_name . "'";
 	$result = mysqli_query($conn, $sql);
 	if (mysqli_num_rows($result) > 0) {
 		while ($row = mysqli_fetch_assoc($result)) {
-			$user_id = $row["u_id"];
-			return $user_id;
+			return $row["u_id"];
 		}
 	} else {
 		return "0 results.";
