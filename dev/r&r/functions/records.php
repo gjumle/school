@@ -16,9 +16,8 @@ function get_distance($conn, $distance) {
 	$result = mysqli_query($conn, $sql);
 	if (mysqli_num_rows($result) > 0) {
 		while ($row = mysqli_fetch_assoc($result)) {
-			$user_id = $row["d_id"];
-			return $distance_id;
-		}
+			return $row["d_id"];
+		}	
 	} else {
 		return "0 results.";
 	}

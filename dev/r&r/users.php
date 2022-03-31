@@ -41,7 +41,6 @@ if (isset($_POST['submit'])) {
 		} else {
 			$sql = "INSERT INTO users (user_name, f_name, s_name, email, age) VALUES ('" . $user_name . "', '" . $f_name . "', '" . $s_name . "', '" . $email . "', " . $age . ")";
 		}
-		echo $sql;
 		$result = mysqli_query($conn, $sql);
 		
 		$user_name = "";
