@@ -1,23 +1,44 @@
-.about-title {
+.title {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 25vh;
+    height: 15vh;
 }
 
-.about-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 25vh;
-}
-
-h1.about-title {
+h1.title {
     color: orangered;
     margin: 15px;
 }
 
-p.about-text {
+.text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background-color: orangered;
+    line-height: 1.5;
+}
+
+.text {
+    width: 50vw;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+
+p.text {
     color: black;
-    margin: 10px;
+    font-size: 16px;
+}
+
+ul {
+    margin-left: 2vw;
+}
+
+.media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
 }
