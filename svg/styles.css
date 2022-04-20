@@ -11,15 +11,38 @@
 	fill: rgb(220, 10, 10);
 }
 
+#chimney {
+	fill: rgb(160, 160, 160);
+}
+
 #house-body {
 	fill: rgb(255, 255, 125);
 }
 
 .window {
 	fill: rgb(0, 150, 220);
+	stroke: rgb(200, 200, 150);
+	stroke-width: 7.5px;
+}
+
+#door {
+	fill: rgb(130, 50, 10);
 	stroke: black;
+	stroke-width: 7.5px;
+}
+
+.plot {
+	fill: rgb(255, 255, 255);
+}
+
+.deska {
+	fill: rgb(255, 255, 255);
 }
 
 #ground {
-	fill: rgb(120, 85, 0);
+	fill: rgb(20, 120, 15);
+}
+
+#sun {
+	fill: rgb(255, 255, 0);
 }
