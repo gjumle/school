@@ -27,12 +27,23 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 	<div class="title">
 		<h1>Wellcome to r&r</h1>
 	</div>
-	<div class="text-container">
-		<div class="text" id="services">
-			<p id="media-text-records">
-				Keep track of your progress.
-			</p>
+	<div class="media-container">
+		<div class="media">
+			<img class="media-img" src="./svg/track.svg">
+			<img class="media-img" src="./svg/data.svg">
+			<img class="media-img" src="./svg/users.svg">
 		</div>
 	</div>
+	<div class="text-container" id="media-text-container">
+		<p class="media-text" id="media-text-records">
+			Keep track of your progress.
+		</p>
+		<p class="media-text" id="media-text-data">
+			Solid analytics.
+		</p>
+		<p class="media-text" id="media-text-users">
+			Comparasion between users.
+		</p>
+		</div>
 </body>
 </html>
