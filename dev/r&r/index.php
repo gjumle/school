@@ -11,6 +11,7 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 	<meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/nav.css">
 	<link rel="stylesheet" type="text/css" href="./css/home.css">
+	<link rel="stylesheet" type="text/css" href="./css/about.css">
 	<script type="text/javascript" src="./js/records.js"></script>
 </head>
 <body>
@@ -23,3 +24,15 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 			<li class="nav-link"><a class="nav-link" href="./about.php">About</a></li>
 		</ul>
 	</div>
+	<div class="title">
+		<h1>Wellcome to r&r</h1>
+	</div>
+	<div class="text-container">
+		<div class="text" id="services">
+			<p id="media-text-records">
+				Keep track of your progress.
+			</p>
+		</div>
+	</div>
+</body>
+</html>
