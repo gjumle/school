@@ -73,7 +73,7 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 		</div>
 	</div>
 	<div class="media">
-			<img src="./svg/erd.svg">
+			<img class="about-img" src="./svg/erd.svg">
 	</div>
 </main>
 <footer class="footer">

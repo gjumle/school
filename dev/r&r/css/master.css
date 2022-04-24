@@ -15,7 +15,7 @@
 
 h1.title {
     color: orangered;
-    margin: 15px;
+    margin: 2em;
 }
 
 .text-container {
@@ -37,7 +37,7 @@ h1.title {
 
 p.text {
     color: black;
-    font-size: 16px;
+    font-size: 1em;
 }
 
 #items {
@@ -48,7 +48,11 @@ p.text {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50%;
+    height: 50vh;
+}
+
+.about-img {
+    height: 25vh;
 }
 
 /* HOME */
@@ -138,4 +142,17 @@ th, td {
 
 #email {
     width: 200px;
+}
+
+/* MEDIA */
+@media screen and (max-width: 600px) {
+	.home-container {
+		flex-direction: column;
+	}
+    .text-container {
+        height: 65vh;
+    }
+    .text {
+        width: 65vw;
+    }
 }

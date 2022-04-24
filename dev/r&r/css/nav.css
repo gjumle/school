@@ -20,3 +20,11 @@
 li.nav-link:hover {
 	background-color: orangered;
 }
+
+/* MEDIA */
+
+@media screen and (max-width: 600px) {
+	.nav-links {
+		flex-direction: column;
+	}
+} 
