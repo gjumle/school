@@ -10,8 +10,8 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 <head>
 	<meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/nav.css">
-	<link rel="stylesheet" type="text/css" href="./css/home.css">
-	<link rel="stylesheet" type="text/css" href="./css/about.css">
+	<link rel="stylesheet" type="text/css" href="./css/master.css">
+	<link rel="stylesheet" type="text/css" href="./css/foot.css">
 	<script type="text/javascript" src="./js/records.js"></script>
 </head>
 <body>
@@ -29,21 +29,25 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 	</div>
 	<div class="media-container">
 		<div class="media">
-			<img class="media-img" src="./svg/track.svg">
-			<img class="media-img" src="./svg/data.svg">
-			<img class="media-img" src="./svg/users.svg">
+			<div class="text-container">
+				<img class="media-img" src="./svg/track.svg">
+				<p class="media-text" id="media-text-records">
+					Keep track of your progress.
+				</p>
+			</div>
+			<div class="text-container">
+				<img class="media-img" src="./svg/data.svg">
+				<p class="media-text" id="media-text-data">
+					Solid analytics.
+				</p>
+			</div>
+			<div class="text-container">
+				<img class="media-img" src="./svg/users.svg">
+				<p class="media-text" id="media-text-users">
+					Comparasion between users.
+				</p>
+			</div>
 		</div>
 	</div>
-	<div class="text-container" id="media-text-container">
-		<p class="media-text" id="media-text-records">
-			Keep track of your progress.
-		</p>
-		<p class="media-text" id="media-text-data">
-			Solid analytics.
-		</p>
-		<p class="media-text" id="media-text-users">
-			Comparasion between users.
-		</p>
-		</div>
 </body>
 </html>

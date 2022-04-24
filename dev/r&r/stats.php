@@ -9,8 +9,9 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/nav.css">
-	<link rel="stylesheet" type="text/css" href="./css/home.css">
+	<link rel="stylesheet" type="text/css" href="./css/nav.css">
+	<link rel="stylesheet" type="text/css" href="./css/master.css">
+	<link rel="stylesheet" type="text/css" href="./css/foot.css">
 	<script type="text/javascript" src="./js/records.js"></script>
 </head>
 <body>
