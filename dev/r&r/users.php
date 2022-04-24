@@ -112,5 +112,10 @@ if (isset($_POST['submit'])) {
 			return "0 results.";
 		}
 	?>
+	<footer class="footer">
+		<div class="foot-text">
+			<p id="foot-text">Leoš Gjumija 2022</p>
+		</div>
+	</footer>
 </body>
 </html>

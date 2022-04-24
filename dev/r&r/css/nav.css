@@ -1,10 +1,12 @@
 .nav-links {
 	background-color: black;
-	
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	list-style: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
 
 .nav-link {

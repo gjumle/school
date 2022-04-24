@@ -24,3 +24,5 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 			<li class="nav-link"><a class="nav-link" href="./about.php">About</a></li>
 		</ul>
 	</div>
+</body>
+</html>
