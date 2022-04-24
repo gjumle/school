@@ -24,7 +24,6 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 			<li class="nav-link active"><a class="nav-link" href="./about.php">About</a></li>
 		</ul>
 	</div>
-<main>
 	<div class="title" id="about">
 		<h1>About this project</h1>
 	</div>
@@ -75,10 +74,10 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 	<div class="media">
 			<img class="about-img" src="./svg/erd.svg">
 	</div>
-</main>
-<footer class="footer">
-	<div class="foot-text">
-		<p id="foot-text">Leoš Gjumija 2022</p>
-	</div>
-	
-</footer>	
+	<footer class="footer">
+		<div class="foot-text">
+			<p id="foot-text">Leoš Gjumija 2022</p>
+		</div>
+	</footer>
+</body>
+</html>
