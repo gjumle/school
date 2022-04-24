@@ -30,7 +30,7 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 	<div class="home-container">
 		<div class="home-item">
 			<div class="home-media">
-				<img src="./svg/track.svg">
+				<img class="home-img" src="./svg/track.svg">
 			</div>
 			<div class="home-text">
 				<p id="media-text-records">
@@ -40,7 +40,7 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 		</div>
 		<div class="home-item">
 			<div class="home-media">
-				<img src="./svg/data.svg">
+				<img class="home-img" src="./svg/data.svg">
 			</div>
 			<div class="home-text">
 				<p id="media-text-data">
@@ -50,7 +50,7 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 		</div>
 		<div class="home-item">
 			<div class="home-media">
-				<img src="./svg/users.svg">
+				<img class="home-img" src="./svg/users.svg">
 			</div>
 			<div class="home-text">
 				<p id="media-text-users">
