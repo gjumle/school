@@ -4,6 +4,8 @@
 	padding: 0;
 }
 
+/* ABOUT */
+
 .title {
     display: flex;
     align-items: center;
@@ -49,20 +51,38 @@ p.text {
     height: 50%;
 }
 
-.media-container {
-	background-color: orangered;
+/* HOME */
+
+.home-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: orangered;
+    line-height: 1.5;
 }
 
-.media-img {
-	height: 50%;
-	margin: 10vh;
+.home-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.media-text {
-	color: white;
-	font-size: 20px;
+.home-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5vh;
 }
 
+img  {
+    height: 15vh;
+}
+
+.home-text {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 2.5vh;
+}
 
 /* IN & OUT */
 
