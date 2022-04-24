@@ -91,16 +91,24 @@ p.text {
 /* IN & OUT */
 
 .inputs {
-	align-items: center;
 	display: flex;
-	height: 50vh;
+	align-items: center;
 	justify-content: center;
+	height: 25vh;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .input {
 	border: 1px solid black;
 	color: black;
-	padding: 14px 16px;
+	padding: 1em 2em;
+    margin: 0.5vw;
+    width: 15vw;
 }
 
 #submit {
@@ -117,6 +125,7 @@ p.text {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+    height: 50vh;
 }
 
 table, td, th {  
@@ -129,7 +138,7 @@ table {
 }
 
 th, td {
-	padding: 15px;
+	padding: 0.5em;
 }
 
 #edit {
@@ -138,10 +147,6 @@ th, td {
 
 #delete {
 	color: red;
-}
-
-#email {
-    width: 200px;
 }
 
 /* MEDIA */
@@ -154,5 +159,15 @@ th, td {
     }
     .text {
         width: 65vw;
+    }
+    .inputs, .outputs {
+        flex-direction: column;
+    }
+    .form {
+        flex-direction: column;
+        height: 50vh;
+    }
+    .input {
+        width: 40vw;
     }
 }
