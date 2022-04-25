@@ -22,7 +22,7 @@ if (isset($_GET["edit_id"])) {
     $s_name = get_value_u($conn, $_SESSION['edit_id'], 'Surname');
 	$email = get_value_u($conn, $_SESSION['edit_id'], 'Email');
 	$age = get_value_u($conn, $_SESSION['edit_id'], 'Age');
-	$password = get_value_u($conn, $_SESSION['password_id'], 'Password');
+	$password = get_value_u($conn, $_SESSION['edit_id'], 'Password');
 }
 
 if (isset($_GET['delete_id'])) {
