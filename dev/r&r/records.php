@@ -100,6 +100,7 @@ if (isset($_POST['submit'])) {
 		echo "<div class='outputs'>";
 		echo "<table>";
 		echo "<tr><th>ID</th>";
+		echo "<th>Date</th>";
 		echo "<th>Distance (Km)</th>";
 		echo "<th>Time (HH:MM:SS)</th>";
 		echo "<th>Username</th>";
@@ -108,6 +109,7 @@ if (isset($_POST['submit'])) {
 			while ($row = mysqli_fetch_assoc($result)) {
 				echo "<tr>
 					<td>". $row["ID"] . "</td>
+					<td>" . $row["Date"] . "</td>
 					<td>" . $row["Distance"] . "</td>
 					<td>" . $row["Time"] . "</td>
 					<td>" . $row["Username"] . "</td>

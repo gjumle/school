@@ -18,7 +18,7 @@ CREATE TABLE distance (
 DROP TABLE distance;
 
 CREATE VIEW web_records AS
-	SELECT r_id ID, distance_name Distance, time_rec Time, user_name Username FROM records r
+	SELECT r_id ID, t_stamp Date, distance_name Distance, time_rec Time, user_name Username FROM records r
 		JOIN users u ON r.user_id=u.u_id
 		JOIN distance d ON r.distance_id=d.d_id;
 
