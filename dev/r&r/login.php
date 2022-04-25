@@ -9,6 +9,7 @@ $f_name = "";
 $s_name = "";
 $email = "";
 $age = "";
+$password = "";
 
 session_start();
 
@@ -21,6 +22,7 @@ if (isset($_GET["edit_id"])) {
     $s_name = get_value_u($conn, $_SESSION['edit_id'], 'Surname');
 	$email = get_value_u($conn, $_SESSION['edit_id'], 'Email');
 	$age = get_value_u($conn, $_SESSION['edit_id'], 'Age');
+	$password = get_value_u($conn, $_SESSION['password_id'], 'Password');
 }
 
 if (isset($_GET['delete_id'])) {
@@ -39,7 +41,7 @@ if (isset($_POST['submit'])) {
 		if ($_SESSION['edit_id'] != FALSE) {
 			$sql = 'UPDATE users SET user_name ="' . $user_name . '", f_name ="' . $f_name . '", s_name ="' . $s_name . '", email ="' . $email . '", age =' . $age . ' WHERE u_id =' . $_SESSION['edit_id'];
 		} else {
-			$sql = "INSERT INTO users (user_name, f_name, s_name, email, age) VALUES ('" . $user_name . "', '" . $f_name . "', '" . $s_name . "', '" . $email . "', " . $age . ")";
+			$sql = "INSERT INTO users (user_name, f_name, s_name, email, age, password_hash) VALUES ('" . $user_name . "', '" . $f_name . "', '" . $s_name . "', '" . $email . "', " . $age . ", ' . $password_hash . "')";
 		}
 		$result = mysqli_query($conn, $sql);
 		
@@ -48,6 +50,7 @@ if (isset($_POST['submit'])) {
 		$s_name = "";
 		$email = "";
 		$age = "";
+		$password_hash = "";
 	} else {
 		echo "Fill out all fields";
 	}
@@ -80,6 +83,7 @@ if (isset($_POST['submit'])) {
 			<input class="input" type="text" name="s_name" id="s_name" placeholder="Surname" value="<?php echo $s_name; ?>">
 			<input class="input" type="text" name="email" id="email" placeholder="E-mail" value="<?php echo $email; ?>">
 			<input class="input" type="text" name="age" id="age" placeholder="Age" value="<?php echo $age; ?>">
+			<input class="input" type="text" name="password" id="password" placeholder="Password" value="<?php echo $password; ?>">
 			<input class="input" type="submit" name="submit" id="submit" value="OK">
 		</form>	
 	</div>
@@ -94,6 +98,7 @@ if (isset($_POST['submit'])) {
 		echo "<th>Surname</th>";
 		echo "<th>E-mail</th>";
 		echo "<th>Age</th>";
+		echo "<th>Password</th>";
 		echo "<th colspan='2';'>Action</th></tr>";
 		if (mysqli_num_rows($result) > 0) {
 			while ($row = mysqli_fetch_assoc($result)) {
@@ -104,6 +109,7 @@ if (isset($_POST['submit'])) {
 					<td>" . $row["Surname"] . "</td>
 					<td>" . $row["Email"] . "</td>
 					<td>" . $row["Age"] . "</td>
+					<td>" . $row["Password"] . "</td>
 					<td><a id='edit' href='?edit_id=" . $row["ID"] . "'>Edit</a></td>
 					<td><a id='delete' onclick ='delete_check()' href='?delete_id=" . $row["ID"] . "''>Delete</a></td></tr>";
 			}
