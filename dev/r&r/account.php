@@ -20,17 +20,17 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 			<li class="nav-link"><a class="nav-link" href="./index.php">Home</a></li>
 			<li class="nav-link"><a class="nav-link" href="./records.php">Records</a></li>
 			<li class="nav-link"><a class="nav-link" href="./stats.php">Statistics</a></li>
-            <li class="nav-link active"><a class="nav-link" href="./logon.php">Account</a></li>
+            <li class="nav-link active"><a class="nav-link" href="./account.php">Account</a></li>
 			<li class="nav-link"><a class="nav-link" href="./about.php">About</a></li>
 		</ul>
 	</div>
 	<div class="title">
-		<h1>Wellcome to r&r</h1>
+		<h1>r&r login / registration</h1>
 	</div>
 	<div class="home-container">
 		<div class="home-item">
 			<div class="home-media">
-				<a href="./log.php"><img class="home-img" src="./svg/log.svg"></a>
+				<a href="./login.php"><img class="home-img" src="./svg/log.svg"></a>
 			</div>
 			<div class="home-text">
 				<p id="media-text-records">
@@ -40,7 +40,7 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 		</div>
 		<div class="home-item">
 			<div class="home-media">
-				<a href="./reg.php"><img class="home-img" src="./svg/reg.svg"></a>
+				<a href="./register.php"><img class="home-img" src="./svg/reg.svg"></a>
 			</div>
 			<div class="home-text">
 				<p id="media-text-data">

@@ -46,8 +46,8 @@ if (isset($_POST['submit'])) {
 			<li class="nav-link"><a class="nav-link" href="./about.php">About</a></li>
 		</ul>
 	</div>
-	<div class="inputs" id="success">
-		<form class="form" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+	<div class="inputs login" id="login">
+		<form class="form login" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 			<input class="input" type="text" name="user_name" id="user_name" placeholder="Username" value="<?php echo $user_name; ?>">
 			<input class="input" type="text" name="password" id="password" placeholder="Password" value="<?php echo $password; ?>">
 			<input class="input" type="submit" name="submit" id="submit" value="OK">

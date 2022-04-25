@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
 			<li class="nav-link"><a class="nav-link" href="./about.php">About</a></li>
 		</ul>
 	</div>
-	<div class="inputs" id="success">
+	<div class="inputs" id="records">
 		<form class="form" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 			<select class="input" name="distance" id="distance">
 				<option value=0>Distance</option>

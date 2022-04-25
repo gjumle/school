@@ -110,6 +110,16 @@ p.text {
     width: 15vw;
 }
 
+.login {
+    flex-direction: column;
+    height: 25vh;
+    margin-top: 15vh;
+}
+
+#login {
+    margin-bottom: 55vh;
+}
+
 #submit {
 	background-color: black;
 	color: white;

@@ -69,11 +69,11 @@ if (isset($_POST['submit'])) {
 			<li class="nav-link"><a class="nav-link" href="./index.php">Home</a></li>
 			<li class="nav-link"><a class="nav-link" href="./records.php">Records</a></li>
 			<li class="nav-link"><a class="nav-link" href="./stats.php">Statistics</a></li>
-            <li class="nav-link active"><a class="nav-link" href="./logon.php">Account</a></li>
+            <li class="nav-link active"><a class="nav-link" href="./account.php">Account</a></li>
 			<li class="nav-link"><a class="nav-link" href="./about.php">About</a></li>
 		</ul>
 	</div>
-	<div class="inputs" id="success">
+	<div class="inputs" id="users">
 		<form class="form" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 			<input class="input" type="text" name="user_name" id="user_name" placeholder="Username" value="<?php echo $user_name; ?>">
 			<input class="input" type="text" name="f_name" id="f_name" placeholder="Firstname" value="<?php echo $f_name; ?>">
