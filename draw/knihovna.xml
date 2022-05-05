@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-05-05T08:50:49.619Z" agent="5.0 (Windows)" etag="FbpkAZKFSHPnqxdSLIv1" version="17.4.6" type="github">
+<mxfile host="app.diagrams.net" modified="2022-05-05T09:55:29.252Z" agent="5.0 (Windows)" etag="I3tny5mcn9wHfanV5K3R" version="17.4.6" type="github">
   <diagram id="M0KmAAV76cXTpjR5iRMa" name="Page-1">
     <mxGraphModel dx="1278" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -143,6 +143,51 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="390" y="420" as="sourcePoint" />
             <mxPoint x="550" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TXKfK-zZMsHB78dyxmuf-38" value="autor" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="940" y="545" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TXKfK-zZMsHB78dyxmuf-39" value="prijmeni" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="930" y="610" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TXKfK-zZMsHB78dyxmuf-40" value="jmeno" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="610" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TXKfK-zZMsHB78dyxmuf-41" value="a_id" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="810" y="610" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TXKfK-zZMsHB78dyxmuf-42" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=none;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="TXKfK-zZMsHB78dyxmuf-37" target="TXKfK-zZMsHB78dyxmuf-2">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="620" y="460" as="sourcePoint" />
+            <mxPoint x="720" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TXKfK-zZMsHB78dyxmuf-37" value="ma" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="810" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXKfK-zZMsHB78dyxmuf-43" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=none;startArrow=ERmandOne;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="TXKfK-zZMsHB78dyxmuf-38" target="TXKfK-zZMsHB78dyxmuf-37">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="990" y="545" as="sourcePoint" />
+            <mxPoint x="670" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TXKfK-zZMsHB78dyxmuf-44" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="TXKfK-zZMsHB78dyxmuf-41" target="TXKfK-zZMsHB78dyxmuf-38">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="310" as="sourcePoint" />
+            <mxPoint x="770" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TXKfK-zZMsHB78dyxmuf-46" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="TXKfK-zZMsHB78dyxmuf-39" target="TXKfK-zZMsHB78dyxmuf-38">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="870" y="620" as="sourcePoint" />
+            <mxPoint x="950" y="595" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TXKfK-zZMsHB78dyxmuf-47" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="TXKfK-zZMsHB78dyxmuf-40" target="TXKfK-zZMsHB78dyxmuf-38">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="990" y="620" as="sourcePoint" />
+            <mxPoint x="1000" y="595" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
