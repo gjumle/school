@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-02T07:21:44.635Z" agent="5.0 (Windows)" etag="6TR8p8LKsRz1Pv0CmyAi" version="18.2.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-02T07:28:02.927Z" agent="5.0 (Windows)" etag="vnmIcWN6agkeYgFCy21q" version="18.2.0" type="github">
   <diagram id="ViacQ8fwWvPRITRj0JHx" name="Page-1">
     <mxGraphModel dx="1278" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -13,8 +13,14 @@
         <mxCell id="OO18w47lmKbV_DsNL0jp-2" value="array input" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
           <mxGeometry x="354" y="130" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="OO18w47lmKbV_DsNL0jp-3" value="arr" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="374" y="230" width="80" height="80" as="geometry" />
+        <mxCell id="OO18w47lmKbV_DsNL0jp-3" value="arr[i] &amp;lt; arr[i+1]" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="310" width="168" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="OO18w47lmKbV_DsNL0jp-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OO18w47lmKbV_DsNL0jp-1" target="OO18w47lmKbV_DsNL0jp-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="320" as="sourcePoint" />
+            <mxPoint x="440" y="270" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
