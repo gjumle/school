@@ -116,8 +116,18 @@ p.text {
     margin-top: 15vh;
 }
 
+.register {
+    flex-direction: column;
+    height: 25vh;
+    margin-top: 35vh;
+}
+
 #login {
     margin-bottom: 55vh;
+}
+
+#register {
+    margin-bottom: 70vh;
 }
 
 #submit {

@@ -5,6 +5,10 @@ include "./functions/records.php";
 include "./functions/users.php";
 
 $user_name = "";
+$fisrt_name = "";
+$sur_name = "";
+$e_mail = "";
+$age = "";
 $password = "";
 
 session_start();
@@ -20,6 +24,10 @@ if (isset($_POST['submit'])) {
 		$result = mysqli_query($conn, $sql);
 		
 		$user_name = "";
+        $fisrt_name = "";
+        $sur_name = "";
+        $e_mail = "";
+        $age = "";
 		$password_hash = "";
 	} else {
 		echo "Fill out all fields";
@@ -46,9 +54,13 @@ if (isset($_POST['submit'])) {
 			<li class="nav-link"><a class="nav-link" href="./about.php">About</a></li>
 		</ul>
 	</div>
-	<div class="inputs login" id="login">
-		<form class="form login" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+	<div class="inputs registe" id="register">
+		<form class="form register" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 			<input class="input" type="text" name="user_name" id="user_name" placeholder="Username" value="<?php echo $user_name; ?>">
+            <input class="input" type="text" name="first_name" id="first_name" placeholder="Firstname" value="<?php echo $fisrt_name; ?>">
+            <input class="input" type="text" name="sur_name" id="sur_name" placeholder="Surname" value="<?php echo $sur_name; ?>">
+            <input class="input" type="text" name="e-mail" id="e-mail" placeholder="E-mail" value="<?php echo $e_mail; ?>">
+            <input class="input" type="text" name="age" id="age" placeholder="Age" value="<?php echo $age; ?>">
 			<input class="input" type="password" name="password" id="password" placeholder="Password" value="<?php echo $password; ?>">
 			<input class="input" type="submit" name="submit" id="submit" value="OK">
 		</form>	
