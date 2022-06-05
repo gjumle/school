@@ -66,7 +66,7 @@ if (isset($_POST['submit'])) {
 		</form>	
 	</div>
 	
-	<footer class="footer">
+	<footer class="footer" id="register-foot">
 		<div class="foot-text">
 			<p id="foot-text">Leoš Gjumija 2022</p>
 		</div>

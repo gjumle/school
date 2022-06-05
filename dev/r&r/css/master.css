@@ -122,12 +122,28 @@ p.text {
     margin-top: 35vh;
 }
 
-#login {
-    margin-bottom: 55vh;
+#login-foot {
+    margin-top: 55vh;
 }
 
-#register {
-    margin-bottom: 70vh;
+#register-foot {
+    margin-top: 70vh;
+}
+
+#index-foot {
+    margin-top: 47.7vh;
+}
+
+#stats-foot {
+    margin-top: 70vh;
+}
+
+#users-foot {
+    margin-top: 42.45vh;
+}
+
+#account-foot {
+    margin-top: 47.7vh;
 }
 
 #submit {

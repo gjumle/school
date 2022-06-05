@@ -49,7 +49,7 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 			</div>
 		</div>
 	</div>
-	<footer class="footer">
+	<footer class="footer" id="account-foot">
 		<div class="foot-text">
 			<p id="foot-text">Leoš Gjumija 2022</p>
 		</div>

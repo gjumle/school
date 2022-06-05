@@ -102,7 +102,7 @@ $stats = "";
 			}
 		} 
 	?>
-	<footer class="footer">
+	<footer class="footer" id="stats-foot">
 		<div class="foot-text">
 			<p id="foot-text">Leoš Gjumija 2022</p>
 		</div>
