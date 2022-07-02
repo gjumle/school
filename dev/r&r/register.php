@@ -18,7 +18,7 @@ $conn = db_conn('localhost', 'r_admin', 'runrecord', 'rr', FALSE);
 
 if (isset($_POST['submit'])) {
 	$user_name = $_POST['user_name'];
-	$age = $_POST['password_hash'];
+	$password_hash = $_POST['password_hash'];
 	if (($user_name && $password_hash) == TRUE) {
 		$sql = "SELECT user_id FROM users WHERE user_name = '" . $user_name . "' AND password_hash = '" . $password_hash . "'";
 		$result = mysqli_query($conn, $sql);
